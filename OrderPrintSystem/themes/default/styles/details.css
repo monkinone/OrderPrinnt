@@ -1,0 +1,597 @@
+﻿html
+{
+    overflow: visible;
+}
+body
+{
+    margin: 0 auto;
+    padding: 0 auto;
+    overflow: hidden;
+}
+
+/*弹出的详情区域*/
+.details
+{
+    text-align: center;
+}
+
+.optbar
+{
+    width: 100%;
+    text-align: right;
+    background: #fff;
+    padding: 4px 0;
+    border-bottom: 1px solid #004ea2;
+    height: 40px;
+}
+.optbar > table
+{
+    width: 100%;
+}
+.optbar .title
+{
+    font: bold 28px/28px "微软雅黑" , "黑体" , "宋体";
+    text-align: right;
+    white-space: nowrap;
+    width: 120px;
+}
+.optbar .info
+{
+    font: bold 28px/28px "微软雅黑" , "黑体" , "宋体";
+    color: #454545;
+    text-align: left;
+    white-space: nowrap;
+    padding-left: 20px;
+}
+.optbar .info span
+{
+    display: block;
+    overflow: visible;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.optbar .info .tbox
+{
+    border: 0;
+    width: 100%;
+    height: 30px;
+    font: bold 20px/28px "微软雅黑" , "黑体" , "宋体";
+    color: #454545;
+    border-bottom: 1px dashed #bbb;
+}
+
+.optbar .optbtn
+{
+    padding: 0 10px;
+    white-space: nowrap;
+    text-align: right;
+    width: 150px;
+}
+.optbar .btn
+{
+    margin: 0 4px 0 0;
+    vertical-align: top;
+}
+
+.details .leftinfo
+{
+    float: left;
+    vertical-align: top;
+    background: #eee;
+    width: 30%;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.details .leftinfo .form, .details .rightinfo .form
+{
+    width: 96%;
+    margin-bottom: 0px;
+}
+.details .leftinfo .form, .details .rightinfo .form2
+{
+    width: 100%;
+    margin-bottom: 0px;
+}
+.details .leftinfo .title
+{
+    border: 0;
+    text-align: left;
+    font: bold 24px/26px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: bottom;
+    height: 40px;
+    color: #004ea2;
+    padding-left: 30px;
+}
+.details .leftinfo .title1
+{
+    border: 0;
+    text-align: left;
+    font: bold 16px/18px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: bottom;
+    height: 20px;
+    color: #004ea2;
+    padding-left: 30px;
+}
+.details .leftinfo .info
+{
+    font: normal 20px/20px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: top;
+    border-bottom: 1px dashed #bbb;
+    text-align: left;
+    padding-left: 30px;
+    color: #454545;
+}
+.details .leftinfo .info .current
+{
+    margin-right: 10px;
+    min-width: 90px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    border: 1px solid #004ea2;
+    text-align: center;
+    cursor: pointer;
+    background-color: #004ea2;
+    color: White;
+}
+.current
+{
+    margin-right: 5px;
+   
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    border: 1px solid #004ea2;
+    text-align: center;
+    cursor: pointer;
+    background-color: #004ea2;
+    color: White;
+}
+.details .leftinfo .info2
+{
+    font: normal 20px/20px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: top;
+    border-bottom: 1px dashed #bbb;
+    text-align: left;
+    padding-left: 0px;
+    color: #454545;
+}
+.details .info .tbox
+{
+    border: #004ea2 1px solid;
+    height: 30px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    color: #454545;
+}
+
+.details .rightinfo
+{
+   /* float: right;*/
+    position: relative;
+    top: 0;
+    right: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.details .rightinfoMain
+{
+    position: relative;
+    top: 0;
+    right: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.details .rightinfoMain .title1
+{
+    border: 0;
+    text-align: left;
+    font: bold 16px/18px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: bottom;
+    height: 30px;
+    color: #004ea2;
+    padding-left: 30px;
+}
+.details .rightinfo .split
+{
+    border-top: 1px dashed #bbb;
+}
+.details .rightinfo .title
+{
+    text-align: left;
+    font: bold 26px/26px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: bottom;
+    height: 40px;
+    color: #004ea2;
+    padding-left: 30px;
+}
+.details .rightinfo .title1
+{
+    border: 0;
+    text-align: left;
+    font: bold 16px/18px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: bottom;
+    height: 30px;
+    color: #004ea2;
+    padding-left: 30px;
+}
+.details .rightinfo .title2
+{
+    border: 0;
+    text-align: left;
+    font: 22px/22px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: text-top;
+    height: 30px;
+    color: #004ea2;
+    padding-left: 0px;
+}
+.details .rightinfo .title3
+{
+    border: 1;
+    text-align: left;
+    font: bold 18px/20px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: middle;
+    height: 30px;
+    color: #004ea2;
+    padding-left: 10px;
+}
+.details .rightinfo .title4
+{
+    border: 0;
+    text-align: left;
+    font: bold 16px/18px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: top;
+    height: 30px;
+    color: #004ea2;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.details .rightinfo .title1 .btn
+{
+    min-width: 120px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    background-color: #007ed6;
+    border: 1px solid #004ea2;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 30px;
+}
+.details .rightinfo .info
+{
+    font: normal 22px/22px "微软雅黑" , "黑体" , "宋体";
+    text-align: left;
+    padding: 0 30px;
+    color: #454545;
+}
+
+.details .rightinfo .info2
+{
+    font: normal 22px/22px "微软雅黑" , "黑体" , "宋体";
+    text-align: center;
+    padding: 0 5px;
+    color: #454545;
+}
+
+.details .rightinfo .oneddl
+{
+    padding: 0 10px 6px 30px;
+}
+.details .rightinfo .oneddl .selecter
+{
+    width: 98%;
+}
+.details .rightinfo .twoddl
+{
+    padding: 0 10px 6px 0;
+}
+.details .rightinfo .twoddl .selecter
+{
+    width: 60%;
+}
+.details .rightinfo .largetext
+{
+    font: normal 21px/30px "微软雅黑" , "黑体" , "宋体";
+}
+
+.details .rightinfo .info .tbox
+{
+    border: #004ea2 1px solid;
+    height: 30px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    color: #454545;
+}
+.details .rightinfo .info .addfile
+{
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    color: White;
+    border: 1px solid #004ea2;
+    background: #007ed6;
+}
+.details .rightinfo .info .file
+{
+    margin-top: 2px;
+}
+.details .rightinfo .info .file .filebox, .details .rightinfo .info .filebox
+{
+    height: 36px;
+    border: #004ea2 1px solid;
+    background: white;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+}
+.details .rightinfo .info .deleteFile
+{
+    height: 36px;
+    width: 90px;
+    margin-left: 2px;
+}
+.details .rightinfo .info .tarea
+{
+    border: #004ea2 1px solid;
+    height: 80px;
+    width: 80%;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+}
+.details .rightinfo .info .forwordrecorditem
+{
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 4px;
+}
+.details .rightinfo .info .forwordrecorditem-last
+{
+    border-bottom: 1px solid #ddd;
+}
+
+.details .rightinfo .info .forwordrecorditem table
+{
+    width: 100%;
+}
+.details .rightinfo .info .forwordrecorditem .photo
+{
+    vertical-align: top;
+    width: 50px;
+    text-align: center;
+    vertical-align: top;
+}
+.details .rightinfo .info .forwordrecorditem .photo img
+{
+    width: 47px;
+}
+.details .rightinfo .info .forwordrecorditem .title
+{
+    font: bold 14px/18px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: middle;
+    color: #004ea2;
+    white-space: nowrap;
+    padding: 0;
+    height: 22px;
+    width: 50px;
+    text-align: right;
+}
+.details .rightinfo .info .forwordrecorditem .info
+{
+    font: normal 14px/18px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: middle;
+    color: #454545;
+    white-space: nowrap;
+    padding: 0;
+    width: 80px;
+}
+.details .rightinfo .info .forwordrecorditem .htext
+{
+    font: bold 22px/28px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: top;
+    color: #454545;
+    white-space: normal;
+    padding: 0;
+}
+.details .rightinfo .info .forwordrecorditem .attachment
+{
+    vertical-align: middle;
+    text-align: right;
+}
+.details .rightinfo .info .forwordrecorditem .date
+{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.details .rightinfo .info .forwordrecorditem .largetext
+{
+    font: normal 14px/18px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: top;
+    color: #454545;
+    white-space: normal;
+    padding: 0;
+}
+.details .rightinfo .info .forwordrecorditem .largetext .img
+{
+    float: right;
+    width: 30px;
+    cursor: pointer;
+}
+
+.details .rightinfo .info .separator
+{
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    width: 90%;
+    padding: 0 4px;
+    text-align: center;
+}
+.details .rightinfo .info .separator .down
+{
+}
+
+.details .rightinfo .info .grid
+{
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    width: 100%;
+    border-color: #004ea2;
+}
+.details .rightinfo .info .grid th
+{
+    text-align: center;
+    color: #004ea2;
+    border-color: #004ea2;
+    background: white;
+    border: 0;
+}
+.details .rightinfo .info .grid td
+{
+    text-align: center;
+    border: 0;
+}
+
+.details .rightinfo .info .grid tr.odd
+{
+    background: #e6f3fd;
+    border-bottom: 1px solid #004ea2;
+    border-top: 1px solid #004ea2;
+}
+.details .rightinfo .info .grid tr.even
+{
+    border-bottom: 1px solid #004ea2;
+    border-top: 1px solid #004ea2;
+}
+.details .rightinfo .info .btn
+{
+    min-width: 120px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    background-color: #007ed6;
+    border: 1px solid #004ea2;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+}
+.details .rightinfo .info .btn:hover
+{
+    background-color: #009944;
+}
+.details .rightinfo .info .attachment
+{
+    text-align: right;
+    vertical-align: top;
+}
+.details .rightinfo .info .attachment .img
+{
+    width: 40px;
+    cursor: pointer;
+}
+
+.details .rightinfo .file
+{
+    padding: 0 30px;
+}
+
+
+.fileQueue
+{
+}
+
+.uploadedattach
+{
+}
+.uploadedattach > table
+{
+    width: 260px;
+    height: auto;
+    background: #6eb92b;
+    margin-bottom: 2px;
+    cursor: pointer;
+    float: left;
+}
+.uploadedattach .img
+{
+    padding: 10px;
+}
+.uploadedattach .img img
+{
+    width: 50px;
+    height: 50px;
+}
+.uploadedattach .filename
+{
+    padding: 0 6px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    color: White;
+}
+.uploadedattach .filename span
+{
+    display: block;
+    width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.uploadedattach .filesize
+{
+    font: normal 14px/28px "微软雅黑" , "黑体" , "宋体";
+    color: White;
+    padding: 0 6px;
+}
+.uploadedattach .delete
+{
+    width: 20px;
+    text-align: right;
+    padding: 6px;
+    vertical-align: bottom;
+}
+.uploadedattach .delete img
+{
+    cursor: pointer;
+}
+.uploadedattach-s > table
+{
+    width: 205px;
+    height: auto;
+    background: #6eb92b;
+    margin: 0 4px 2px 0;
+    cursor: pointer;
+    float: left;
+}
+.uploadedattach-s .img
+{
+    padding: 2px;
+}
+.uploadedattach-s .img img
+{
+    width: 30px;
+    height: 30px;
+}
+.uploadedattach-s .filename
+{
+    padding: 0 6px;
+    font: normal 14px/24px "微软雅黑" , "黑体" , "宋体";
+    color: White;
+}
+.uploadedattach-s .filename span
+{
+    display: block;
+    width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.uploadedattach-s .filesize
+{
+    font: normal 12px/18px "微软雅黑" , "黑体" , "宋体";
+    color: White;
+    padding: 0 6px;
+}
+.uploadedattach-s .delete
+{
+    width: 20px;
+    text-align: right;
+    padding: 2px 6px;
+    vertical-align: bottom;
+}
+.uploadedattach-s .delete img
+{
+    cursor: pointer;
+}
+.loginTishi{ color:Red;   font: normal 14px/24px "微软雅黑" , "黑体" , "宋体";}

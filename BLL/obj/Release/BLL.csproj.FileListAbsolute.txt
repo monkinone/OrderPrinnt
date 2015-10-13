@@ -1,0 +1,11 @@
+H:\OrderPrint\BLL\bin\Release\DCQWBOA.W8.BLL.dll
+H:\OrderPrint\BLL\bin\Release\DCQWBOA.W8.BLL.pdb
+H:\OrderPrint\BLL\bin\Release\DCQWBOA.W8.Common.dll
+H:\OrderPrint\BLL\bin\Release\DCQWBOA.W8.DAO.dll
+H:\OrderPrint\BLL\bin\Release\DCQWBOA.W8.DBUtility.dll
+H:\OrderPrint\BLL\bin\Release\DCQWBOA.W8.Modules.dll
+H:\OrderPrint\BLL\bin\Release\DCQWBOA.W8.Common.pdb
+H:\OrderPrint\BLL\bin\Release\DCQWBOA.W8.DBUtility.pdb
+H:\OrderPrint\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+H:\OrderPrint\BLL\obj\Release\DCQWBOA.W8.BLL.dll
+H:\OrderPrint\BLL\obj\Release\DCQWBOA.W8.BLL.pdb

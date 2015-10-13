@@ -1,0 +1,153 @@
+﻿body, #fileExplorer
+{
+    padding: 0 auto;
+    margin: 0 auto;
+    font-size: 13px;
+    overflow: hidden;
+}
+#tree
+{
+    width: 220px;
+    overflow-x: scroll;
+    float: left;
+    white-space: nowrap;
+    display: none;
+}
+#rightPanel
+{
+    width: 100%;
+    height: 100%;
+    text-align: right;
+}
+#optbar
+{
+    height: 66px;
+    background: white;
+    border-bottom: 1px solid #004ea2;
+}
+#path
+{
+    font: normal 18px/22px "微软雅黑" , "黑体" , "宋体";
+    padding-top: 10px;
+    clear: both;
+    float: left;
+}
+#pathString
+{
+    color: #004ea2;
+}
+#pathName
+{
+    font: bold 18px/22px "微软雅黑" , "黑体" , "宋体";
+    padding: 10px 0;
+    clear: both;
+    float: left;
+    color: #004ea2;
+    width:200px;
+    text-align:center;
+    border:1px solid #ddd;
+    margin:10px;
+}
+#menu
+{
+    float: right;
+}
+.menuItem
+{
+    float: left;
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    border: solid 1px #eee;
+    margin: 3px;
+}
+.menuItemImg
+{
+}
+.tipText
+{
+    width: 50px;
+    font-size: 13px;
+    text-align: center;
+    height: 13px;
+}
+#fileListHead
+{
+    background-color: #1eb9ee;
+    font: normal 18px/40px "微软雅黑" , "黑体" , "宋体";
+    border-bottom: 1px solid #004ea2;
+    color: White;
+}
+#fileListHead div
+{
+    font-weight: bold;
+}
+.chkColumn
+{
+    float: left;
+    text-align: center;
+    padding-top: 8px;
+    height: 32px;
+}
+.fileType
+{
+    float: left;
+    width: 60px;
+    text-align: center;
+    padding-top:1px;
+}
+.fileType img
+{
+    width: 25px;
+    height: 27px;
+    margin-top: 8px;
+}
+.fileName
+{
+    text-align: left;
+    float: left;
+    height: 32px;
+}
+.fileSize
+{
+    text-align: center;
+    float: left;
+    width: 70px;
+    height: 32px;
+}
+.lastUpdate
+{
+    text-align: center;
+    float: left;
+    width: 250px;
+    height: 32px;
+}
+.rename
+{
+    float: left;
+    text-align: center;
+    width: 150px;
+    height: 32px;
+    display:none;
+}
+#fileList
+{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 700px;
+}
+.fileItem
+{
+    clear: both;
+    border-bottom: solid 1px #ccc;
+    font: normal 18px/40px "微软雅黑" , "黑体" , "宋体";
+}
+.fileItem .rename
+{
+    padding-top: 10px;
+}
+.odd
+{
+    background: url(../images/grayblue_alpha_bg.png);
+}

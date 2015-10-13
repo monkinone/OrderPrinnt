@@ -1,0 +1,5 @@
+H:\OrderPrint\DBUtility\bin\Release\DCQWBOA.W8.DBUtility.dll
+H:\OrderPrint\DBUtility\bin\Release\DCQWBOA.W8.DBUtility.pdb
+H:\OrderPrint\DBUtility\obj\Release\DBUtility.csprojResolveAssemblyReference.cache
+H:\OrderPrint\DBUtility\obj\Release\DCQWBOA.W8.DBUtility.dll
+H:\OrderPrint\DBUtility\obj\Release\DCQWBOA.W8.DBUtility.pdb

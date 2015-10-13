@@ -1,0 +1,119 @@
+﻿.tb {
+    /*width: 98%;*/
+    border-left: 1px solid #004EA2;
+    margin: 0 auto;
+}
+
+    .tb th {
+        font: normal 12px "微软雅黑";
+        background: #004EA2;
+        color: White;
+        text-align: center;
+        vertical-align: middle;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .tb td, tb tr {
+        font: normal 12px "微软雅黑";
+        color: #454545;
+        text-align: center;
+        vertical-align: middle;
+        border-bottom: 1px solid #004EA2;
+        border-right: 1px solid #004EA2;
+        height: 32px;
+        max-width: 240px;
+        word-break: break-all;
+        font-size: 12px;
+    }
+
+        .tb td a {
+            text-decoration: none;
+        }
+
+            .tb td a:link {
+            }
+
+            .tb td a:visited {
+            }
+
+            .tb td a:hover {
+                text-decoration: underline;
+                color: #007b37;
+            }
+
+            .tb td a:active {
+            }
+
+    .tb tr.even {
+    }
+
+    .tb tr.odd {
+    }
+
+    .tb tr:hover {
+        background: #95C7FB;
+    }
+
+        .tb tr:hover td {
+            color: White;
+        }
+
+            .tb tr:hover td a {
+                color: White;
+            }
+
+                .tb tr:hover td a:link {
+                }
+
+                .tb tr:hover td a:visited {
+                }
+
+                .tb tr:hover td a:hover {
+                    text-decoration: underline;
+                    color: #007b37;
+                }
+
+                .tb tr:hover td a:active {
+                }
+
+.tb_v {
+    border-top: 1px solid #004EA2;
+}
+
+    .tb_v td {
+        height: 36px;
+    }
+
+    .tb_v .tbt {
+        font: normal 18px/26px "微软雅黑", "黑体";
+        text-align: right;
+        vertical-align: middle;
+        padding: 0 10px;
+    }
+
+    .tb_v .tbdata {
+        font: bold 18px/26px "微软雅黑", "黑体";
+        text-align: center;
+        vertical-align: middle;
+        padding: 0 10px;
+        color: #004EA2;
+        background: #E5F2FB;
+    }
+
+    .tb_v tr:hover .tbdata {
+        background: #95C7FB;
+    }
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+#listtr td {
+    background-color: #727272;
+    height: 50px;
+}

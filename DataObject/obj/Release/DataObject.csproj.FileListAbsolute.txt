@@ -1,0 +1,8 @@
+H:\OrderPrint\DataObject\bin\Release\DCQWBOA.W8.DAO.dll
+H:\OrderPrint\DataObject\bin\Release\DCQWBOA.W8.Common.dll
+H:\OrderPrint\DataObject\bin\Release\DCQWBOA.W8.DBUtility.dll
+H:\OrderPrint\DataObject\bin\Release\DCQWBOA.W8.Modules.dll
+H:\OrderPrint\DataObject\bin\Release\DCQWBOA.W8.Common.pdb
+H:\OrderPrint\DataObject\bin\Release\DCQWBOA.W8.DBUtility.pdb
+H:\OrderPrint\DataObject\obj\Release\DataObject.csprojResolveAssemblyReference.cache
+H:\OrderPrint\DataObject\obj\Release\DCQWBOA.W8.DAO.dll

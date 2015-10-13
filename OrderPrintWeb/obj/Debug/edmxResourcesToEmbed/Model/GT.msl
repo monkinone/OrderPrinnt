@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GTModelStoreContainer" CdmEntityContainer="GTEntities">
+    <EntitySetMapping Name="BiaoShiImg">
+      <EntityTypeMapping TypeName="GTModel.BiaoShiImg">
+        <MappingFragment StoreEntitySet="BiaoShiImg">
+          <ScalarProperty Name="imgId" ColumnName="imgId" />
+          <ScalarProperty Name="biaoShiNo" ColumnName="biaoShiNo" />
+          <ScalarProperty Name="biaoShiImg1" ColumnName="biaoShiImg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="GTModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="customerNo" ColumnName="customerNo" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="contacts" ColumnName="contacts" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="telPhone" ColumnName="telPhone" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="InvoiceMethod" ColumnName="InvoiceMethod" />
+          <ScalarProperty Name="backMethod" ColumnName="backMethod" />
+          <ScalarProperty Name="isFanben" ColumnName="isFanben" />
+          <ScalarProperty Name="companyAddress" ColumnName="companyAddress" />
+          <ScalarProperty Name="otherDangAn" ColumnName="otherDangAn" />
+          <ScalarProperty Name="modifyPriceRecord" ColumnName="modifyPriceRecord" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="isShowPrice" ColumnName="isShowPrice" />
+          <ScalarProperty Name="islock" ColumnName="islock" />
+          <ScalarProperty Name="zhangHao" ColumnName="zhangHao" />
+          <ScalarProperty Name="shuiHao" ColumnName="shuiHao" />
+          <ScalarProperty Name="isAddInfo" ColumnName="isAddInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuanJiaoZhenImg">
+      <EntityTypeMapping TypeName="GTModel.GuanJiaoZhenImg">
+        <MappingFragment StoreEntitySet="GuanJiaoZhenImg">
+          <ScalarProperty Name="imgId" ColumnName="imgId" />
+          <ScalarProperty Name="guanJiaoZhenNo" ColumnName="guanJiaoZhenNo" />
+          <ScalarProperty Name="guanJiaoZhenImg1" ColumnName="guanJiaoZhenImg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuiGeShu">
+      <EntityTypeMapping TypeName="GTModel.GuiGeShu">
+        <MappingFragment StoreEntitySet="GuiGeShu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fileUrl" ColumnName="fileUrl" />
+          <ScalarProperty Name="productNo" ColumnName="productNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MattersNeedingAttention">
+      <EntityTypeMapping TypeName="GTModel.MattersNeedingAttention">
+        <MappingFragment StoreEntitySet="MattersNeedingAttention">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customerNo" ColumnName="customerNo" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notice">
+      <EntityTypeMapping TypeName="GTModel.Notice">
+        <MappingFragment StoreEntitySet="Notice">
+          <ScalarProperty Name="noticeId" ColumnName="noticeId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priceManage">
+      <EntityTypeMapping TypeName="GTModel.priceManage">
+        <MappingFragment StoreEntitySet="priceManage">
+          <ScalarProperty Name="priceId" ColumnName="priceId" />
+          <ScalarProperty Name="customNo" ColumnName="customNo" />
+          <ScalarProperty Name="productNo" ColumnName="productNo" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrintSGDCount">
+      <EntityTypeMapping TypeName="GTModel.PrintSGDCount">
+        <MappingFragment StoreEntitySet="PrintSGDCount">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="printCount" ColumnName="printCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductParam">
+      <EntityTypeMapping TypeName="GTModel.ProductParam">
+        <MappingFragment StoreEntitySet="ProductParam">
+          <ScalarProperty Name="paramId" ColumnName="paramId" />
+          <ScalarProperty Name="customNo" ColumnName="customNo" />
+          <ScalarProperty Name="productNo" ColumnName="productNo" />
+          <ScalarProperty Name="paramContent" ColumnName="paramContent" />
+          <ScalarProperty Name="isWriteFahuoInfo" ColumnName="isWriteFahuoInfo" />
+          <ScalarProperty Name="isWriteXianChang" ColumnName="isWriteXianChang" />
+          <ScalarProperty Name="wuliaobian" ColumnName="wuliaobian" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="GTModel.products">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="productNum" ColumnName="productNum" />
+          <ScalarProperty Name="waiBZ" ColumnName="waiBZ" />
+          <ScalarProperty Name="NeiBZ" ColumnName="NeiBZ" />
+          <ScalarProperty Name="NeiBZDW" ColumnName="NeiBZDW" />
+          <ScalarProperty Name="bian" ColumnName="bian" />
+          <ScalarProperty Name="jingDu" ColumnName="jingDu" />
+          <ScalarProperty Name="xianXingdu" ColumnName="xianXingdu" />
+          <ScalarProperty Name="eDingJC" ColumnName="eDingJC" />
+          <ScalarProperty Name="tieXiCount" ColumnName="tieXiCount" />
+          <ScalarProperty Name="guiGe" ColumnName="guiGe" />
+          <ScalarProperty Name="caiLiao" ColumnName="caiLiao" />
+          <ScalarProperty Name="xingNeng" ColumnName="xingNeng" />
+          <ScalarProperty Name="chuLiMethod" ColumnName="chuLiMethod" />
+          <ScalarProperty Name="baoHeDian" ColumnName="baoHeDian" />
+          <ScalarProperty Name="xianQuanCount" ColumnName="xianQuanCount" />
+          <ScalarProperty Name="chujZaShu" ColumnName="chujZaShu" />
+          <ScalarProperty Name="chujXianJing" ColumnName="chujXianJing" />
+          <ScalarProperty Name="chujRaoXianZD" ColumnName="chujRaoXianZD" />
+          <ScalarProperty Name="chujXianTouCD" ColumnName="chujXianTouCD" />
+          <ScalarProperty Name="chujXiantouCL" ColumnName="chujXiantouCL" />
+          <ScalarProperty Name="chujTongMD" ColumnName="chujTongMD" />
+          <ScalarProperty Name="cijZaShu" ColumnName="cijZaShu" />
+          <ScalarProperty Name="cijXianJing" ColumnName="cijXianJing" />
+          <ScalarProperty Name="cijRaoXianZD" ColumnName="cijRaoXianZD" />
+          <ScalarProperty Name="cijXianTouCD" ColumnName="cijXianTouCD" />
+          <ScalarProperty Name="cijXianTouCL" ColumnName="cijXianTouCL" />
+          <ScalarProperty Name="cijTongMD" ColumnName="cijTongMD" />
+          <ScalarProperty Name="xqjcyqEquip" ColumnName="xqjcyqEquip" />
+          <ScalarProperty Name="xqjcyqShuRuState" ColumnName="xqjcyqShuRuState" />
+          <ScalarProperty Name="xqjcyqShuChuState" ColumnName="xqjcyqShuChuState" />
+          <ScalarProperty Name="xqjcyqJiaoCha" ColumnName="xqjcyqJiaoCha" />
+          <ScalarProperty Name="xqjcyqFuZai" ColumnName="xqjcyqFuZai" />
+          <ScalarProperty Name="biaoShiNo" ColumnName="biaoShiNo" />
+          <ScalarProperty Name="waiKeNo" ColumnName="waiKeNo" />
+          <ScalarProperty Name="waiKeCount" ColumnName="waiKeCount" />
+          <ScalarProperty Name="yongJiaoCS" ColumnName="yongJiaoCS" />
+          <ScalarProperty Name="shuRu" ColumnName="shuRu" />
+          <ScalarProperty Name="shuChu" ColumnName="shuChu" />
+          <ScalarProperty Name="biaoShiAddress" ColumnName="biaoShiAddress" />
+          <ScalarProperty Name="chajianNo" ColumnName="chajianNo" />
+          <ScalarProperty Name="chajianCount" ColumnName="chajianCount" />
+          <ScalarProperty Name="waiXingTZ" ColumnName="waiXingTZ" />
+          <ScalarProperty Name="cpjccsEquip" ColumnName="cpjccsEquip" />
+          <ScalarProperty Name="cpjccsShuRuState" ColumnName="cpjccsShuRuState" />
+          <ScalarProperty Name="cpjccsShuChuState" ColumnName="cpjccsShuChuState" />
+          <ScalarProperty Name="CpjccsJiaoChaBH" ColumnName="CpjccsJiaoChaBH" />
+          <ScalarProperty Name="cpjccsFuZai" ColumnName="cpjccsFuZai" />
+          <ScalarProperty Name="cpjccsNaiYa" ColumnName="cpjccsNaiYa" />
+          <ScalarProperty Name="cpjccsTongMD" ColumnName="cpjccsTongMD" />
+          <ScalarProperty Name="guanJiaoZhenLX" ColumnName="guanJiaoZhenLX" />
+          <ScalarProperty Name="guanJIaoZhenLXCount" ColumnName="guanJIaoZhenLXCount" />
+          <ScalarProperty Name="guanJiaoZhenLXTOW" ColumnName="guanJiaoZhenLXTOW" />
+          <ScalarProperty Name="guanJiaoZhenLXTOWCount" ColumnName="guanJiaoZhenLXTOWCount" />
+          <ScalarProperty Name="shuRuXC" ColumnName="shuRuXC" />
+          <ScalarProperty Name="shuChuXC" ColumnName="shuChuXC" />
+          <ScalarProperty Name="peiXianSR" ColumnName="peiXianSR" />
+          <ScalarProperty Name="peiXianSRCount" ColumnName="peiXianSRCount" />
+          <ScalarProperty Name="peiXianSC" ColumnName="peiXianSC" />
+          <ScalarProperty Name="peiXianSCCount" ColumnName="peiXianSCCount" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="isModifyTZ" ColumnName="isModifyTZ" />
+          <ScalarProperty Name="biaoShiPicture" ColumnName="biaoShiPicture" />
+          <ScalarProperty Name="isModifyWaikeNo" ColumnName="isModifyWaikeNo" />
+          <ScalarProperty Name="gongyiZYSX" ColumnName="gongyiZYSX" />
+          <ScalarProperty Name="baoZhuangHeGG" ColumnName="baoZhuangHeGG" />
+          <ScalarProperty Name="baoZhuangXiangGG" ColumnName="baoZhuangXiangGG" />
+          <ScalarProperty Name="baoHeDianTestTJ" ColumnName="baoHeDianTestTJ" />
+          <ScalarProperty Name="guJia" ColumnName="guJia" />
+          <ScalarProperty Name="tongPai" ColumnName="tongPai" />
+          <ScalarProperty Name="ciHuan" ColumnName="ciHuan" />
+          <ScalarProperty Name="duanZi" ColumnName="duanZi" />
+          <ScalarProperty Name="xianLuBan" ColumnName="xianLuBan" />
+          <ScalarProperty Name="jiaoPian" ColumnName="jiaoPian" />
+          <ScalarProperty Name="pingBi" ColumnName="pingBi" />
+          <ScalarProperty Name="wenYaGuan" ColumnName="wenYaGuan" />
+          <ScalarProperty Name="dianZu" ColumnName="dianZu" />
+          <ScalarProperty Name="luoSi" ColumnName="luoSi" />
+          <ScalarProperty Name="reSuoTaoGuan" ColumnName="reSuoTaoGuan" />
+          <ScalarProperty Name="anZhuangPJ" ColumnName="anZhuangPJ" />
+          <ScalarProperty Name="yuanQiJian1" ColumnName="yuanQiJian1" />
+          <ScalarProperty Name="yuanQiJian2" ColumnName="yuanQiJian2" />
+          <ScalarProperty Name="yuanQiJian3" ColumnName="yuanQiJian3" />
+          <ScalarProperty Name="yuanQiJian4" ColumnName="yuanQiJian4" />
+          <ScalarProperty Name="gujiaCanshu" ColumnName="gujiaCanshu" />
+          <ScalarProperty Name="gujiaCount" ColumnName="gujiaCount" />
+          <ScalarProperty Name="tongpaiCanshu" ColumnName="tongpaiCanshu" />
+          <ScalarProperty Name="tongpaoCount" ColumnName="tongpaoCount" />
+          <ScalarProperty Name="cihuanCanshu" ColumnName="cihuanCanshu" />
+          <ScalarProperty Name="cihuanCount" ColumnName="cihuanCount" />
+          <ScalarProperty Name="duanziCanshu" ColumnName="duanziCanshu" />
+          <ScalarProperty Name="duanziCount" ColumnName="duanziCount" />
+          <ScalarProperty Name="xianlubanCanshu" ColumnName="xianlubanCanshu" />
+          <ScalarProperty Name="xianlubanCount" ColumnName="xianlubanCount" />
+          <ScalarProperty Name="jiaopianCanshu" ColumnName="jiaopianCanshu" />
+          <ScalarProperty Name="jiaopianCount" ColumnName="jiaopianCount" />
+          <ScalarProperty Name="pingbiCanshu" ColumnName="pingbiCanshu" />
+          <ScalarProperty Name="pingbiCount" ColumnName="pingbiCount" />
+          <ScalarProperty Name="wenyaguanCanshu" ColumnName="wenyaguanCanshu" />
+          <ScalarProperty Name="wenyaguanCount" ColumnName="wenyaguanCount" />
+          <ScalarProperty Name="dianzuCanshu" ColumnName="dianzuCanshu" />
+          <ScalarProperty Name="dianzuCount" ColumnName="dianzuCount" />
+          <ScalarProperty Name="luosiCanshu" ColumnName="luosiCanshu" />
+          <ScalarProperty Name="luosiCount" ColumnName="luosiCount" />
+          <ScalarProperty Name="resuotaoguanCanshu" ColumnName="resuotaoguanCanshu" />
+          <ScalarProperty Name="resuotaoguanCount" ColumnName="resuotaoguanCount" />
+          <ScalarProperty Name="anzhuangPJCanshu" ColumnName="anzhuangPJCanshu" />
+          <ScalarProperty Name="anzhuangPJCount" ColumnName="anzhuangPJCount" />
+          <ScalarProperty Name="yuanqijian1Canshu" ColumnName="yuanqijian1Canshu" />
+          <ScalarProperty Name="Yuanqijian1Count" ColumnName="Yuanqijian1Count" />
+          <ScalarProperty Name="Yuanqijian2Canshu" ColumnName="Yuanqijian2Canshu" />
+          <ScalarProperty Name="Yuanqijian2Count" ColumnName="Yuanqijian2Count" />
+          <ScalarProperty Name="Yuanqijian3Canshu" ColumnName="Yuanqijian3Canshu" />
+          <ScalarProperty Name="Yuanqijian3Count" ColumnName="Yuanqijian3Count" />
+          <ScalarProperty Name="Yuanqijian4Canshu" ColumnName="Yuanqijian4Canshu" />
+          <ScalarProperty Name="Yuanqijian4Count" ColumnName="Yuanqijian4Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proOrders">
+      <EntityTypeMapping TypeName="GTModel.proOrders">
+        <MappingFragment StoreEntitySet="proOrders">
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="customNum" ColumnName="customNum" />
+          <ScalarProperty Name="heTongNum" ColumnName="heTongNum" />
+          <ScalarProperty Name="customOrderNum" ColumnName="customOrderNum" />
+          <ScalarProperty Name="customWLBH" ColumnName="customWLBH" />
+          <ScalarProperty Name="customManager" ColumnName="customManager" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="editTime" ColumnName="editTime" />
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="yikaipiaoMoney" ColumnName="yikaipiaoMoney" />
+          <ScalarProperty Name="yijiekuanMoney" ColumnName="yijiekuanMoney" />
+          <ScalarProperty Name="faPiaoDanhao" ColumnName="faPiaoDanhao" />
+          <ScalarProperty Name="chengShuiHao" ColumnName="chengShuiHao" />
+          <ScalarProperty Name="Remark1" ColumnName="Remark1" />
+          <ScalarProperty Name="editUser" ColumnName="editUser" />
+          <ScalarProperty Name="isTiXing" ColumnName="isTiXing" />
+          <ScalarProperty Name="shuRuXianchang" ColumnName="shuRuXianchang" />
+          <ScalarProperty Name="shuChuXianchang" ColumnName="shuChuXianchang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proOrdersDetail">
+      <EntityTypeMapping TypeName="GTModel.proOrdersDetail">
+        <MappingFragment StoreEntitySet="proOrdersDetail">
+          <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="proNum" ColumnName="proNum" />
+          <ScalarProperty Name="ProPrice" ColumnName="ProPrice" />
+          <ScalarProperty Name="withWorkNo" ColumnName="withWorkNo" />
+          <ScalarProperty Name="printTime" ColumnName="printTime" />
+          <ScalarProperty Name="printType" ColumnName="printType" />
+          <ScalarProperty Name="printCount" ColumnName="printCount" />
+          <ScalarProperty Name="piHao" ColumnName="piHao" />
+          <ScalarProperty Name="planSendTime" ColumnName="planSendTime" />
+          <ScalarProperty Name="productAddress" ColumnName="productAddress" />
+          <ScalarProperty Name="printSGDTime" ColumnName="printSGDTime" />
+          <ScalarProperty Name="printSGDCount" ColumnName="printSGDCount" />
+          <ScalarProperty Name="printSGDJLTime" ColumnName="printSGDJLTime" />
+          <ScalarProperty Name="printSGDJLCount" ColumnName="printSGDJLCount" />
+          <ScalarProperty Name="printQLDTime" ColumnName="printQLDTime" />
+          <ScalarProperty Name="printQLDCount" ColumnName="printQLDCount" />
+          <ScalarProperty Name="printCCJYBGTime" ColumnName="printCCJYBGTime" />
+          <ScalarProperty Name="printCCJYBGCount" ColumnName="printCCJYBGCount" />
+          <ScalarProperty Name="printSHDTime" ColumnName="printSHDTime" />
+          <ScalarProperty Name="printSHDCount" ColumnName="printSHDCount" />
+          <ScalarProperty Name="printBZBQTime" ColumnName="printBZBQTime" />
+          <ScalarProperty Name="printBZBQCount" ColumnName="printBZBQCount" />
+          <ScalarProperty Name="printZYSXTime" ColumnName="printZYSXTime" />
+          <ScalarProperty Name="printZYSXCount" ColumnName="printZYSXCount" />
+          <ScalarProperty Name="printYYQRDTime" ColumnName="printYYQRDTime" />
+          <ScalarProperty Name="printYYQRDCount" ColumnName="printYYQRDCount" />
+          <ScalarProperty Name="sGDCount" ColumnName="sGDCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SendDetail">
+      <EntityTypeMapping TypeName="GTModel.SendDetail">
+        <MappingFragment StoreEntitySet="SendDetail">
+          <ScalarProperty Name="sendId" ColumnName="sendId" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="sendProNum" ColumnName="sendProNum" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="sendTime" ColumnName="sendTime" />
+          <ScalarProperty Name="packingDetail" ColumnName="packingDetail" />
+          <ScalarProperty Name="packingCount" ColumnName="packingCount" />
+          <ScalarProperty Name="packingCompanyName" ColumnName="packingCompanyName" />
+          <ScalarProperty Name="sendNum" ColumnName="sendNum" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="suiGongDanNum" ColumnName="suiGongDanNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGDRecord">
+      <EntityTypeMapping TypeName="GTModel.SGDRecord">
+        <MappingFragment StoreEntitySet="SGDRecord">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="customerNum" ColumnName="customerNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="suigongdan" ColumnName="suigongdan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userManage">
+      <EntityTypeMapping TypeName="GTModel.userManage">
+        <MappingFragment StoreEntitySet="userManage">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="trueName" ColumnName="trueName" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="userPass" ColumnName="userPass" />
+          <ScalarProperty Name="loginNum" ColumnName="loginNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WaiKeImg">
+      <EntityTypeMapping TypeName="GTModel.WaiKeImg">
+        <MappingFragment StoreEntitySet="WaiKeImg">
+          <ScalarProperty Name="imgId" ColumnName="imgId" />
+          <ScalarProperty Name="waiKeNo" ColumnName="waiKeNo" />
+          <ScalarProperty Name="waiKeImg1" ColumnName="waiKeImg" />
+          <ScalarProperty Name="isModify" ColumnName="isModify" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

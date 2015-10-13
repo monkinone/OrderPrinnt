@@ -1,0 +1,317 @@
+﻿html
+{
+    overflow: hidden;
+}
+body
+{
+    margin: 0 auto;
+    padding: 0 auto;
+    overflow: hidden;
+}
+
+.btn
+{
+    cursor: pointer;
+}
+.btnCR
+{
+    margin-right: 10px;
+    min-width: 90px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    border: 1px solid #004ea2;
+    text-align: center;
+    cursor: pointer;
+    background-color: #004ea2;
+    color: White;
+}
+.data-template
+{
+    display: none;
+}
+/*WindowControl区域*/
+.wincontrol
+{
+    width: 300px;
+    float: right;
+    text-align: right;
+    background: #004ea2;
+    color: White;
+}
+.wincontrol .item
+{
+    float: left;
+}
+.wincontrol .btn
+{
+    margin: 6px 16px 0 0;
+}
+
+
+
+/*TopArea区域*/
+.t
+{
+    background: url(../images/appname_bg.png) repeat-x top left;
+}
+.appname
+{
+    /* background: url(../images/appname_title.png) no-repeat center center;*/
+    width: 100%;
+    height: 90px;
+}
+.MainTitle
+{
+    font: normal 44px/48px "微软雅黑" , "黑体" , "宋体";
+    color: #004ea2;
+    font-weight:bold;
+    width:85%;
+    text-align:center;
+    padding-top:20px;
+    float:left;
+}
+.t .logo
+{
+    float: left;
+    margin: 10px 0 0 20px;
+}
+.t .userinfo
+{
+    float: left;
+    vertical-align: bottom;
+    margin: 10px 20px 0 0;
+    font: normal 24px/28px "微软雅黑" , "黑体" , "宋体";
+    color: #004ea2;
+}
+.t .userinfo .username
+{
+    font: normal 24px/28px "微软雅黑" , "黑体" , "宋体";
+    color: #004ea2;
+}
+.t .userinfo .photo
+{
+    border: 1px solid #004ea2;
+    margin: 8px 0 -4px 4px;
+    width: 47px;
+    height: 57px;
+}
+/*TabBar区域*/
+.tab
+{
+    width: 100%;
+    height: 52px;
+    background: #004ea2;
+}
+.tab ul
+{
+    padding: 0;
+    margin: 0;
+}
+.tab ul li.item
+{
+    cursor: pointer;
+    float: left;
+    display: block;
+    padding: 0 0 0 20px;
+    font: normal 30px/52px "微软雅黑" , "黑体" , "宋体";
+    color: White;
+    height: 52px;
+    text-decoration: none;
+    background: #004ea2;
+    width: auto;
+}
+.tab ul li.item:hover
+{
+    background: #1eb9ee;
+}
+.tab ul li.item .close
+{
+    float: left;
+    margin-left: 10px;
+}
+
+.tab ul li.current
+{
+    float: left;
+    display: block;
+    padding: 0 0 0 20px;
+    font: normal 30px/52px "微软雅黑" , "黑体" , "宋体";
+    color: White;
+    height: 52px;
+    background: #007ed6;
+}
+.tab ul li.current:hover
+{
+    background: #007ed6;
+}
+
+/*MainArea区域*/
+.m
+{
+    width: 100%;
+    background: white url(../images/main_ass_bg.png) no-repeat bottom left;
+    overflow: hidden;
+}
+.m iframe
+{
+    border: 0;
+    display: none;
+}
+.m iframe.current
+{
+    display: block;
+}
+
+/*FootArea区域*/
+.f
+{
+    background: #004ea2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.f .currentfun
+{
+    height: 30px;
+    margin: 0 auto;
+    font: normal 12px/30px "微软雅黑" , "黑体" , "宋体";
+    width: 208px;
+    color: #fff;
+    text-align: center;
+}
+
+/*Error区域*/
+.error
+{
+    width: 100%;
+    background: error url(../images/main_ass_bg.png) no-repeat bottom left;
+    overflow: hidden;
+}
+.error .icon
+{
+    padding: 20px 40px 0 100px;
+    vertical-align: top;
+}
+
+.error .title
+{
+    font: bold 40px/50px "微软雅黑" , "黑体" , "宋体";
+    color: #b71a35;
+    padding-top: 20px;
+}
+
+.error .info
+{
+    font: normal 18px/24px "微软雅黑" , "黑体" , "宋体";
+    color: #004ea2;
+}
+.error .info a
+{
+    color: #b71a35;
+    display: inline-block;
+    padding: 0 10px;
+    border: 1px solid #b71a35;
+    text-decoration: none;
+}
+.error .info a:hover
+{
+    color: #fff;
+    background: #b71a35;
+}
+
+/*周期提醒*/
+.note
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 200;
+}
+.note .handler
+{
+    font: bold 18px/24px "微软雅黑" , "黑体" , "宋体";
+    height: 30px;
+    background-image: url(../images/notehandler_bg.png);
+    background-position: -730px center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-align: left;
+    color: White;
+    border-bottom: 1px solid #007ed6;
+    text-indent: 10px;
+}
+.note .optbtn
+{
+    background: #e6f3fd;
+    width: 160px;
+    text-align: center;
+    vertical-align: top;
+}
+.note .optbtn input
+{
+    margin: 10px;
+    min-width: 90px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    border: 1px solid #004ea2;
+    text-align: center;
+    cursor: pointer;
+    background-color: #004ea2;
+    color: White;
+}
+
+.note .list
+{
+    background: #fff;
+    text-align: left;
+    vertical-align: top;
+    height: 100px;
+}
+.note .listo
+{
+    text-align: left;
+    vertical-align: top;
+    height: 100px;
+    overflow: auto;
+}
+.note .list .item
+{
+    width: 200px;
+    background: #1eb9ee; /*  float: left;*/
+    margin: 4px 0 0 4px;
+    float: left;
+    color: White;
+    cursor: pointer;
+}
+.note .list .item .title
+{
+    font: bold 14px/18px "微软雅黑" , "黑体" , "宋体";
+    width: 200px;
+}
+.note .list .item .title span
+{
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.note .list .item .otherinfo
+{
+    text-align: right;
+    font: normal 12px/18px "微软雅黑" , "黑体" , "宋体";
+}
+.otherinfo span
+{
+    display: block;
+    width: 198px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.note .colors
+{
+    background-color: Red;
+}

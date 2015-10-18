@@ -65,15 +65,18 @@ namespace Web.Service.DomainService_2
         /// </summary>
         private void AddEnterWareHouse(HttpContext context)
         {
+            int  WareHouseID = NCore.DataConvert.ToInt(context.Request["WareHouseID"],0);
+            string MaterialName = context.Request["MaterialName"]??"";
+            string ModelNumber = context.Request["ModelNumber"] ?? "";
             Model.domain_EnterWareHouseLog log = new Model.domain_EnterWareHouseLog()
             {
                 OrderID = context.Request["OrderID"]??"",
-                MaterialName = context.Request["MaterialName"]??"",
-                ModelNumber = context.Request["ModelNumber"] ?? "",
+                MaterialName = MaterialName,
+                ModelNumber = ModelNumber,
                 CategoryName = context.Request["CategoryName"] ?? "",
                 UnitName = context.Request["UnitName"]??"",
                 Amout = decimal.Parse(context.Request["Amout"]??""),
-                WareHouseID = NCore.DataConvert.ToInt(context.Request["WareHouseID"],0),
+                WareHouseID = WareHouseID,
                 WareHouseName = context.Request["WareHouseName"]??"",
                 Suppliers = context.Request["Suppliers"]??"",
                 Remark = context.Request["Remark"]??"",
@@ -84,6 +87,23 @@ namespace Web.Service.DomainService_2
             };
             db.domain_EnterWareHouseLog.Add(log);
             int num = db.SaveChanges();
+            if (num > 0) //日志录入成功
+            {
+                List<domain_Material_WareHouse> list = db.domain_Material_WareHouse
+                                                                                     .Where(w => w.WareHouseID == WareHouseID
+                                                                                                  &&w.MaterialName==MaterialName
+                                                                                                  &&w.MaterialModelNumber==ModelNumber)
+                                                                                     .ToList();
+                if (list.Count > 0)
+                {
+
+                }
+                else
+                { 
+                
+                }
+
+            }
         }
         
     }

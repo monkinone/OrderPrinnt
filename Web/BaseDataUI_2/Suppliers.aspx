@@ -59,13 +59,13 @@
         <div class="sear_list">
             <ul>
                 <li class="b3">&nbsp;</li>
-                <li class="b15_right">供应商编号：</li>
+                <li class="b10_right">供应商编号：</li>
                 <li class="b20_left">
                     <label id="gyxaddid" class="red">本编号由系统自动生成</label>
                     <label id="gyxeditid"></label>
                     <%--<input type="text" class="inpu_bg" id="tbx_supplier_id" maxlength="50" />--%>
                 </li>
-                <li class="b15_right">供应商用户选择：</li>
+                <li class="b10_right">供应商用户选择：</li>
                 <li class="b20_left">
                     <select class="easyui-combobox" style="width: 165px" id="tbx_supplier_user">
                     </select>

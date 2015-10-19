@@ -116,7 +116,7 @@ namespace Web.Service.BaseDataService_2
             Model.domain_EvaluationLevel el = db.domain_EvaluationLevel.Where(w => w.ID == ID).First();
             if (SuppliersID == el.SuppliersID && Level == el.Level)//信息未更改
             {
-                num = 1;
+                num = 1;    
             }
             else
             {

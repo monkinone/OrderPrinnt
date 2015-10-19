@@ -16,10 +16,10 @@ namespace Web.Model
     {
         public int ID { get; set; }
         public string OrderID { get; set; }
-        public Nullable<int> ItemCount { get; set; }
         public string AddBy { get; set; }
         public Nullable<System.DateTime> AddTime { get; set; }
         public string LastUpdateBy { get; set; }
         public Nullable<System.DateTime> LastUpdateTime { get; set; }
+        public int isFinished { get; set; }
     }
 }

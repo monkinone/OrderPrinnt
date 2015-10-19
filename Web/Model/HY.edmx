@@ -1,0 +1,2421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OrderPrintModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="OrderPrintModelStoreContainer">
+          <EntitySet Name="base_Material" EntityType="OrderPrintModel.Store.base_Material" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="base_MaterialAttribute" EntityType="OrderPrintModel.Store.base_MaterialAttribute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="base_MaterialCategory" EntityType="OrderPrintModel.Store.base_MaterialCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="base_Suppliers" EntityType="OrderPrintModel.Store.base_Suppliers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="base_Unit" EntityType="OrderPrintModel.Store.base_Unit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="base_WareHouse" EntityType="OrderPrintModel.Store.base_WareHouse" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BiaoShiImg" EntityType="OrderPrintModel.Store.BiaoShiImg" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="customer" EntityType="OrderPrintModel.Store.customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_DeliverGoods" EntityType="OrderPrintModel.Store.domain_DeliverGoods" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_EnterWareHouseLog" EntityType="OrderPrintModel.Store.domain_EnterWareHouseLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_EvaluationLevel" EntityType="OrderPrintModel.Store.domain_EvaluationLevel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_Log" EntityType="OrderPrintModel.Store.domain_Log" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_Material_WareHouse" EntityType="OrderPrintModel.Store.domain_Material_WareHouse" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_MaterialPrice" EntityType="OrderPrintModel.Store.domain_MaterialPrice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_OutWareHouseLog" EntityType="OrderPrintModel.Store.domain_OutWareHouseLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_PurchaseContract" EntityType="OrderPrintModel.Store.domain_PurchaseContract" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_PurchaseContractItem" EntityType="OrderPrintModel.Store.domain_PurchaseContractItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_PurchaseOrders" EntityType="OrderPrintModel.Store.domain_PurchaseOrders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_PurchaseOrdersItem" EntityType="OrderPrintModel.Store.domain_PurchaseOrdersItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="domain_ReturnWareHouseLog" EntityType="OrderPrintModel.Store.domain_ReturnWareHouseLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GuanJiaoZhenImg" EntityType="OrderPrintModel.Store.GuanJiaoZhenImg" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GuiGeShu" EntityType="OrderPrintModel.Store.GuiGeShu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MattersNeedingAttention" EntityType="OrderPrintModel.Store.MattersNeedingAttention" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Notice" EntityType="OrderPrintModel.Store.Notice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="priceManage" EntityType="OrderPrintModel.Store.priceManage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PrintSGDCount" EntityType="OrderPrintModel.Store.PrintSGDCount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductParam" EntityType="OrderPrintModel.Store.ProductParam" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products" EntityType="OrderPrintModel.Store.products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proOrders" EntityType="OrderPrintModel.Store.proOrders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="proOrdersDetail" EntityType="OrderPrintModel.Store.proOrdersDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SendDetail" EntityType="OrderPrintModel.Store.SendDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SGDRecord" EntityType="OrderPrintModel.Store.SGDRecord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="userManage" EntityType="OrderPrintModel.Store.userManage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WaiKeImg" EntityType="OrderPrintModel.Store.WaiKeImg" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="view_NoWanChengOrder" EntityType="OrderPrintModel.Store.view_NoWanChengOrder" store:Type="Views" store:Schema="dbo" store:Name="view_NoWanChengOrder">
+            <DefiningQuery>SELECT 
+      [view_NoWanChengOrder].[orderDetailId] AS [orderDetailId], 
+      [view_NoWanChengOrder].[orderNum] AS [orderNum], 
+      [view_NoWanChengOrder].[proType] AS [proType], 
+      [view_NoWanChengOrder].[proNum] AS [proNum], 
+      [view_NoWanChengOrder].[printSHDCount] AS [printSHDCount], 
+      [view_NoWanChengOrder].[planSendTime] AS [planSendTime], 
+      [view_NoWanChengOrder].[remark] AS [remark], 
+      [view_NoWanChengOrder].[companyName] AS [companyName], 
+      [view_NoWanChengOrder].[customerNo] AS [customerNo], 
+      [view_NoWanChengOrder].[SendCount] AS [SendCount]
+      FROM [dbo].[view_NoWanChengOrder] AS [view_NoWanChengOrder]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_OrderList" EntityType="OrderPrintModel.Store.view_OrderList" store:Type="Views" store:Schema="dbo" store:Name="view_OrderList">
+            <DefiningQuery>SELECT 
+      [view_OrderList].[orderDetailId] AS [orderDetailId], 
+      [view_OrderList].[orderNum] AS [orderNum], 
+      [view_OrderList].[proType] AS [proType], 
+      [view_OrderList].[proNum] AS [proNum], 
+      [view_OrderList].[ProPrice] AS [ProPrice], 
+      [view_OrderList].[withWorkNo] AS [withWorkNo], 
+      [view_OrderList].[printTime] AS [printTime], 
+      [view_OrderList].[printType] AS [printType], 
+      [view_OrderList].[printCount] AS [printCount], 
+      [view_OrderList].[piHao] AS [piHao], 
+      [view_OrderList].[planSendTime] AS [planSendTime], 
+      [view_OrderList].[productAddress] AS [productAddress], 
+      [view_OrderList].[printSGDTime] AS [printSGDTime], 
+      [view_OrderList].[printSGDCount] AS [printSGDCount], 
+      [view_OrderList].[printSGDJLTime] AS [printSGDJLTime], 
+      [view_OrderList].[printSGDJLCount] AS [printSGDJLCount], 
+      [view_OrderList].[printQLDTime] AS [printQLDTime], 
+      [view_OrderList].[printQLDCount] AS [printQLDCount], 
+      [view_OrderList].[printCCJYBGTime] AS [printCCJYBGTime], 
+      [view_OrderList].[printCCJYBGCount] AS [printCCJYBGCount], 
+      [view_OrderList].[printSHDTime] AS [printSHDTime], 
+      [view_OrderList].[printSHDCount] AS [printSHDCount], 
+      [view_OrderList].[printBZBQTime] AS [printBZBQTime], 
+      [view_OrderList].[printBZBQCount] AS [printBZBQCount], 
+      [view_OrderList].[printZYSXTime] AS [printZYSXTime], 
+      [view_OrderList].[printZYSXCount] AS [printZYSXCount], 
+      [view_OrderList].[printYYQRDTime] AS [printYYQRDTime], 
+      [view_OrderList].[printYYQRDCount] AS [printYYQRDCount], 
+      [view_OrderList].[sGDCount] AS [sGDCount], 
+      [view_OrderList].[发货状态] AS [发货状态], 
+      [view_OrderList].[customNum] AS [customNum], 
+      [view_OrderList].[editTime] AS [editTime], 
+      [view_OrderList].[sgdPrintCount] AS [sgdPrintCount], 
+      [view_OrderList].[SendCount] AS [SendCount]
+      FROM [dbo].[view_OrderList] AS [view_OrderList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_SendOrder" EntityType="OrderPrintModel.Store.view_SendOrder" store:Type="Views" store:Schema="dbo" store:Name="view_SendOrder">
+            <DefiningQuery>SELECT 
+      [view_SendOrder].[orderDetailId] AS [orderDetailId], 
+      [view_SendOrder].[orderNum] AS [orderNum], 
+      [view_SendOrder].[proType] AS [proType], 
+      [view_SendOrder].[proNum] AS [proNum], 
+      [view_SendOrder].[ProPrice] AS [ProPrice], 
+      [view_SendOrder].[withWorkNo] AS [withWorkNo], 
+      [view_SendOrder].[printTime] AS [printTime], 
+      [view_SendOrder].[printType] AS [printType], 
+      [view_SendOrder].[printCount] AS [printCount], 
+      [view_SendOrder].[piHao] AS [piHao], 
+      [view_SendOrder].[planSendTime] AS [planSendTime], 
+      [view_SendOrder].[productAddress] AS [productAddress], 
+      [view_SendOrder].[printSGDTime] AS [printSGDTime], 
+      [view_SendOrder].[printSGDCount] AS [printSGDCount], 
+      [view_SendOrder].[printSGDJLTime] AS [printSGDJLTime], 
+      [view_SendOrder].[printSGDJLCount] AS [printSGDJLCount], 
+      [view_SendOrder].[printQLDTime] AS [printQLDTime], 
+      [view_SendOrder].[printQLDCount] AS [printQLDCount], 
+      [view_SendOrder].[printCCJYBGTime] AS [printCCJYBGTime], 
+      [view_SendOrder].[printCCJYBGCount] AS [printCCJYBGCount], 
+      [view_SendOrder].[printSHDTime] AS [printSHDTime], 
+      [view_SendOrder].[printSHDCount] AS [printSHDCount], 
+      [view_SendOrder].[printBZBQTime] AS [printBZBQTime], 
+      [view_SendOrder].[printBZBQCount] AS [printBZBQCount], 
+      [view_SendOrder].[printZYSXTime] AS [printZYSXTime], 
+      [view_SendOrder].[printZYSXCount] AS [printZYSXCount], 
+      [view_SendOrder].[printYYQRDTime] AS [printYYQRDTime], 
+      [view_SendOrder].[printYYQRDCount] AS [printYYQRDCount], 
+      [view_SendOrder].[sGDCount] AS [sGDCount], 
+      [view_SendOrder].[发货状态] AS [发货状态], 
+      [view_SendOrder].[customNum] AS [customNum], 
+      [view_SendOrder].[editTime] AS [editTime], 
+      [view_SendOrder].[remark] AS [remark], 
+      [view_SendOrder].[customManager] AS [customManager], 
+      [view_SendOrder].[companyName] AS [companyName], 
+      [view_SendOrder].[paramContent] AS [paramContent], 
+      [view_SendOrder].[SendCount] AS [SendCount]
+      FROM [dbo].[view_SendOrder] AS [view_SendOrder]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="base_Material">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="50" />
+          <Property Name="ModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="AttributeID" Type="int" />
+          <Property Name="AttributeName" Type="varchar" MaxLength="50" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="UnitName" Type="varchar" MaxLength="10" />
+          <Property Name="UpperLimit" Type="int" />
+          <Property Name="LowerLimit" Type="int" />
+          <Property Name="TechnicalParameter" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="WareHouseIDs" Type="varchar" MaxLength="100" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+          <Property Name="DeleteBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeleteTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="base_MaterialAttribute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AttributeName" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+          <Property Name="DeleteBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeleteTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="base_MaterialCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="ParentName" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+          <Property Name="DeleteBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeleteTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="base_Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+          <Property Name="ContactMan" Type="varchar" MaxLength="100" />
+          <Property Name="Telephone" Type="varchar" MaxLength="20" />
+          <Property Name="MobilePhone" Type="varchar" MaxLength="20" />
+          <Property Name="Fax" Type="varchar" MaxLength="20" />
+          <Property Name="Position" Type="varchar" MaxLength="20" />
+          <Property Name="AssessmentLevel" Type="varchar" MaxLength="50" />
+          <Property Name="InvoiceFa" Type="varchar" MaxLength="50" />
+          <Property Name="Payment" Type="varchar" MaxLength="50" />
+          <Property Name="IsContractModel" Type="int" />
+          <Property Name="BankAccount" Type="varchar" MaxLength="50" />
+          <Property Name="BankName" Type="varchar" MaxLength="50" />
+          <Property Name="TaxpayerNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyAdress" Type="varchar" MaxLength="100" />
+          <Property Name="OtherContactMan" Type="text" />
+          <Property Name="ContactManDetailInfo" Type="text" />
+          <Property Name="LoginUserID" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+          <Property Name="DeleteBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeleteTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="base_Unit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UnitName" Type="varchar" MaxLength="10" />
+          <Property Name="Status" Type="int" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+          <Property Name="DeleteBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeleteTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="base_WareHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WareHouseName" Type="varchar" MaxLength="50" />
+          <Property Name="Position" Type="varchar" MaxLength="20" />
+          <Property Name="CategoryIDs" Type="varchar" MaxLength="200" />
+          <Property Name="CategoryNames" Type="varchar" MaxLength="200" />
+          <Property Name="Remark" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+          <Property Name="DeleteBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeleteTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BiaoShiImg">
+          <Key>
+            <PropertyRef Name="imgId" />
+          </Key>
+          <Property Name="imgId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="biaoShiNo" Type="varchar" MaxLength="100" />
+          <Property Name="biaoShiImg" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customerId" />
+          </Key>
+          <Property Name="customerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customerNo" Type="varchar" MaxLength="100" />
+          <Property Name="companyName" Type="varchar" MaxLength="100" />
+          <Property Name="contacts" Type="varchar" MaxLength="100" />
+          <Property Name="position" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="100" />
+          <Property Name="telPhone" Type="varchar" MaxLength="100" />
+          <Property Name="tax" Type="varchar" MaxLength="100" />
+          <Property Name="discount" Type="varchar" MaxLength="5000" />
+          <Property Name="InvoiceMethod" Type="varchar" MaxLength="100" />
+          <Property Name="backMethod" Type="varchar" MaxLength="100" />
+          <Property Name="isFanben" Type="int" />
+          <Property Name="companyAddress" Type="varchar" MaxLength="100" />
+          <Property Name="otherDangAn" Type="varchar" MaxLength="500" />
+          <Property Name="modifyPriceRecord" Type="varchar" MaxLength="500" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
+          <Property Name="isShowPrice" Type="int" />
+          <Property Name="islock" Type="int" />
+          <Property Name="zhangHao" Type="varchar" MaxLength="100" />
+          <Property Name="shuiHao" Type="varchar" MaxLength="100" />
+          <Property Name="isAddInfo" Type="int" />
+        </EntityType>
+        <EntityType Name="domain_DeliverGoods">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="varchar" MaxLength="50" />
+          <Property Name="ModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="50" />
+          <Property Name="TheDeliveryAmout" Type="decimal" />
+          <Property Name="Number" Type="decimal" />
+          <Property Name="DeliveryNum" Type="varchar" MaxLength="50" />
+          <Property Name="LogisticsCompany" Type="varchar" MaxLength="50" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="domain_EnterWareHouseLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="50" />
+          <Property Name="ModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="UnitName" Type="varchar" MaxLength="10" />
+          <Property Name="Amout" Type="decimal" />
+          <Property Name="WareHouseID" Type="int" />
+          <Property Name="WareHouseName" Type="varchar" MaxLength="50" />
+          <Property Name="Suppliers" Type="varchar" MaxLength="50" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" />
+          <Property Name="DealWithBy" Type="varchar" MaxLength="50" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="DoBy" Type="varchar" MaxLength="50" />
+          <Property Name="DoTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="domain_EvaluationLevel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SuppliersID" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+          <Property Name="Level" Type="varchar" MaxLength="50" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="domain_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DoID" Type="int" />
+          <Property Name="DoType" Type="int" />
+          <Property Name="DoContent" Type="text" />
+          <Property Name="DoBy" Type="varchar" MaxLength="50" />
+          <Property Name="DoTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="domain_Material_WareHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WareHouseID" Type="int" />
+          <Property Name="WareHouseName" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="50" />
+          <Property Name="KuCun" Type="decimal" Scale="2" />
+        </EntityType>
+        <EntityType Name="domain_MaterialPrice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SuppliersID" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+          <Property Name="ModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="50" />
+          <Property Name="UnitPrice" Type="decimal" />
+          <Property Name="Remark" Type="varchar" MaxLength="100" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="domain_OutWareHouseLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OutNo" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="50" />
+          <Property Name="ModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="UnitName" Type="varchar" MaxLength="10" />
+          <Property Name="Amout" Type="decimal" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" />
+          <Property Name="DealWithBy" Type="varchar" MaxLength="50" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="DoBy" Type="varchar" MaxLength="50" />
+          <Property Name="DoTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="domain_PurchaseContract">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContractID" Type="varchar" MaxLength="50" />
+          <Property Name="OrderID" Type="varchar" MaxLength="50" />
+          <Property Name="SuppliersID" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+          <Property Name="GoodsMethods" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+          <Property Name="DeleteBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeleteTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="domain_PurchaseContractItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContractID" Type="varchar" MaxLength="50" />
+          <Property Name="OrderID" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="50" />
+          <Property Name="ModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="UnitName" Type="varchar" MaxLength="10" />
+          <Property Name="Amout" Type="decimal" />
+          <Property Name="TechnicalParameters" Type="text" />
+          <Property Name="Requirement" Type="text" />
+        </EntityType>
+        <EntityType Name="domain_PurchaseOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="varchar" MaxLength="50" />
+          <Property Name="ItemCount" Type="int" />
+          <Property Name="AddBy" Type="varchar" MaxLength="50" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="domain_PurchaseOrdersItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="50" />
+          <Property Name="ModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="UnitName" Type="varchar" MaxLength="10" />
+          <Property Name="Amout" Type="decimal" />
+          <Property Name="TechnicalParameters" Type="text" />
+          <Property Name="Requirement" Type="text" />
+        </EntityType>
+        <EntityType Name="domain_ReturnWareHouseLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReturnNo" Type="varchar" MaxLength="50" />
+          <Property Name="MaterialName" Type="varchar" MaxLength="50" />
+          <Property Name="ModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="UnitName" Type="varchar" MaxLength="10" />
+          <Property Name="Amout" Type="decimal" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" />
+          <Property Name="DealWithBy" Type="varchar" MaxLength="50" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="DoBy" Type="varchar" MaxLength="50" />
+          <Property Name="DoTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GuanJiaoZhenImg">
+          <Key>
+            <PropertyRef Name="imgId" />
+          </Key>
+          <Property Name="imgId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="guanJiaoZhenNo" Type="varchar" MaxLength="100" />
+          <Property Name="guanJiaoZhenImg" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="GuiGeShu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fileUrl" Type="varchar" MaxLength="100" />
+          <Property Name="productNo" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MattersNeedingAttention">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customerNo" Type="varchar" MaxLength="50" />
+          <Property Name="contents" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Notice">
+          <Key>
+            <PropertyRef Name="noticeId" />
+          </Key>
+          <Property Name="noticeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="varchar" MaxLength="50" />
+          <Property Name="contents" Type="text" />
+        </EntityType>
+        <EntityType Name="priceManage">
+          <Key>
+            <PropertyRef Name="priceId" />
+          </Key>
+          <Property Name="priceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customNo" Type="varchar" MaxLength="100" />
+          <Property Name="productNo" Type="varchar" MaxLength="100" />
+          <Property Name="price" Type="decimal" Scale="5" />
+        </EntityType>
+        <EntityType Name="PrintSGDCount">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="varchar" MaxLength="100" />
+          <Property Name="proType" Type="varchar" MaxLength="100" />
+          <Property Name="printCount" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductParam">
+          <Key>
+            <PropertyRef Name="paramId" />
+          </Key>
+          <Property Name="paramId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customNo" Type="varchar" MaxLength="100" />
+          <Property Name="productNo" Type="varchar" MaxLength="100" />
+          <Property Name="paramContent" Type="varchar" MaxLength="1000" />
+          <Property Name="isWriteFahuoInfo" Type="int" />
+          <Property Name="isWriteXianChang" Type="int" />
+          <Property Name="wuliaobian" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Name="productId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="productName" Type="varchar" MaxLength="5000" />
+          <Property Name="productNum" Type="varchar" MaxLength="5000" />
+          <Property Name="waiBZ" Type="int" />
+          <Property Name="NeiBZ" Type="varchar" MaxLength="5000" />
+          <Property Name="NeiBZDW" Type="varchar" MaxLength="5000" />
+          <Property Name="bian" Type="varchar" MaxLength="5000" />
+          <Property Name="jingDu" Type="varchar" MaxLength="5000" />
+          <Property Name="xianXingdu" Type="varchar" MaxLength="5000" />
+          <Property Name="eDingJC" Type="varchar" MaxLength="5000" />
+          <Property Name="tieXiCount" Type="int" />
+          <Property Name="guiGe" Type="varchar" MaxLength="5000" />
+          <Property Name="caiLiao" Type="varchar" MaxLength="5000" />
+          <Property Name="xingNeng" Type="varchar" MaxLength="5000" />
+          <Property Name="chuLiMethod" Type="varchar" MaxLength="5000" />
+          <Property Name="baoHeDian" Type="varchar" MaxLength="5000" />
+          <Property Name="xianQuanCount" Type="int" />
+          <Property Name="chujZaShu" Type="varchar" MaxLength="5000" />
+          <Property Name="chujXianJing" Type="varchar" MaxLength="5000" />
+          <Property Name="chujRaoXianZD" Type="varchar" MaxLength="5000" />
+          <Property Name="chujXianTouCD" Type="varchar" MaxLength="5000" />
+          <Property Name="chujXiantouCL" Type="varchar" MaxLength="5000" />
+          <Property Name="chujTongMD" Type="varchar" MaxLength="5000" />
+          <Property Name="cijZaShu" Type="varchar" MaxLength="5000" />
+          <Property Name="cijXianJing" Type="varchar" MaxLength="5000" />
+          <Property Name="cijRaoXianZD" Type="varchar" MaxLength="5000" />
+          <Property Name="cijXianTouCD" Type="varchar" MaxLength="5000" />
+          <Property Name="cijXianTouCL" Type="varchar" MaxLength="5000" />
+          <Property Name="cijTongMD" Type="varchar" MaxLength="5000" />
+          <Property Name="xqjcyqEquip" Type="varchar" MaxLength="5000" />
+          <Property Name="xqjcyqShuRuState" Type="varchar" MaxLength="5000" />
+          <Property Name="xqjcyqShuChuState" Type="varchar" MaxLength="5000" />
+          <Property Name="xqjcyqJiaoCha" Type="varchar" MaxLength="5000" />
+          <Property Name="xqjcyqFuZai" Type="varchar" MaxLength="5000" />
+          <Property Name="biaoShiNo" Type="varchar" MaxLength="5000" />
+          <Property Name="waiKeNo" Type="varchar" MaxLength="5000" />
+          <Property Name="waiKeCount" Type="int" />
+          <Property Name="yongJiaoCS" Type="varchar" MaxLength="5000" />
+          <Property Name="shuRu" Type="varchar" MaxLength="5000" />
+          <Property Name="shuChu" Type="varchar" MaxLength="5000" />
+          <Property Name="biaoShiAddress" Type="varchar" MaxLength="5000" />
+          <Property Name="chajianNo" Type="varchar" MaxLength="5000" />
+          <Property Name="chajianCount" Type="int" />
+          <Property Name="waiXingTZ" Type="varchar" MaxLength="5000" />
+          <Property Name="cpjccsEquip" Type="varchar" MaxLength="5000" />
+          <Property Name="cpjccsShuRuState" Type="varchar" MaxLength="5000" />
+          <Property Name="cpjccsShuChuState" Type="varchar" MaxLength="5000" />
+          <Property Name="CpjccsJiaoChaBH" Type="varchar" MaxLength="5000" />
+          <Property Name="cpjccsFuZai" Type="varchar" MaxLength="5000" />
+          <Property Name="cpjccsNaiYa" Type="varchar" MaxLength="5000" />
+          <Property Name="cpjccsTongMD" Type="varchar" MaxLength="5000" />
+          <Property Name="guanJiaoZhenLX" Type="varchar" MaxLength="5000" />
+          <Property Name="guanJIaoZhenLXCount" Type="int" />
+          <Property Name="guanJiaoZhenLXTOW" Type="varchar" MaxLength="5000" />
+          <Property Name="guanJiaoZhenLXTOWCount" Type="int" />
+          <Property Name="shuRuXC" Type="varchar" MaxLength="5000" />
+          <Property Name="shuChuXC" Type="varchar" MaxLength="5000" />
+          <Property Name="peiXianSR" Type="varchar" MaxLength="5000" />
+          <Property Name="peiXianSRCount" Type="decimal" Scale="2" />
+          <Property Name="peiXianSC" Type="varchar" MaxLength="5000" />
+          <Property Name="peiXianSCCount" Type="decimal" Scale="2" />
+          <Property Name="remark" Type="text" />
+          <Property Name="isModifyTZ" Type="int" />
+          <Property Name="biaoShiPicture" Type="varchar" MaxLength="500" />
+          <Property Name="isModifyWaikeNo" Type="int" />
+          <Property Name="gongyiZYSX" Type="varchar" MaxLength="5000" />
+          <Property Name="baoZhuangHeGG" Type="varchar" MaxLength="5000" />
+          <Property Name="baoZhuangXiangGG" Type="varchar" MaxLength="5000" />
+          <Property Name="baoHeDianTestTJ" Type="varchar" MaxLength="5000" />
+          <Property Name="guJia" Type="varchar" MaxLength="5000" />
+          <Property Name="tongPai" Type="varchar" MaxLength="5000" />
+          <Property Name="ciHuan" Type="varchar" MaxLength="5000" />
+          <Property Name="duanZi" Type="varchar" MaxLength="5000" />
+          <Property Name="xianLuBan" Type="varchar" MaxLength="5000" />
+          <Property Name="jiaoPian" Type="varchar" MaxLength="5000" />
+          <Property Name="pingBi" Type="varchar" MaxLength="5000" />
+          <Property Name="wenYaGuan" Type="varchar" MaxLength="5000" />
+          <Property Name="dianZu" Type="varchar" MaxLength="5000" />
+          <Property Name="luoSi" Type="varchar" MaxLength="5000" />
+          <Property Name="reSuoTaoGuan" Type="varchar" MaxLength="5000" />
+          <Property Name="anZhuangPJ" Type="varchar" MaxLength="5000" />
+          <Property Name="yuanQiJian1" Type="varchar" MaxLength="5000" />
+          <Property Name="yuanQiJian2" Type="varchar" MaxLength="5000" />
+          <Property Name="yuanQiJian3" Type="varchar" MaxLength="5000" />
+          <Property Name="yuanQiJian4" Type="varchar" MaxLength="5000" />
+          <Property Name="gujiaCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="gujiaCount" Type="int" />
+          <Property Name="tongpaiCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="tongpaoCount" Type="int" />
+          <Property Name="cihuanCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="cihuanCount" Type="int" />
+          <Property Name="duanziCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="duanziCount" Type="int" />
+          <Property Name="xianlubanCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="xianlubanCount" Type="int" />
+          <Property Name="jiaopianCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="jiaopianCount" Type="int" />
+          <Property Name="pingbiCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="pingbiCount" Type="int" />
+          <Property Name="wenyaguanCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="wenyaguanCount" Type="int" />
+          <Property Name="dianzuCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="dianzuCount" Type="int" />
+          <Property Name="luosiCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="luosiCount" Type="int" />
+          <Property Name="resuotaoguanCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="resuotaoguanCount" Type="int" />
+          <Property Name="anzhuangPJCanshu" Type="varchar" MaxLength="5000" />
+          <Property Name="anzhuangPJCount" Type="int" />
+          <Property Name="yuanqijian1Canshu" Type="varchar" MaxLength="5000" />
+          <Property Name="Yuanqijian1Count" Type="int" />
+          <Property Name="Yuanqijian2Canshu" Type="varchar" MaxLength="5000" />
+          <Property Name="Yuanqijian2Count" Type="int" />
+          <Property Name="Yuanqijian3Canshu" Type="varchar" MaxLength="5000" />
+          <Property Name="Yuanqijian3Count" Type="int" />
+          <Property Name="Yuanqijian4Canshu" Type="varchar" MaxLength="5000" />
+          <Property Name="Yuanqijian4Count" Type="int" />
+        </EntityType>
+        <EntityType Name="proOrders">
+          <Key>
+            <PropertyRef Name="orderId" />
+          </Key>
+          <Property Name="orderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="varchar" MaxLength="100" />
+          <Property Name="customNum" Type="varchar" MaxLength="100" />
+          <Property Name="heTongNum" Type="varchar" MaxLength="100" />
+          <Property Name="customOrderNum" Type="varchar" MaxLength="100" />
+          <Property Name="customWLBH" Type="varchar" MaxLength="100" />
+          <Property Name="customManager" Type="varchar" MaxLength="100" />
+          <Property Name="remark" Type="text" />
+          <Property Name="editTime" Type="datetime" />
+          <Property Name="updateTime" Type="datetime" />
+          <Property Name="yikaipiaoMoney" Type="decimal" Scale="2" />
+          <Property Name="yijiekuanMoney" Type="decimal" Scale="2" />
+          <Property Name="faPiaoDanhao" Type="varchar" MaxLength="100" />
+          <Property Name="chengShuiHao" Type="varchar" MaxLength="100" />
+          <Property Name="Remark1" Type="text" />
+          <Property Name="editUser" Type="int" />
+          <Property Name="isTiXing" Type="int" />
+          <Property Name="shuRuXianchang" Type="varchar" MaxLength="100" />
+          <Property Name="shuChuXianchang" Type="varchar" MaxLength="100" />
+          <Property Name="发货状态" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="proOrdersDetail">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Name="orderDetailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="varchar" MaxLength="100" />
+          <Property Name="proType" Type="varchar" MaxLength="100" />
+          <Property Name="proNum" Type="int" />
+          <Property Name="ProPrice" Type="decimal" Scale="3" />
+          <Property Name="withWorkNo" Type="varchar" MaxLength="50" />
+          <Property Name="printTime" Type="datetime" />
+          <Property Name="printType" Type="varchar" MaxLength="50" />
+          <Property Name="printCount" Type="int" />
+          <Property Name="piHao" Type="varchar" MaxLength="50" />
+          <Property Name="planSendTime" Type="datetime" />
+          <Property Name="productAddress" Type="varchar" MaxLength="100" />
+          <Property Name="printSGDTime" Type="datetime" />
+          <Property Name="printSGDCount" Type="int" />
+          <Property Name="printSGDJLTime" Type="datetime" />
+          <Property Name="printSGDJLCount" Type="int" />
+          <Property Name="printQLDTime" Type="datetime" />
+          <Property Name="printQLDCount" Type="int" />
+          <Property Name="printCCJYBGTime" Type="datetime" />
+          <Property Name="printCCJYBGCount" Type="int" />
+          <Property Name="printSHDTime" Type="datetime" />
+          <Property Name="printSHDCount" Type="int" />
+          <Property Name="printBZBQTime" Type="datetime" />
+          <Property Name="printBZBQCount" Type="int" />
+          <Property Name="printZYSXTime" Type="datetime" />
+          <Property Name="printZYSXCount" Type="int" />
+          <Property Name="printYYQRDTime" Type="datetime" />
+          <Property Name="printYYQRDCount" Type="int" />
+          <Property Name="sGDCount" Type="int" />
+          <Property Name="发货状态" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="SendDetail">
+          <Key>
+            <PropertyRef Name="sendId" />
+          </Key>
+          <Property Name="sendId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="varchar" MaxLength="100" />
+          <Property Name="proType" Type="varchar" MaxLength="100" />
+          <Property Name="sendProNum" Type="int" />
+          <Property Name="UnitPrice" Type="decimal" Scale="2" />
+          <Property Name="sendTime" Type="datetime" />
+          <Property Name="packingDetail" Type="varchar" MaxLength="200" />
+          <Property Name="packingCount" Type="int" />
+          <Property Name="packingCompanyName" Type="varchar" MaxLength="5000" />
+          <Property Name="sendNum" Type="varchar" MaxLength="5000" />
+          <Property Name="remark" Type="text" />
+          <Property Name="suiGongDanNum" Type="varchar" MaxLength="100" />
+          <Property Name="PrintCompanyName" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="SGDRecord">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="varchar" MaxLength="500" />
+          <Property Name="customerNum" Type="varchar" MaxLength="500" />
+          <Property Name="proType" Type="varchar" MaxLength="500" />
+          <Property Name="suigongdan" Type="varchar" MaxLength="500" />
+          <Property Name="PrintCount" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="userManage">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="varchar" MaxLength="50" />
+          <Property Name="trueName" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="userType" Type="int" />
+          <Property Name="userPass" Type="varchar" MaxLength="100" />
+          <Property Name="loginNum" Type="int" />
+        </EntityType>
+        <EntityType Name="WaiKeImg">
+          <Key>
+            <PropertyRef Name="imgId" />
+          </Key>
+          <Property Name="imgId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="waiKeNo" Type="varchar" MaxLength="100" />
+          <Property Name="waiKeImg" Type="varchar" MaxLength="100" />
+          <Property Name="isModify" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“OrderPrint.dbo.view_NoWanChengOrder”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="view_NoWanChengOrder">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Name="orderDetailId" Type="int" Nullable="false" />
+          <Property Name="orderNum" Type="varchar" MaxLength="100" />
+          <Property Name="proType" Type="varchar" MaxLength="100" />
+          <Property Name="proNum" Type="int" />
+          <Property Name="printSHDCount" Type="int" />
+          <Property Name="planSendTime" Type="datetime" />
+          <Property Name="remark" Type="text" />
+          <Property Name="companyName" Type="varchar" MaxLength="100" />
+          <Property Name="customerNo" Type="varchar" MaxLength="100" />
+          <Property Name="SendCount" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“OrderPrint.dbo.view_OrderList”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="view_OrderList">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Name="orderDetailId" Type="int" Nullable="false" />
+          <Property Name="orderNum" Type="varchar" MaxLength="100" />
+          <Property Name="proType" Type="varchar" MaxLength="100" />
+          <Property Name="proNum" Type="int" />
+          <Property Name="ProPrice" Type="decimal" Scale="2" />
+          <Property Name="withWorkNo" Type="varchar" MaxLength="50" />
+          <Property Name="printTime" Type="datetime" />
+          <Property Name="printType" Type="varchar" MaxLength="50" />
+          <Property Name="printCount" Type="int" />
+          <Property Name="piHao" Type="varchar" MaxLength="50" />
+          <Property Name="planSendTime" Type="datetime" />
+          <Property Name="productAddress" Type="varchar" MaxLength="100" />
+          <Property Name="printSGDTime" Type="datetime" />
+          <Property Name="printSGDCount" Type="int" />
+          <Property Name="printSGDJLTime" Type="datetime" />
+          <Property Name="printSGDJLCount" Type="int" />
+          <Property Name="printQLDTime" Type="datetime" />
+          <Property Name="printQLDCount" Type="int" />
+          <Property Name="printCCJYBGTime" Type="datetime" />
+          <Property Name="printCCJYBGCount" Type="int" />
+          <Property Name="printSHDTime" Type="datetime" />
+          <Property Name="printSHDCount" Type="int" />
+          <Property Name="printBZBQTime" Type="datetime" />
+          <Property Name="printBZBQCount" Type="int" />
+          <Property Name="printZYSXTime" Type="datetime" />
+          <Property Name="printZYSXCount" Type="int" />
+          <Property Name="printYYQRDTime" Type="datetime" />
+          <Property Name="printYYQRDCount" Type="int" />
+          <Property Name="sGDCount" Type="int" />
+          <Property Name="发货状态" Type="nvarchar" MaxLength="500" />
+          <Property Name="customNum" Type="varchar" MaxLength="100" />
+          <Property Name="editTime" Type="datetime" />
+          <Property Name="sgdPrintCount" Type="int" />
+          <Property Name="SendCount" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“OrderPrint.dbo.view_SendOrder”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="view_SendOrder">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Name="orderDetailId" Type="int" Nullable="false" />
+          <Property Name="orderNum" Type="varchar" MaxLength="100" />
+          <Property Name="proType" Type="varchar" MaxLength="100" />
+          <Property Name="proNum" Type="int" />
+          <Property Name="ProPrice" Type="decimal" Scale="2" />
+          <Property Name="withWorkNo" Type="varchar" MaxLength="50" />
+          <Property Name="printTime" Type="datetime" />
+          <Property Name="printType" Type="varchar" MaxLength="50" />
+          <Property Name="printCount" Type="int" />
+          <Property Name="piHao" Type="varchar" MaxLength="50" />
+          <Property Name="planSendTime" Type="datetime" />
+          <Property Name="productAddress" Type="varchar" MaxLength="100" />
+          <Property Name="printSGDTime" Type="datetime" />
+          <Property Name="printSGDCount" Type="int" />
+          <Property Name="printSGDJLTime" Type="datetime" />
+          <Property Name="printSGDJLCount" Type="int" />
+          <Property Name="printQLDTime" Type="datetime" />
+          <Property Name="printQLDCount" Type="int" />
+          <Property Name="printCCJYBGTime" Type="datetime" />
+          <Property Name="printCCJYBGCount" Type="int" />
+          <Property Name="printSHDTime" Type="datetime" />
+          <Property Name="printSHDCount" Type="int" />
+          <Property Name="printBZBQTime" Type="datetime" />
+          <Property Name="printBZBQCount" Type="int" />
+          <Property Name="printZYSXTime" Type="datetime" />
+          <Property Name="printZYSXCount" Type="int" />
+          <Property Name="printYYQRDTime" Type="datetime" />
+          <Property Name="printYYQRDCount" Type="int" />
+          <Property Name="sGDCount" Type="int" />
+          <Property Name="发货状态" Type="nvarchar" MaxLength="500" />
+          <Property Name="customNum" Type="varchar" MaxLength="100" />
+          <Property Name="editTime" Type="datetime" />
+          <Property Name="remark" Type="text" />
+          <Property Name="customManager" Type="varchar" MaxLength="100" />
+          <Property Name="companyName" Type="varchar" MaxLength="100" />
+          <Property Name="paramContent" Type="varchar" MaxLength="1000" />
+          <Property Name="SendCount" Type="int" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OrderPrintModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="OrderPrintEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="base_Material" EntityType="OrderPrintModel.base_Material" />
+          <EntitySet Name="base_MaterialAttribute" EntityType="OrderPrintModel.base_MaterialAttribute" />
+          <EntitySet Name="base_MaterialCategory" EntityType="OrderPrintModel.base_MaterialCategory" />
+          <EntitySet Name="base_Suppliers" EntityType="OrderPrintModel.base_Suppliers" />
+          <EntitySet Name="base_Unit" EntityType="OrderPrintModel.base_Unit" />
+          <EntitySet Name="base_WareHouse" EntityType="OrderPrintModel.base_WareHouse" />
+          <EntitySet Name="BiaoShiImg" EntityType="OrderPrintModel.BiaoShiImg" />
+          <EntitySet Name="customer" EntityType="OrderPrintModel.customer" />
+          <EntitySet Name="domain_DeliverGoods" EntityType="OrderPrintModel.domain_DeliverGoods" />
+          <EntitySet Name="domain_EnterWareHouseLog" EntityType="OrderPrintModel.domain_EnterWareHouseLog" />
+          <EntitySet Name="domain_EvaluationLevel" EntityType="OrderPrintModel.domain_EvaluationLevel" />
+          <EntitySet Name="domain_Log" EntityType="OrderPrintModel.domain_Log" />
+          <EntitySet Name="domain_Material_WareHouse" EntityType="OrderPrintModel.domain_Material_WareHouse" />
+          <EntitySet Name="domain_MaterialPrice" EntityType="OrderPrintModel.domain_MaterialPrice" />
+          <EntitySet Name="domain_OutWareHouseLog" EntityType="OrderPrintModel.domain_OutWareHouseLog" />
+          <EntitySet Name="domain_PurchaseContract" EntityType="OrderPrintModel.domain_PurchaseContract" />
+          <EntitySet Name="domain_PurchaseContractItem" EntityType="OrderPrintModel.domain_PurchaseContractItem" />
+          <EntitySet Name="domain_PurchaseOrders" EntityType="OrderPrintModel.domain_PurchaseOrders" />
+          <EntitySet Name="domain_PurchaseOrdersItem" EntityType="OrderPrintModel.domain_PurchaseOrdersItem" />
+          <EntitySet Name="domain_ReturnWareHouseLog" EntityType="OrderPrintModel.domain_ReturnWareHouseLog" />
+          <EntitySet Name="GuanJiaoZhenImg" EntityType="OrderPrintModel.GuanJiaoZhenImg" />
+          <EntitySet Name="GuiGeShu" EntityType="OrderPrintModel.GuiGeShu" />
+          <EntitySet Name="MattersNeedingAttention" EntityType="OrderPrintModel.MattersNeedingAttention" />
+          <EntitySet Name="Notice" EntityType="OrderPrintModel.Notice" />
+          <EntitySet Name="priceManage" EntityType="OrderPrintModel.priceManage" />
+          <EntitySet Name="PrintSGDCount" EntityType="OrderPrintModel.PrintSGDCount" />
+          <EntitySet Name="ProductParam" EntityType="OrderPrintModel.ProductParam" />
+          <EntitySet Name="products" EntityType="OrderPrintModel.products" />
+          <EntitySet Name="proOrders" EntityType="OrderPrintModel.proOrders" />
+          <EntitySet Name="proOrdersDetail" EntityType="OrderPrintModel.proOrdersDetail" />
+          <EntitySet Name="SendDetail" EntityType="OrderPrintModel.SendDetail" />
+          <EntitySet Name="SGDRecord" EntityType="OrderPrintModel.SGDRecord" />
+          <EntitySet Name="userManage" EntityType="OrderPrintModel.userManage" />
+          <EntitySet Name="WaiKeImg" EntityType="OrderPrintModel.WaiKeImg" />
+          <EntitySet Name="view_NoWanChengOrder" EntityType="OrderPrintModel.view_NoWanChengOrder" />
+          <EntitySet Name="view_OrderList" EntityType="OrderPrintModel.view_OrderList" />
+          <EntitySet Name="view_SendOrder" EntityType="OrderPrintModel.view_SendOrder" />
+        </EntityContainer>
+        <EntityType Name="base_Material">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ModelNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AttributeID" Type="Int32" />
+          <Property Name="AttributeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="UnitName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="UpperLimit" Type="Int32" />
+          <Property Name="LowerLimit" Type="Int32" />
+          <Property Name="TechnicalParameter" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="WareHouseIDs" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="DeleteBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeleteTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="base_MaterialAttribute">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttributeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="DeleteBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeleteTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="base_MaterialCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="ParentName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="DeleteBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeleteTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="base_Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ContactMan" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MobilePhone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Position" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AssessmentLevel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="InvoiceFa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Payment" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IsContractModel" Type="Int32" />
+          <Property Name="BankAccount" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BankName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TaxpayerNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CompanyAdress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="OtherContactMan" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ContactManDetailInfo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="LoginUserID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="DeleteBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeleteTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="base_Unit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="DeleteBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeleteTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="base_WareHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WareHouseName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Position" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryIDs" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryNames" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="DeleteBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeleteTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BiaoShiImg">
+          <Key>
+            <PropertyRef Name="imgId" />
+          </Key>
+          <Property Name="imgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="biaoShiNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="biaoShiImg1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customerId" />
+          </Key>
+          <Property Name="customerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="companyName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="contacts" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="position" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="telPhone" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="tax" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="discount" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="InvoiceMethod" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="backMethod" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="isFanben" Type="Int32" />
+          <Property Name="companyAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="otherDangAn" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="modifyPriceRecord" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="isShowPrice" Type="Int32" />
+          <Property Name="islock" Type="Int32" />
+          <Property Name="zhangHao" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="shuiHao" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="isAddInfo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="domain_DeliverGoods">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ModelNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TheDeliveryAmout" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Number" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DeliveryNum" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LogisticsCompany" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="domain_EnterWareHouseLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ModelNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UnitName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Amout" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WareHouseID" Type="Int32" />
+          <Property Name="WareHouseName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Suppliers" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DealWithBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Department" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DoBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DoTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="domain_EvaluationLevel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SuppliersID" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Level" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="domain_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoID" Type="Int32" />
+          <Property Name="DoType" Type="Int32" />
+          <Property Name="DoContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="DoBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DoTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="domain_Material_WareHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WareHouseID" Type="Int32" />
+          <Property Name="WareHouseName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaterialModelNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="KuCun" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="domain_MaterialPrice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SuppliersID" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ModelNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Remark" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="domain_OutWareHouseLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OutNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ModelNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UnitName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Amout" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Remark" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DealWithBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Department" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DoBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DoTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="domain_PurchaseContract">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OrderID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SuppliersID" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="GoodsMethods" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="DeleteBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeleteTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="domain_PurchaseContractItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OrderID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ModelNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UnitName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Amout" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Requirement" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="domain_PurchaseOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ItemCount" Type="Int32" />
+          <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="domain_PurchaseOrdersItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ModelNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UnitName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Amout" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TechnicalParameters" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Requirement" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="domain_ReturnWareHouseLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReturnNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ModelNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UnitName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Amout" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Remark" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DealWithBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Department" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DoBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DoTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="GuanJiaoZhenImg">
+          <Key>
+            <PropertyRef Name="imgId" />
+          </Key>
+          <Property Name="imgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="guanJiaoZhenNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="guanJiaoZhenImg1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="GuiGeShu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fileUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="productNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MattersNeedingAttention">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="contents" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Notice">
+          <Key>
+            <PropertyRef Name="noticeId" />
+          </Key>
+          <Property Name="noticeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="contents" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="priceManage">
+          <Key>
+            <PropertyRef Name="priceId" />
+          </Key>
+          <Property Name="priceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="productNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="5" />
+        </EntityType>
+        <EntityType Name="PrintSGDCount">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="printCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ProductParam">
+          <Key>
+            <PropertyRef Name="paramId" />
+          </Key>
+          <Property Name="paramId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="productNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="paramContent" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="isWriteFahuoInfo" Type="Int32" />
+          <Property Name="isWriteXianChang" Type="Int32" />
+          <Property Name="wuliaobian" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Name="productId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productName" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="productNum" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="waiBZ" Type="Int32" />
+          <Property Name="NeiBZ" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="NeiBZDW" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="bian" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="jingDu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xianXingdu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="eDingJC" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="tieXiCount" Type="Int32" />
+          <Property Name="guiGe" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="caiLiao" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xingNeng" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="chuLiMethod" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="baoHeDian" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xianQuanCount" Type="Int32" />
+          <Property Name="chujZaShu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="chujXianJing" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="chujRaoXianZD" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="chujXianTouCD" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="chujXiantouCL" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="chujTongMD" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cijZaShu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cijXianJing" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cijRaoXianZD" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cijXianTouCD" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cijXianTouCL" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cijTongMD" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xqjcyqEquip" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xqjcyqShuRuState" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xqjcyqShuChuState" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xqjcyqJiaoCha" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xqjcyqFuZai" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="biaoShiNo" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="waiKeNo" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="waiKeCount" Type="Int32" />
+          <Property Name="yongJiaoCS" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="shuRu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="shuChu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="biaoShiAddress" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="chajianNo" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="chajianCount" Type="Int32" />
+          <Property Name="waiXingTZ" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cpjccsEquip" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cpjccsShuRuState" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cpjccsShuChuState" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="CpjccsJiaoChaBH" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cpjccsFuZai" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cpjccsNaiYa" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cpjccsTongMD" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="guanJiaoZhenLX" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="guanJIaoZhenLXCount" Type="Int32" />
+          <Property Name="guanJiaoZhenLXTOW" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="guanJiaoZhenLXTOWCount" Type="Int32" />
+          <Property Name="shuRuXC" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="shuChuXC" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="peiXianSR" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="peiXianSRCount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="peiXianSC" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="peiXianSCCount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="isModifyTZ" Type="Int32" />
+          <Property Name="biaoShiPicture" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="isModifyWaikeNo" Type="Int32" />
+          <Property Name="gongyiZYSX" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="baoZhuangHeGG" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="baoZhuangXiangGG" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="baoHeDianTestTJ" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="guJia" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="tongPai" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="ciHuan" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="duanZi" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xianLuBan" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="jiaoPian" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="pingBi" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="wenYaGuan" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="dianZu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="luoSi" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="reSuoTaoGuan" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="anZhuangPJ" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="yuanQiJian1" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="yuanQiJian2" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="yuanQiJian3" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="yuanQiJian4" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="gujiaCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="gujiaCount" Type="Int32" />
+          <Property Name="tongpaiCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="tongpaoCount" Type="Int32" />
+          <Property Name="cihuanCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="cihuanCount" Type="Int32" />
+          <Property Name="duanziCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="duanziCount" Type="Int32" />
+          <Property Name="xianlubanCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="xianlubanCount" Type="Int32" />
+          <Property Name="jiaopianCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="jiaopianCount" Type="Int32" />
+          <Property Name="pingbiCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="pingbiCount" Type="Int32" />
+          <Property Name="wenyaguanCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="wenyaguanCount" Type="Int32" />
+          <Property Name="dianzuCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="dianzuCount" Type="Int32" />
+          <Property Name="luosiCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="luosiCount" Type="Int32" />
+          <Property Name="resuotaoguanCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="resuotaoguanCount" Type="Int32" />
+          <Property Name="anzhuangPJCanshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="anzhuangPJCount" Type="Int32" />
+          <Property Name="yuanqijian1Canshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="Yuanqijian1Count" Type="Int32" />
+          <Property Name="Yuanqijian2Canshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="Yuanqijian2Count" Type="Int32" />
+          <Property Name="Yuanqijian3Canshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="Yuanqijian3Count" Type="Int32" />
+          <Property Name="Yuanqijian4Canshu" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="Yuanqijian4Count" Type="Int32" />
+        </EntityType>
+        <EntityType Name="proOrders">
+          <Key>
+            <PropertyRef Name="orderId" />
+          </Key>
+          <Property Name="orderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="customNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="heTongNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="customOrderNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="customWLBH" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="customManager" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="editTime" Type="DateTime" Precision="3" />
+          <Property Name="updateTime" Type="DateTime" Precision="3" />
+          <Property Name="yikaipiaoMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="yijiekuanMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="faPiaoDanhao" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="chengShuiHao" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Remark1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="editUser" Type="Int32" />
+          <Property Name="isTiXing" Type="Int32" />
+          <Property Name="shuRuXianchang" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="shuChuXianchang" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="发货状态" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="proOrdersDetail">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Name="orderDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proNum" Type="Int32" />
+          <Property Name="ProPrice" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="withWorkNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="printTime" Type="DateTime" Precision="3" />
+          <Property Name="printType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="printCount" Type="Int32" />
+          <Property Name="piHao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="planSendTime" Type="DateTime" Precision="3" />
+          <Property Name="productAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="printSGDTime" Type="DateTime" Precision="3" />
+          <Property Name="printSGDCount" Type="Int32" />
+          <Property Name="printSGDJLTime" Type="DateTime" Precision="3" />
+          <Property Name="printSGDJLCount" Type="Int32" />
+          <Property Name="printQLDTime" Type="DateTime" Precision="3" />
+          <Property Name="printQLDCount" Type="Int32" />
+          <Property Name="printCCJYBGTime" Type="DateTime" Precision="3" />
+          <Property Name="printCCJYBGCount" Type="Int32" />
+          <Property Name="printSHDTime" Type="DateTime" Precision="3" />
+          <Property Name="printSHDCount" Type="Int32" />
+          <Property Name="printBZBQTime" Type="DateTime" Precision="3" />
+          <Property Name="printBZBQCount" Type="Int32" />
+          <Property Name="printZYSXTime" Type="DateTime" Precision="3" />
+          <Property Name="printZYSXCount" Type="Int32" />
+          <Property Name="printYYQRDTime" Type="DateTime" Precision="3" />
+          <Property Name="printYYQRDCount" Type="Int32" />
+          <Property Name="sGDCount" Type="Int32" />
+          <Property Name="发货状态" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SendDetail">
+          <Key>
+            <PropertyRef Name="sendId" />
+          </Key>
+          <Property Name="sendId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="sendProNum" Type="Int32" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sendTime" Type="DateTime" Precision="3" />
+          <Property Name="packingDetail" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="packingCount" Type="Int32" />
+          <Property Name="packingCompanyName" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="sendNum" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="suiGongDanNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PrintCompanyName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SGDRecord">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderNum" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="customerNum" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="proType" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="suigongdan" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="PrintCount" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="userManage">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="trueName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="userType" Type="Int32" />
+          <Property Name="userPass" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="loginNum" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WaiKeImg">
+          <Key>
+            <PropertyRef Name="imgId" />
+          </Key>
+          <Property Name="imgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="waiKeNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="waiKeImg1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="isModify" Type="Int32" />
+        </EntityType>
+        <EntityType Name="view_NoWanChengOrder">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Name="orderDetailId" Type="Int32" Nullable="false" />
+          <Property Name="orderNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proNum" Type="Int32" />
+          <Property Name="printSHDCount" Type="Int32" />
+          <Property Name="planSendTime" Type="DateTime" Precision="3" />
+          <Property Name="remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="companyName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="customerNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SendCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="view_OrderList">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Name="orderDetailId" Type="Int32" Nullable="false" />
+          <Property Name="orderNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proNum" Type="Int32" />
+          <Property Name="ProPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="withWorkNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="printTime" Type="DateTime" Precision="3" />
+          <Property Name="printType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="printCount" Type="Int32" />
+          <Property Name="piHao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="planSendTime" Type="DateTime" Precision="3" />
+          <Property Name="productAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="printSGDTime" Type="DateTime" Precision="3" />
+          <Property Name="printSGDCount" Type="Int32" />
+          <Property Name="printSGDJLTime" Type="DateTime" Precision="3" />
+          <Property Name="printSGDJLCount" Type="Int32" />
+          <Property Name="printQLDTime" Type="DateTime" Precision="3" />
+          <Property Name="printQLDCount" Type="Int32" />
+          <Property Name="printCCJYBGTime" Type="DateTime" Precision="3" />
+          <Property Name="printCCJYBGCount" Type="Int32" />
+          <Property Name="printSHDTime" Type="DateTime" Precision="3" />
+          <Property Name="printSHDCount" Type="Int32" />
+          <Property Name="printBZBQTime" Type="DateTime" Precision="3" />
+          <Property Name="printBZBQCount" Type="Int32" />
+          <Property Name="printZYSXTime" Type="DateTime" Precision="3" />
+          <Property Name="printZYSXCount" Type="Int32" />
+          <Property Name="printYYQRDTime" Type="DateTime" Precision="3" />
+          <Property Name="printYYQRDCount" Type="Int32" />
+          <Property Name="sGDCount" Type="Int32" />
+          <Property Name="发货状态" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="customNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="editTime" Type="DateTime" Precision="3" />
+          <Property Name="sgdPrintCount" Type="Int32" />
+          <Property Name="SendCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="view_SendOrder">
+          <Key>
+            <PropertyRef Name="orderDetailId" />
+          </Key>
+          <Property Name="orderDetailId" Type="Int32" Nullable="false" />
+          <Property Name="orderNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="proNum" Type="Int32" />
+          <Property Name="ProPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="withWorkNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="printTime" Type="DateTime" Precision="3" />
+          <Property Name="printType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="printCount" Type="Int32" />
+          <Property Name="piHao" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="planSendTime" Type="DateTime" Precision="3" />
+          <Property Name="productAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="printSGDTime" Type="DateTime" Precision="3" />
+          <Property Name="printSGDCount" Type="Int32" />
+          <Property Name="printSGDJLTime" Type="DateTime" Precision="3" />
+          <Property Name="printSGDJLCount" Type="Int32" />
+          <Property Name="printQLDTime" Type="DateTime" Precision="3" />
+          <Property Name="printQLDCount" Type="Int32" />
+          <Property Name="printCCJYBGTime" Type="DateTime" Precision="3" />
+          <Property Name="printCCJYBGCount" Type="Int32" />
+          <Property Name="printSHDTime" Type="DateTime" Precision="3" />
+          <Property Name="printSHDCount" Type="Int32" />
+          <Property Name="printBZBQTime" Type="DateTime" Precision="3" />
+          <Property Name="printBZBQCount" Type="Int32" />
+          <Property Name="printZYSXTime" Type="DateTime" Precision="3" />
+          <Property Name="printZYSXCount" Type="Int32" />
+          <Property Name="printYYQRDTime" Type="DateTime" Precision="3" />
+          <Property Name="printYYQRDCount" Type="Int32" />
+          <Property Name="sGDCount" Type="Int32" />
+          <Property Name="发货状态" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="customNum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="editTime" Type="DateTime" Precision="3" />
+          <Property Name="remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="customManager" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="companyName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="paramContent" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="SendCount" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OrderPrintModelStoreContainer" CdmEntityContainer="OrderPrintEntities">
+          <EntitySetMapping Name="base_Material">
+            <EntityTypeMapping TypeName="OrderPrintModel.base_Material">
+              <MappingFragment StoreEntitySet="base_Material">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="AttributeID" ColumnName="AttributeID" />
+                <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="UpperLimit" ColumnName="UpperLimit" />
+                <ScalarProperty Name="LowerLimit" ColumnName="LowerLimit" />
+                <ScalarProperty Name="TechnicalParameter" ColumnName="TechnicalParameter" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="WareHouseIDs" ColumnName="WareHouseIDs" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+                <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_MaterialAttribute">
+            <EntityTypeMapping TypeName="OrderPrintModel.base_MaterialAttribute">
+              <MappingFragment StoreEntitySet="base_MaterialAttribute">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+                <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_MaterialCategory">
+            <EntityTypeMapping TypeName="OrderPrintModel.base_MaterialCategory">
+              <MappingFragment StoreEntitySet="base_MaterialCategory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="ParentName" ColumnName="ParentName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+                <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_Suppliers">
+            <EntityTypeMapping TypeName="OrderPrintModel.base_Suppliers">
+              <MappingFragment StoreEntitySet="base_Suppliers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactMan" ColumnName="ContactMan" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="AssessmentLevel" ColumnName="AssessmentLevel" />
+                <ScalarProperty Name="InvoiceFa" ColumnName="InvoiceFa" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+                <ScalarProperty Name="IsContractModel" ColumnName="IsContractModel" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="TaxpayerNumber" ColumnName="TaxpayerNumber" />
+                <ScalarProperty Name="CompanyAdress" ColumnName="CompanyAdress" />
+                <ScalarProperty Name="OtherContactMan" ColumnName="OtherContactMan" />
+                <ScalarProperty Name="ContactManDetailInfo" ColumnName="ContactManDetailInfo" />
+                <ScalarProperty Name="LoginUserID" ColumnName="LoginUserID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+                <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_Unit">
+            <EntityTypeMapping TypeName="OrderPrintModel.base_Unit">
+              <MappingFragment StoreEntitySet="base_Unit">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+                <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_WareHouse">
+            <EntityTypeMapping TypeName="OrderPrintModel.base_WareHouse">
+              <MappingFragment StoreEntitySet="base_WareHouse">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WareHouseName" ColumnName="WareHouseName" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="CategoryIDs" ColumnName="CategoryIDs" />
+                <ScalarProperty Name="CategoryNames" ColumnName="CategoryNames" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+                <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BiaoShiImg">
+            <EntityTypeMapping TypeName="OrderPrintModel.BiaoShiImg">
+              <MappingFragment StoreEntitySet="BiaoShiImg">
+                <ScalarProperty Name="imgId" ColumnName="imgId" />
+                <ScalarProperty Name="biaoShiNo" ColumnName="biaoShiNo" />
+                <ScalarProperty Name="biaoShiImg1" ColumnName="biaoShiImg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer">
+            <EntityTypeMapping TypeName="OrderPrintModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="customerNo" ColumnName="customerNo" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="contacts" ColumnName="contacts" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="telPhone" ColumnName="telPhone" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="InvoiceMethod" ColumnName="InvoiceMethod" />
+                <ScalarProperty Name="backMethod" ColumnName="backMethod" />
+                <ScalarProperty Name="isFanben" ColumnName="isFanben" />
+                <ScalarProperty Name="companyAddress" ColumnName="companyAddress" />
+                <ScalarProperty Name="otherDangAn" ColumnName="otherDangAn" />
+                <ScalarProperty Name="modifyPriceRecord" ColumnName="modifyPriceRecord" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="isShowPrice" ColumnName="isShowPrice" />
+                <ScalarProperty Name="islock" ColumnName="islock" />
+                <ScalarProperty Name="zhangHao" ColumnName="zhangHao" />
+                <ScalarProperty Name="shuiHao" ColumnName="shuiHao" />
+                <ScalarProperty Name="isAddInfo" ColumnName="isAddInfo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_DeliverGoods">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_DeliverGoods">
+              <MappingFragment StoreEntitySet="domain_DeliverGoods">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="TheDeliveryAmout" ColumnName="TheDeliveryAmout" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="DeliveryNum" ColumnName="DeliveryNum" />
+                <ScalarProperty Name="LogisticsCompany" ColumnName="LogisticsCompany" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_EnterWareHouseLog">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_EnterWareHouseLog">
+              <MappingFragment StoreEntitySet="domain_EnterWareHouseLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="Amout" ColumnName="Amout" />
+                <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+                <ScalarProperty Name="WareHouseName" ColumnName="WareHouseName" />
+                <ScalarProperty Name="Suppliers" ColumnName="Suppliers" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="DealWithBy" ColumnName="DealWithBy" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="DoBy" ColumnName="DoBy" />
+                <ScalarProperty Name="DoTime" ColumnName="DoTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_EvaluationLevel">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_EvaluationLevel">
+              <MappingFragment StoreEntitySet="domain_EvaluationLevel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_Log">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_Log">
+              <MappingFragment StoreEntitySet="domain_Log">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DoID" ColumnName="DoID" />
+                <ScalarProperty Name="DoType" ColumnName="DoType" />
+                <ScalarProperty Name="DoContent" ColumnName="DoContent" />
+                <ScalarProperty Name="DoBy" ColumnName="DoBy" />
+                <ScalarProperty Name="DoTime" ColumnName="DoTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_Material_WareHouse">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_Material_WareHouse">
+              <MappingFragment StoreEntitySet="domain_Material_WareHouse">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+                <ScalarProperty Name="WareHouseName" ColumnName="WareHouseName" />
+                <ScalarProperty Name="MaterialModelNumber" ColumnName="MaterialModelNumber" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="KuCun" ColumnName="KuCun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_MaterialPrice">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_MaterialPrice">
+              <MappingFragment StoreEntitySet="domain_MaterialPrice">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_OutWareHouseLog">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_OutWareHouseLog">
+              <MappingFragment StoreEntitySet="domain_OutWareHouseLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OutNo" ColumnName="OutNo" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="Amout" ColumnName="Amout" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="DealWithBy" ColumnName="DealWithBy" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="DoBy" ColumnName="DoBy" />
+                <ScalarProperty Name="DoTime" ColumnName="DoTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_PurchaseContract">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_PurchaseContract">
+              <MappingFragment StoreEntitySet="domain_PurchaseContract">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="GoodsMethods" ColumnName="GoodsMethods" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+                <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_PurchaseContractItem">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_PurchaseContractItem">
+              <MappingFragment StoreEntitySet="domain_PurchaseContractItem">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="Amout" ColumnName="Amout" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Requirement" ColumnName="Requirement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_PurchaseOrders">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_PurchaseOrders">
+              <MappingFragment StoreEntitySet="domain_PurchaseOrders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ItemCount" ColumnName="ItemCount" />
+                <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_PurchaseOrdersItem">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_PurchaseOrdersItem">
+              <MappingFragment StoreEntitySet="domain_PurchaseOrdersItem">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="Amout" ColumnName="Amout" />
+                <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+                <ScalarProperty Name="Requirement" ColumnName="Requirement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domain_ReturnWareHouseLog">
+            <EntityTypeMapping TypeName="OrderPrintModel.domain_ReturnWareHouseLog">
+              <MappingFragment StoreEntitySet="domain_ReturnWareHouseLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ReturnNo" ColumnName="ReturnNo" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="Amout" ColumnName="Amout" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="DealWithBy" ColumnName="DealWithBy" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="DoBy" ColumnName="DoBy" />
+                <ScalarProperty Name="DoTime" ColumnName="DoTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GuanJiaoZhenImg">
+            <EntityTypeMapping TypeName="OrderPrintModel.GuanJiaoZhenImg">
+              <MappingFragment StoreEntitySet="GuanJiaoZhenImg">
+                <ScalarProperty Name="imgId" ColumnName="imgId" />
+                <ScalarProperty Name="guanJiaoZhenNo" ColumnName="guanJiaoZhenNo" />
+                <ScalarProperty Name="guanJiaoZhenImg1" ColumnName="guanJiaoZhenImg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GuiGeShu">
+            <EntityTypeMapping TypeName="OrderPrintModel.GuiGeShu">
+              <MappingFragment StoreEntitySet="GuiGeShu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fileUrl" ColumnName="fileUrl" />
+                <ScalarProperty Name="productNo" ColumnName="productNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MattersNeedingAttention">
+            <EntityTypeMapping TypeName="OrderPrintModel.MattersNeedingAttention">
+              <MappingFragment StoreEntitySet="MattersNeedingAttention">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customerNo" ColumnName="customerNo" />
+                <ScalarProperty Name="contents" ColumnName="contents" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notice">
+            <EntityTypeMapping TypeName="OrderPrintModel.Notice">
+              <MappingFragment StoreEntitySet="Notice">
+                <ScalarProperty Name="noticeId" ColumnName="noticeId" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="contents" ColumnName="contents" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="priceManage">
+            <EntityTypeMapping TypeName="OrderPrintModel.priceManage">
+              <MappingFragment StoreEntitySet="priceManage">
+                <ScalarProperty Name="priceId" ColumnName="priceId" />
+                <ScalarProperty Name="customNo" ColumnName="customNo" />
+                <ScalarProperty Name="productNo" ColumnName="productNo" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrintSGDCount">
+            <EntityTypeMapping TypeName="OrderPrintModel.PrintSGDCount">
+              <MappingFragment StoreEntitySet="PrintSGDCount">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="printCount" ColumnName="printCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductParam">
+            <EntityTypeMapping TypeName="OrderPrintModel.ProductParam">
+              <MappingFragment StoreEntitySet="ProductParam">
+                <ScalarProperty Name="paramId" ColumnName="paramId" />
+                <ScalarProperty Name="customNo" ColumnName="customNo" />
+                <ScalarProperty Name="productNo" ColumnName="productNo" />
+                <ScalarProperty Name="paramContent" ColumnName="paramContent" />
+                <ScalarProperty Name="isWriteFahuoInfo" ColumnName="isWriteFahuoInfo" />
+                <ScalarProperty Name="isWriteXianChang" ColumnName="isWriteXianChang" />
+                <ScalarProperty Name="wuliaobian" ColumnName="wuliaobian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="OrderPrintModel.products">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="productNum" ColumnName="productNum" />
+                <ScalarProperty Name="waiBZ" ColumnName="waiBZ" />
+                <ScalarProperty Name="NeiBZ" ColumnName="NeiBZ" />
+                <ScalarProperty Name="NeiBZDW" ColumnName="NeiBZDW" />
+                <ScalarProperty Name="bian" ColumnName="bian" />
+                <ScalarProperty Name="jingDu" ColumnName="jingDu" />
+                <ScalarProperty Name="xianXingdu" ColumnName="xianXingdu" />
+                <ScalarProperty Name="eDingJC" ColumnName="eDingJC" />
+                <ScalarProperty Name="tieXiCount" ColumnName="tieXiCount" />
+                <ScalarProperty Name="guiGe" ColumnName="guiGe" />
+                <ScalarProperty Name="caiLiao" ColumnName="caiLiao" />
+                <ScalarProperty Name="xingNeng" ColumnName="xingNeng" />
+                <ScalarProperty Name="chuLiMethod" ColumnName="chuLiMethod" />
+                <ScalarProperty Name="baoHeDian" ColumnName="baoHeDian" />
+                <ScalarProperty Name="xianQuanCount" ColumnName="xianQuanCount" />
+                <ScalarProperty Name="chujZaShu" ColumnName="chujZaShu" />
+                <ScalarProperty Name="chujXianJing" ColumnName="chujXianJing" />
+                <ScalarProperty Name="chujRaoXianZD" ColumnName="chujRaoXianZD" />
+                <ScalarProperty Name="chujXianTouCD" ColumnName="chujXianTouCD" />
+                <ScalarProperty Name="chujXiantouCL" ColumnName="chujXiantouCL" />
+                <ScalarProperty Name="chujTongMD" ColumnName="chujTongMD" />
+                <ScalarProperty Name="cijZaShu" ColumnName="cijZaShu" />
+                <ScalarProperty Name="cijXianJing" ColumnName="cijXianJing" />
+                <ScalarProperty Name="cijRaoXianZD" ColumnName="cijRaoXianZD" />
+                <ScalarProperty Name="cijXianTouCD" ColumnName="cijXianTouCD" />
+                <ScalarProperty Name="cijXianTouCL" ColumnName="cijXianTouCL" />
+                <ScalarProperty Name="cijTongMD" ColumnName="cijTongMD" />
+                <ScalarProperty Name="xqjcyqEquip" ColumnName="xqjcyqEquip" />
+                <ScalarProperty Name="xqjcyqShuRuState" ColumnName="xqjcyqShuRuState" />
+                <ScalarProperty Name="xqjcyqShuChuState" ColumnName="xqjcyqShuChuState" />
+                <ScalarProperty Name="xqjcyqJiaoCha" ColumnName="xqjcyqJiaoCha" />
+                <ScalarProperty Name="xqjcyqFuZai" ColumnName="xqjcyqFuZai" />
+                <ScalarProperty Name="biaoShiNo" ColumnName="biaoShiNo" />
+                <ScalarProperty Name="waiKeNo" ColumnName="waiKeNo" />
+                <ScalarProperty Name="waiKeCount" ColumnName="waiKeCount" />
+                <ScalarProperty Name="yongJiaoCS" ColumnName="yongJiaoCS" />
+                <ScalarProperty Name="shuRu" ColumnName="shuRu" />
+                <ScalarProperty Name="shuChu" ColumnName="shuChu" />
+                <ScalarProperty Name="biaoShiAddress" ColumnName="biaoShiAddress" />
+                <ScalarProperty Name="chajianNo" ColumnName="chajianNo" />
+                <ScalarProperty Name="chajianCount" ColumnName="chajianCount" />
+                <ScalarProperty Name="waiXingTZ" ColumnName="waiXingTZ" />
+                <ScalarProperty Name="cpjccsEquip" ColumnName="cpjccsEquip" />
+                <ScalarProperty Name="cpjccsShuRuState" ColumnName="cpjccsShuRuState" />
+                <ScalarProperty Name="cpjccsShuChuState" ColumnName="cpjccsShuChuState" />
+                <ScalarProperty Name="CpjccsJiaoChaBH" ColumnName="CpjccsJiaoChaBH" />
+                <ScalarProperty Name="cpjccsFuZai" ColumnName="cpjccsFuZai" />
+                <ScalarProperty Name="cpjccsNaiYa" ColumnName="cpjccsNaiYa" />
+                <ScalarProperty Name="cpjccsTongMD" ColumnName="cpjccsTongMD" />
+                <ScalarProperty Name="guanJiaoZhenLX" ColumnName="guanJiaoZhenLX" />
+                <ScalarProperty Name="guanJIaoZhenLXCount" ColumnName="guanJIaoZhenLXCount" />
+                <ScalarProperty Name="guanJiaoZhenLXTOW" ColumnName="guanJiaoZhenLXTOW" />
+                <ScalarProperty Name="guanJiaoZhenLXTOWCount" ColumnName="guanJiaoZhenLXTOWCount" />
+                <ScalarProperty Name="shuRuXC" ColumnName="shuRuXC" />
+                <ScalarProperty Name="shuChuXC" ColumnName="shuChuXC" />
+                <ScalarProperty Name="peiXianSR" ColumnName="peiXianSR" />
+                <ScalarProperty Name="peiXianSRCount" ColumnName="peiXianSRCount" />
+                <ScalarProperty Name="peiXianSC" ColumnName="peiXianSC" />
+                <ScalarProperty Name="peiXianSCCount" ColumnName="peiXianSCCount" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="isModifyTZ" ColumnName="isModifyTZ" />
+                <ScalarProperty Name="biaoShiPicture" ColumnName="biaoShiPicture" />
+                <ScalarProperty Name="isModifyWaikeNo" ColumnName="isModifyWaikeNo" />
+                <ScalarProperty Name="gongyiZYSX" ColumnName="gongyiZYSX" />
+                <ScalarProperty Name="baoZhuangHeGG" ColumnName="baoZhuangHeGG" />
+                <ScalarProperty Name="baoZhuangXiangGG" ColumnName="baoZhuangXiangGG" />
+                <ScalarProperty Name="baoHeDianTestTJ" ColumnName="baoHeDianTestTJ" />
+                <ScalarProperty Name="guJia" ColumnName="guJia" />
+                <ScalarProperty Name="tongPai" ColumnName="tongPai" />
+                <ScalarProperty Name="ciHuan" ColumnName="ciHuan" />
+                <ScalarProperty Name="duanZi" ColumnName="duanZi" />
+                <ScalarProperty Name="xianLuBan" ColumnName="xianLuBan" />
+                <ScalarProperty Name="jiaoPian" ColumnName="jiaoPian" />
+                <ScalarProperty Name="pingBi" ColumnName="pingBi" />
+                <ScalarProperty Name="wenYaGuan" ColumnName="wenYaGuan" />
+                <ScalarProperty Name="dianZu" ColumnName="dianZu" />
+                <ScalarProperty Name="luoSi" ColumnName="luoSi" />
+                <ScalarProperty Name="reSuoTaoGuan" ColumnName="reSuoTaoGuan" />
+                <ScalarProperty Name="anZhuangPJ" ColumnName="anZhuangPJ" />
+                <ScalarProperty Name="yuanQiJian1" ColumnName="yuanQiJian1" />
+                <ScalarProperty Name="yuanQiJian2" ColumnName="yuanQiJian2" />
+                <ScalarProperty Name="yuanQiJian3" ColumnName="yuanQiJian3" />
+                <ScalarProperty Name="yuanQiJian4" ColumnName="yuanQiJian4" />
+                <ScalarProperty Name="gujiaCanshu" ColumnName="gujiaCanshu" />
+                <ScalarProperty Name="gujiaCount" ColumnName="gujiaCount" />
+                <ScalarProperty Name="tongpaiCanshu" ColumnName="tongpaiCanshu" />
+                <ScalarProperty Name="tongpaoCount" ColumnName="tongpaoCount" />
+                <ScalarProperty Name="cihuanCanshu" ColumnName="cihuanCanshu" />
+                <ScalarProperty Name="cihuanCount" ColumnName="cihuanCount" />
+                <ScalarProperty Name="duanziCanshu" ColumnName="duanziCanshu" />
+                <ScalarProperty Name="duanziCount" ColumnName="duanziCount" />
+                <ScalarProperty Name="xianlubanCanshu" ColumnName="xianlubanCanshu" />
+                <ScalarProperty Name="xianlubanCount" ColumnName="xianlubanCount" />
+                <ScalarProperty Name="jiaopianCanshu" ColumnName="jiaopianCanshu" />
+                <ScalarProperty Name="jiaopianCount" ColumnName="jiaopianCount" />
+                <ScalarProperty Name="pingbiCanshu" ColumnName="pingbiCanshu" />
+                <ScalarProperty Name="pingbiCount" ColumnName="pingbiCount" />
+                <ScalarProperty Name="wenyaguanCanshu" ColumnName="wenyaguanCanshu" />
+                <ScalarProperty Name="wenyaguanCount" ColumnName="wenyaguanCount" />
+                <ScalarProperty Name="dianzuCanshu" ColumnName="dianzuCanshu" />
+                <ScalarProperty Name="dianzuCount" ColumnName="dianzuCount" />
+                <ScalarProperty Name="luosiCanshu" ColumnName="luosiCanshu" />
+                <ScalarProperty Name="luosiCount" ColumnName="luosiCount" />
+                <ScalarProperty Name="resuotaoguanCanshu" ColumnName="resuotaoguanCanshu" />
+                <ScalarProperty Name="resuotaoguanCount" ColumnName="resuotaoguanCount" />
+                <ScalarProperty Name="anzhuangPJCanshu" ColumnName="anzhuangPJCanshu" />
+                <ScalarProperty Name="anzhuangPJCount" ColumnName="anzhuangPJCount" />
+                <ScalarProperty Name="yuanqijian1Canshu" ColumnName="yuanqijian1Canshu" />
+                <ScalarProperty Name="Yuanqijian1Count" ColumnName="Yuanqijian1Count" />
+                <ScalarProperty Name="Yuanqijian2Canshu" ColumnName="Yuanqijian2Canshu" />
+                <ScalarProperty Name="Yuanqijian2Count" ColumnName="Yuanqijian2Count" />
+                <ScalarProperty Name="Yuanqijian3Canshu" ColumnName="Yuanqijian3Canshu" />
+                <ScalarProperty Name="Yuanqijian3Count" ColumnName="Yuanqijian3Count" />
+                <ScalarProperty Name="Yuanqijian4Canshu" ColumnName="Yuanqijian4Canshu" />
+                <ScalarProperty Name="Yuanqijian4Count" ColumnName="Yuanqijian4Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proOrders">
+            <EntityTypeMapping TypeName="OrderPrintModel.proOrders">
+              <MappingFragment StoreEntitySet="proOrders">
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="customNum" ColumnName="customNum" />
+                <ScalarProperty Name="heTongNum" ColumnName="heTongNum" />
+                <ScalarProperty Name="customOrderNum" ColumnName="customOrderNum" />
+                <ScalarProperty Name="customWLBH" ColumnName="customWLBH" />
+                <ScalarProperty Name="customManager" ColumnName="customManager" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="editTime" ColumnName="editTime" />
+                <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+                <ScalarProperty Name="yikaipiaoMoney" ColumnName="yikaipiaoMoney" />
+                <ScalarProperty Name="yijiekuanMoney" ColumnName="yijiekuanMoney" />
+                <ScalarProperty Name="faPiaoDanhao" ColumnName="faPiaoDanhao" />
+                <ScalarProperty Name="chengShuiHao" ColumnName="chengShuiHao" />
+                <ScalarProperty Name="Remark1" ColumnName="Remark1" />
+                <ScalarProperty Name="editUser" ColumnName="editUser" />
+                <ScalarProperty Name="isTiXing" ColumnName="isTiXing" />
+                <ScalarProperty Name="shuRuXianchang" ColumnName="shuRuXianchang" />
+                <ScalarProperty Name="shuChuXianchang" ColumnName="shuChuXianchang" />
+                <ScalarProperty Name="发货状态" ColumnName="发货状态" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="proOrdersDetail">
+            <EntityTypeMapping TypeName="OrderPrintModel.proOrdersDetail">
+              <MappingFragment StoreEntitySet="proOrdersDetail">
+                <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="proNum" ColumnName="proNum" />
+                <ScalarProperty Name="ProPrice" ColumnName="ProPrice" />
+                <ScalarProperty Name="withWorkNo" ColumnName="withWorkNo" />
+                <ScalarProperty Name="printTime" ColumnName="printTime" />
+                <ScalarProperty Name="printType" ColumnName="printType" />
+                <ScalarProperty Name="printCount" ColumnName="printCount" />
+                <ScalarProperty Name="piHao" ColumnName="piHao" />
+                <ScalarProperty Name="planSendTime" ColumnName="planSendTime" />
+                <ScalarProperty Name="productAddress" ColumnName="productAddress" />
+                <ScalarProperty Name="printSGDTime" ColumnName="printSGDTime" />
+                <ScalarProperty Name="printSGDCount" ColumnName="printSGDCount" />
+                <ScalarProperty Name="printSGDJLTime" ColumnName="printSGDJLTime" />
+                <ScalarProperty Name="printSGDJLCount" ColumnName="printSGDJLCount" />
+                <ScalarProperty Name="printQLDTime" ColumnName="printQLDTime" />
+                <ScalarProperty Name="printQLDCount" ColumnName="printQLDCount" />
+                <ScalarProperty Name="printCCJYBGTime" ColumnName="printCCJYBGTime" />
+                <ScalarProperty Name="printCCJYBGCount" ColumnName="printCCJYBGCount" />
+                <ScalarProperty Name="printSHDTime" ColumnName="printSHDTime" />
+                <ScalarProperty Name="printSHDCount" ColumnName="printSHDCount" />
+                <ScalarProperty Name="printBZBQTime" ColumnName="printBZBQTime" />
+                <ScalarProperty Name="printBZBQCount" ColumnName="printBZBQCount" />
+                <ScalarProperty Name="printZYSXTime" ColumnName="printZYSXTime" />
+                <ScalarProperty Name="printZYSXCount" ColumnName="printZYSXCount" />
+                <ScalarProperty Name="printYYQRDTime" ColumnName="printYYQRDTime" />
+                <ScalarProperty Name="printYYQRDCount" ColumnName="printYYQRDCount" />
+                <ScalarProperty Name="sGDCount" ColumnName="sGDCount" />
+                <ScalarProperty Name="发货状态" ColumnName="发货状态" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SendDetail">
+            <EntityTypeMapping TypeName="OrderPrintModel.SendDetail">
+              <MappingFragment StoreEntitySet="SendDetail">
+                <ScalarProperty Name="sendId" ColumnName="sendId" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="sendProNum" ColumnName="sendProNum" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="sendTime" ColumnName="sendTime" />
+                <ScalarProperty Name="packingDetail" ColumnName="packingDetail" />
+                <ScalarProperty Name="packingCount" ColumnName="packingCount" />
+                <ScalarProperty Name="packingCompanyName" ColumnName="packingCompanyName" />
+                <ScalarProperty Name="sendNum" ColumnName="sendNum" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="suiGongDanNum" ColumnName="suiGongDanNum" />
+                <ScalarProperty Name="PrintCompanyName" ColumnName="PrintCompanyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SGDRecord">
+            <EntityTypeMapping TypeName="OrderPrintModel.SGDRecord">
+              <MappingFragment StoreEntitySet="SGDRecord">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="customerNum" ColumnName="customerNum" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="suigongdan" ColumnName="suigongdan" />
+                <ScalarProperty Name="PrintCount" ColumnName="PrintCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userManage">
+            <EntityTypeMapping TypeName="OrderPrintModel.userManage">
+              <MappingFragment StoreEntitySet="userManage">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="trueName" ColumnName="trueName" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="userPass" ColumnName="userPass" />
+                <ScalarProperty Name="loginNum" ColumnName="loginNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WaiKeImg">
+            <EntityTypeMapping TypeName="OrderPrintModel.WaiKeImg">
+              <MappingFragment StoreEntitySet="WaiKeImg">
+                <ScalarProperty Name="imgId" ColumnName="imgId" />
+                <ScalarProperty Name="waiKeNo" ColumnName="waiKeNo" />
+                <ScalarProperty Name="waiKeImg1" ColumnName="waiKeImg" />
+                <ScalarProperty Name="isModify" ColumnName="isModify" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_NoWanChengOrder">
+            <EntityTypeMapping TypeName="OrderPrintModel.view_NoWanChengOrder">
+              <MappingFragment StoreEntitySet="view_NoWanChengOrder">
+                <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="proNum" ColumnName="proNum" />
+                <ScalarProperty Name="printSHDCount" ColumnName="printSHDCount" />
+                <ScalarProperty Name="planSendTime" ColumnName="planSendTime" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="customerNo" ColumnName="customerNo" />
+                <ScalarProperty Name="SendCount" ColumnName="SendCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_OrderList">
+            <EntityTypeMapping TypeName="OrderPrintModel.view_OrderList">
+              <MappingFragment StoreEntitySet="view_OrderList">
+                <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="proNum" ColumnName="proNum" />
+                <ScalarProperty Name="ProPrice" ColumnName="ProPrice" />
+                <ScalarProperty Name="withWorkNo" ColumnName="withWorkNo" />
+                <ScalarProperty Name="printTime" ColumnName="printTime" />
+                <ScalarProperty Name="printType" ColumnName="printType" />
+                <ScalarProperty Name="printCount" ColumnName="printCount" />
+                <ScalarProperty Name="piHao" ColumnName="piHao" />
+                <ScalarProperty Name="planSendTime" ColumnName="planSendTime" />
+                <ScalarProperty Name="productAddress" ColumnName="productAddress" />
+                <ScalarProperty Name="printSGDTime" ColumnName="printSGDTime" />
+                <ScalarProperty Name="printSGDCount" ColumnName="printSGDCount" />
+                <ScalarProperty Name="printSGDJLTime" ColumnName="printSGDJLTime" />
+                <ScalarProperty Name="printSGDJLCount" ColumnName="printSGDJLCount" />
+                <ScalarProperty Name="printQLDTime" ColumnName="printQLDTime" />
+                <ScalarProperty Name="printQLDCount" ColumnName="printQLDCount" />
+                <ScalarProperty Name="printCCJYBGTime" ColumnName="printCCJYBGTime" />
+                <ScalarProperty Name="printCCJYBGCount" ColumnName="printCCJYBGCount" />
+                <ScalarProperty Name="printSHDTime" ColumnName="printSHDTime" />
+                <ScalarProperty Name="printSHDCount" ColumnName="printSHDCount" />
+                <ScalarProperty Name="printBZBQTime" ColumnName="printBZBQTime" />
+                <ScalarProperty Name="printBZBQCount" ColumnName="printBZBQCount" />
+                <ScalarProperty Name="printZYSXTime" ColumnName="printZYSXTime" />
+                <ScalarProperty Name="printZYSXCount" ColumnName="printZYSXCount" />
+                <ScalarProperty Name="printYYQRDTime" ColumnName="printYYQRDTime" />
+                <ScalarProperty Name="printYYQRDCount" ColumnName="printYYQRDCount" />
+                <ScalarProperty Name="sGDCount" ColumnName="sGDCount" />
+                <ScalarProperty Name="发货状态" ColumnName="发货状态" />
+                <ScalarProperty Name="customNum" ColumnName="customNum" />
+                <ScalarProperty Name="editTime" ColumnName="editTime" />
+                <ScalarProperty Name="sgdPrintCount" ColumnName="sgdPrintCount" />
+                <ScalarProperty Name="SendCount" ColumnName="SendCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_SendOrder">
+            <EntityTypeMapping TypeName="OrderPrintModel.view_SendOrder">
+              <MappingFragment StoreEntitySet="view_SendOrder">
+                <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="proType" ColumnName="proType" />
+                <ScalarProperty Name="proNum" ColumnName="proNum" />
+                <ScalarProperty Name="ProPrice" ColumnName="ProPrice" />
+                <ScalarProperty Name="withWorkNo" ColumnName="withWorkNo" />
+                <ScalarProperty Name="printTime" ColumnName="printTime" />
+                <ScalarProperty Name="printType" ColumnName="printType" />
+                <ScalarProperty Name="printCount" ColumnName="printCount" />
+                <ScalarProperty Name="piHao" ColumnName="piHao" />
+                <ScalarProperty Name="planSendTime" ColumnName="planSendTime" />
+                <ScalarProperty Name="productAddress" ColumnName="productAddress" />
+                <ScalarProperty Name="printSGDTime" ColumnName="printSGDTime" />
+                <ScalarProperty Name="printSGDCount" ColumnName="printSGDCount" />
+                <ScalarProperty Name="printSGDJLTime" ColumnName="printSGDJLTime" />
+                <ScalarProperty Name="printSGDJLCount" ColumnName="printSGDJLCount" />
+                <ScalarProperty Name="printQLDTime" ColumnName="printQLDTime" />
+                <ScalarProperty Name="printQLDCount" ColumnName="printQLDCount" />
+                <ScalarProperty Name="printCCJYBGTime" ColumnName="printCCJYBGTime" />
+                <ScalarProperty Name="printCCJYBGCount" ColumnName="printCCJYBGCount" />
+                <ScalarProperty Name="printSHDTime" ColumnName="printSHDTime" />
+                <ScalarProperty Name="printSHDCount" ColumnName="printSHDCount" />
+                <ScalarProperty Name="printBZBQTime" ColumnName="printBZBQTime" />
+                <ScalarProperty Name="printBZBQCount" ColumnName="printBZBQCount" />
+                <ScalarProperty Name="printZYSXTime" ColumnName="printZYSXTime" />
+                <ScalarProperty Name="printZYSXCount" ColumnName="printZYSXCount" />
+                <ScalarProperty Name="printYYQRDTime" ColumnName="printYYQRDTime" />
+                <ScalarProperty Name="printYYQRDCount" ColumnName="printYYQRDCount" />
+                <ScalarProperty Name="sGDCount" ColumnName="sGDCount" />
+                <ScalarProperty Name="发货状态" ColumnName="发货状态" />
+                <ScalarProperty Name="customNum" ColumnName="customNum" />
+                <ScalarProperty Name="editTime" ColumnName="editTime" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="customManager" ColumnName="customManager" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="paramContent" ColumnName="paramContent" />
+                <ScalarProperty Name="SendCount" ColumnName="SendCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

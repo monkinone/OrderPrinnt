@@ -1,0 +1,33 @@
+﻿body
+{
+    overflow: hidden;
+}
+
+.content
+{
+    margin:10px 0;
+    font: normal 14px/22px "微软雅黑";
+    color: #004ea2;
+}
+
+.img
+{
+    vertical-align: top;
+}
+.txt
+{
+    padding:0 10px;
+}
+
+.importent
+{
+    color: #b71a35;
+}
+
+.btnbar
+{
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    padding:0 10px;
+}

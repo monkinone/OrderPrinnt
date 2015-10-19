@@ -1,0 +1,484 @@
+﻿@using Web.Model;
+@using System.Web.Mvc;
+@{
+    var db = new Web.Model.OrderPrintEntities();
+    List<SendDetail> listSendDetail = new List<SendDetail>();
+    if (Session["RepeatPrint"]=="1")
+    {
+        listSendDetail = (List<SendDetail>)Session["SendDetailList"];
+    }
+}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>无标题页</title>
+    <base target="_self" />
+    <link href="../themes/default/styles/details.css" rel="stylesheet" type="text/css" />
+    <link href="../themes/default/styles/select.css" rel="stylesheet" type="text/css" />
+    <link href="../themes/default/styles/colorbox.css" rel="stylesheet" type="text/css" />
+    <script src="../scripts/JQuery/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../scripts/Custom/Config.js" type="text/javascript"></script>
+    <script src="../scripts/JQuery/Selecter-master/jquery.fs.selecter.min.js" type="text/javascript"></script>
+    <script src="../scripts/Custom/BoxControl.js" type="text/javascript"></script>
+    <script src="../scripts/JQuery/colorbox-master/jquery.colorbox-min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            //  DetailsPageControl.SetEveryAreaSize();
+            var HolePageWidth = $(window).width();
+            var HolePageHeight = $(window).height();
+            var LeftInfoAreaWidth = HolePageWidth * .3;
+            var OptBarHeight = $("#OptBar").outerHeight();
+
+            var RightInfoAreaWidth = HolePageWidth;
+            $("#RightInfoArea").height(HolePageHeight - OptBarHeight);
+            var InfoWidth = HolePageWidth - $(".optbar .title").width() - $(".optbar .optbtn").outerWidth() - 40;
+        })
+        //修改打印次数
+        function update() {
+
+            $.ajax({
+                type: "Post",
+                async: false,
+                url: "PrintBZBQ.aspx/UpdatePrint",
+                data: "",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d > 0) {
+                        //  alert('成功');
+                    } else {
+                        // alert('失败');
+                    }
+                },
+                error: function (xml, status) {
+                    if (status == 'error') {
+                        try {
+                            var json = eval('(' + xml.responseText + ')');
+                            //                        alert(json.Message + '\n' + json.StackTrace);
+                        } catch (e) { }
+                    } else {
+                        //                    alert(status);
+                    }
+                }
+            });
+        }
+        function doPrint() {
+            // pagesetup_null();
+            update();
+            bdhtml = window.document.body.innerHTML;
+            sprnstr = "<!--startprint-->";
+            eprnstr = "<!--endprint-->";
+            prnhtml = bdhtml.substr(bdhtml.indexOf(sprnstr) + 17);
+            prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));
+
+            sStr = "<!--物料编号1-->";
+            eStr = "<!--物料编号2-->";
+            var arrTxtWLBH = $("input[name='txtWLBH']");
+            for (var i = 0; i < arrTxtWLBH.length; i++) {
+                var i1 = prnhtml.indexOf(sStr);
+                var i2 = prnhtml.indexOf(eStr);
+                var html1 = prnhtml.substring(0, i1);
+                var html2 = prnhtml.substring(i2+12);
+                var inputHtml = '<input  type="text" name="txtWLBH" style="width: 100%;border:none;font-size: 16pt;font-family:STSong;font-weight:bold;"  value="' + arrTxtWLBH[i].value + '" />';
+                prnhtml = html1 + inputHtml + html2;
+            }
+
+            window.document.body.innerHTML = prnhtml;
+            window.print();
+        }
+
+
+        function pagesetup_null() {
+            //设置网页打印的页眉页脚为空  要降低浏览器安全级别
+            var RegWsh = new CreateObject("WScript.Shell");
+            RegWsh.RegWrite("HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\PageSetup\header", " ");
+            RegWsh.RegWrite("HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\PageSetup\\footer", " ");
+
+
+            //设置页边距   
+            //   RegWsh.RegWrite("HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\PageSetup\\margin_bottom", "");
+            // RegWsh.RegWrite("HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\PageSetup\\margin_left", "100");
+            //   RegWsh.RegWrite("HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\PageSetup\\margin_right", "");
+            //RegWsh.RegWrite("HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\PageSetup\\margin_top", "10");
+        }
+        //设置网页打印的页眉页脚为默认值
+        function pagesetup_default() {
+            var RegWsh = new ActiveXObject("WScript.Shell")
+            hkey_key = "header"
+            RegWsh.RegWrite(hkey_root + hkey_path + hkey_key, "&w&b页码，&p/&P")
+            hkey_key = "footer"
+            RegWsh.RegWrite(hkey_root + hkey_path + hkey_key, "&u&b&d")
+        }
+
+        var doEditVendorCompany = function () {
+            var name = window.prompt("请输入新的供应商名称", "北京霍远科技");
+            $(".VendorCompany").html(name);
+        }
+    </script>
+     
+</head>
+<body>
+    <form id="form1" runat="server" enctype="multipart/form-data" autocomplete="off">
+        <div id="OptBar" class="optbar">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="info">打印外包装标签
+                    </td>
+                    <td class="optbtn">
+                        <input type="button" onclick="doEditVendorCompany(); return false;" class="btn current" value="编辑供应商名称" />
+                        <input type="image" onclick="doPrint(); return false;" class="btn" src="../themes/default/images/btn/btn_print_nbyj_b_h.png" title="打印" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="details" style="text-align: left;">
+            <div class="rightinfo" id="RightInfoArea" style="width: 100%">
+
+                @functions
+                {
+                    public class TagModel
+                    {
+                        public string TagModeType { get; set; }
+                        public customer Customer { get; set; }
+                        public ProductParam ProductParam { get; set; }
+                        public string Quantity { get; set; }
+                        public string VendorCompany { get; set; }
+                        public string NumberOfPackages { get; set; }
+                        public products Products { get; set; }
+                        public string ContractNo { get; set; }
+                        public string OrderNo { get; set; }
+                        public string CustomtNo { get; set; }
+                        public string WLB { get; set; }
+                    }
+                }
+                @helper RenderTagModel(TagModel tm, bool isMarginTop)
+{
+    if (tm.TagModeType == "n")
+    {
+                    @RenderNTagModel(tm, isMarginTop);
+    }
+    else
+    {
+                    @RenderWTagModel(tm, isMarginTop);
+    }
+                }
+                @helper RenderNTagModel(TagModel tm, bool isMarginTop)
+{
+                    <table style='width: 355px; height: 305px;  padding-right: 0px; border: 1px solid #000; margin-right: 5px;  font-size: 13pt;font-weight:bold;@(isMarginTop ? "margin-top: 10px" : "")' align='center'>
+                        <tr>
+                            <td colspan='2' align='center'>内包装盒标签</td>
+                        </tr>
+                        <tr>
+                            <td style='width: 120px;'>客户名称：<br />
+                                Customer name</td>
+                            <td style='font-size: 12pt;' class="companyName">@(ViewBag.companyName)</td>
+                        </tr>
+                        <tr>
+                            <td>型号：<br />
+                                Model number </td>
+                            <td>@(tm.ProductParam.productNo)</td>
+                        </tr>
+                        <tr>
+                            <td>规格参数：<br />
+                                Parameters </td>
+                            <td>@(tm.Products.bian)</td>
+                        </tr>
+                        <tr>
+                            <td>数    量：<br />
+                                Quantity</td>
+                            <td>@(string.IsNullOrEmpty(tm.Quantity)?"":tm.Quantity+"PSC")</td>
+                        </tr>
+                        <tr>
+                            <td>封 装 日 期：<br />
+                                Packaging date</td>
+                            <td>@(DateTime.Now.ToString("yyyy-MM-dd"))</td>
+                        </tr>
+                    </table>
+                }
+                @helper RenderWTagModel(TagModel tm, bool isMarginTop)
+{
+                    <table style='width: 534px;height:512px; @(isMarginTop ? "margin-top: 10px" : ""); border: 1px solid #000; margin-right: 8px; font-size: 13pt;font-weight:bold;' align='center'>
+                        <tr>
+                            <td colspan='2' align='center'>外包装箱标签</td>
+                        </tr>
+                        <tr>
+                            <td style='width: 140px;'>客户名称：<br />
+                                Customer name</td>
+                            <td style='font-size: 13pt;' class="companyName">@(ViewBag.companyName)</td>
+                        </tr>
+                        <tr>
+                            <td>型号：<br />
+                                Model number </td>
+                            <td style="font-size: 16pt;">@(tm.ProductParam.productNo)</td>
+                        </tr>
+                        <tr>
+                            <td>规格参数：<br />
+                                Parameters </td>
+                            <td style="font-size: 16pt">@(tm.Products.bian)</td>
+                        </tr>
+                        <tr>
+                            <td>数    量：<br />
+                                Quantity</td>
+                            <td style="font-size: 16pt">@(tm.Quantity)</td>
+                        </tr>
+                        <tr>
+                            <td>合同编号：<br />
+                                Contract No.</td>
+                            <td style="font-size: 16pt">@(tm.ContractNo)</td>
+                        </tr>
+                        <tr>
+                            <td>物料编号：<br />
+                                Material Code</td>
+                            <td><!--物料编号1--><input  type="text" name="txtWLBH" style="width: 100%;border:none;font-size: 16pt;font-family:STSong;font-weight:bold;"  value="@(tm.WLB)" /><!--物料编号2--></td>
+                        </tr>
+                        <tr>
+                            <td>客户单号：<br />
+                                Purchase order No.</td>
+                            <td style="font-size: 16pt">@(tm.CustomtNo)</td>
+                        </tr>
+                        <tr>
+                            <td>供应商名称：<br />
+                                Vendor Company</td>
+                            <td style="font-size: 16pt" class="VendorCompany">@(tm.VendorCompany)</td>
+                        </tr>
+                        <tr>
+                            <td>件      数：<br />
+                                Number of packages</td>
+                            <td><font size="9"><strong>@(tm.NumberOfPackages)</strong></font>
+                                @{
+                                    int index = tm.NumberOfPackages.IndexOf("-");
+                                    string num = tm.NumberOfPackages.Substring(0,index);
+                                    if (tm.NumberOfPackages.EndsWith(num))
+                                    {
+                                    <font color="red" size="6">(内有清单)</font>
+                                   }
+                                    }
+                            </td>
+                        </tr>
+                    </table>
+                }
+
+
+
+                @{
+                    
+                    var Stack = new List<TagModel> { };
+                    string orderNum = ViewBag.orderNum as string;
+                    string customNum = ViewBag.customNum as string;
+                    var proTypes = db.proOrdersDetail.Where(r => r.orderNum == orderNum).Select(r => r.proType).ToList();
+                    var customerMod = db.customer.Where(r => r.customerNo == customNum).FirstOrDefault();
+                    var order = db.proOrders.FirstOrDefault(r => r.orderNum == orderNum);
+                    var dtl=new SendDetail();
+                    if (Session["RepeatPrint"]=="0")
+	                {
+                        dtl = db.SendDetail.OrderByDescending(r => r.sendId).FirstOrDefault(r => r.orderNum == orderNum);
+	                }
+                    else
+                    {
+                        dtl = listSendDetail.OrderByDescending(r => r.sendId).FirstOrDefault(r => r.orderNum == orderNum);
+                    }
+                        
+                    ViewBag.companyName = customerMod.companyName;
+                    if (dtl != null && !string.IsNullOrEmpty(dtl.PrintCompanyName))
+                    {
+                        ViewBag.companyName = dtl.PrintCompanyName;
+                    }
+                    double allWaiNum = 0;
+
+                    for (int i = 0; i < proTypes.Count; i++)
+                    {
+                        var proType = proTypes[i];
+                        var proMod = db.products.Where(r => r.productNum == proType).FirstOrDefault();
+                        var paramMod = db.ProductParam.Where(r => r.customNo == customNum && r.productNo == proType).FirstOrDefault();
+                        var proNum=0;
+                        if (Session["RepeatPrint"]=="0")
+                        {
+                            proNum = db.SendDetail.Where(r => r.orderNum == orderNum && r.proType == proType).OrderByDescending(r => r.sendId).Select(r => r.sendProNum).FirstOrDefault() ?? 0;
+                        }
+                        else
+                        {
+                            proNum = listSendDetail.Where(r => r.orderNum == orderNum && r.proType == proType).OrderByDescending(r => r.sendId).Select(r => r.sendProNum).FirstOrDefault() ?? 0;
+                        }
+                     
+                        if (proMod == null)
+                        {
+                            continue;
+                        }
+                        var neiCount = Int32.Parse(proMod.NeiBZ ?? "0");
+                        var waiCount = proMod.waiBZ.Value;
+                        if (proNum == 0 || neiCount == 0 || waiCount == 0)
+                        {
+                            continue;
+                        }
+
+
+
+                        var neiNum = Math.Ceiling((double)proNum / (double)neiCount);
+                        var waiNum = Math.Ceiling((double)proNum / (double)(neiCount * waiCount));
+
+                        allWaiNum += waiNum;
+                        //内标签
+                        for (int j = 0; j < neiNum; j++)
+                        {
+                            var leftNum = proNum - (neiCount * (j));
+                            var num = leftNum > 0 ? Math.Min(neiCount, leftNum) : 0;
+                            Stack.Add(new TagModel
+                            {
+                                ProductParam = paramMod,
+                                Customer = customerMod,
+                                Quantity = num.ToString(),
+                                TagModeType = "n",
+                                Products = proMod
+
+                            });
+                        }
+                        for (int j = 0; j < waiNum; j++)
+                        {
+                            var leftNum = proNum - ((waiCount * neiCount) * (j));
+                            var num = leftNum > 0 ? Math.Min((waiCount * neiCount), leftNum) : 0;
+                            Stack.Add(new TagModel
+                            {
+                                ProductParam = paramMod,
+                                Customer = customerMod,
+                                Quantity = string.Format("{1}盒({0}PCS)", num, Math.Ceiling((double)num / (double)neiCount)),
+                                NumberOfPackages = string.Format("{{0}}-{{1}}", waiNum, j + 1),
+                                VendorCompany = "北京霍远科技",
+                                TagModeType = "w",
+                                Products = proMod,
+                                OrderNo = orderNum,
+                                CustomtNo = order == null ? "" : order.customOrderNum,
+                                ContractNo = order == null ? "" : order.heTongNum,
+                                WLB = paramMod.wuliaobian
+
+                            });
+                        }
+                    }
+                    var idx = 0;
+                    Stack.Where(r => r.TagModeType == "w").ToList().ForEach(r => r.NumberOfPackages = string.Format(r.NumberOfPackages, allWaiNum, ++idx));
+                }
+
+                <!--startprint-->
+                @{
+                    //var pairs = new List<List<TagModel>> { };
+                    Stack = Stack.OrderBy(r => r.TagModeType).ToList();
+                    double pageLen = 0;
+                }
+
+                @*分组*@
+                @*                @for (int i = 0; i < Math.Ceiling((double)Stack.Count / 3); i++)
+                {
+                    var pair = new List<TagModel> { };
+                    for (int j = i * 3; j < i * 3 + 3 && j < Stack.Count; j++)
+                    {
+                        pair.Add(Stack[j]);
+                    }
+                    pairs.Add(pair);
+                }*@
+                @*打印*@
+                @*                @for (int i = 0; i < pairs.Count; i++)
+                {
+                    var pair = pairs[i];
+                    var pairLen = pair.Count(r => r.TagModeType == "w") > 0 ? 0.3 : 0.2;
+                    if (pageLen + pairLen > 1)
+                    {
+                    <div style='page-break-after: always;'></div>
+                        pageLen = pairLen;
+                    }
+                    else
+                    {
+                        pageLen += pairLen;
+                    }
+                    <table cellpadding='0' cellspacing='0' align='center'>
+                        <tr>
+                            <td>
+                                @RenderTagModel(pair[0])
+                            </td>
+                            <td>
+                                @if (pair.Count >= 2)
+                                {
+                                    @RenderTagModel(pair[1])
+                                }
+                            </td>
+                            <td>
+                                @if (pair.Count == 3)
+                                {
+                                    @RenderTagModel(pair[2])
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                }*@
+
+                @{
+                    pageLen = 0;
+                }
+                @*打印内标签*@
+                @{
+                    var nTagModels = Stack.Where(r => r.TagModeType == "n").ToList();
+                }
+                @for (int i = 0; i < Math.Ceiling((double)nTagModels.Count / 3); i++)
+                {
+                    var tagModel = nTagModels[i];
+                    pageLen += 0.2;
+                    if (pageLen > 1)
+                    {
+                        pageLen = 0.2;
+                    <div style='page-break-after: always;'></div>
+                    }
+                    <table cellpadding='0' cellspacing='0' align='center'>
+                        <tr>
+                            @for (int j = i * 3; j < i * 3 + 3; j++)
+                            {
+                                <td>
+                                    @if (j < nTagModels.Count)
+                                    {
+                                        @RenderTagModel(nTagModels[j], pageLen != 0.2)
+                                    }
+                                    else
+                                    {
+                                        <div style="width: 355px; height: 305px;"></div>
+                                    }
+                                </td>
+                            }
+                        </tr>
+                    </table>
+                }
+                @*打印外标签*@
+                @{
+                    var wTagModels = Stack.Where(r => r.TagModeType == "w").ToList();
+                }
+                @for (int i = 0; i < Math.Ceiling((double)wTagModels.Count / 2); i++)
+                {
+                    var tagModel = wTagModels[i * 2];
+                    pageLen += 0.33;
+                    if (pageLen > 1)
+                    {
+                        pageLen = 0.33;
+                    <div style='page-break-after: always;'></div>
+                    }
+                    <table cellpadding='0' cellspacing='0' align='center' id="printTable">
+                        <tr>
+                            <td>
+                                @RenderTagModel(tagModel, pageLen != 0.33)
+                            </td>
+
+                            <td>
+                                @if (i * 2 + 1 < wTagModels.Count)
+                                {
+                                    @RenderTagModel(wTagModels[i * 2 + 1], pageLen != 0.33)
+                                }
+                                else
+                                {
+                                    <div style="width: 534px; height: 512px;"></div>
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                }
+                <!--endprint-->
+            </div>
+        </div>
+    </form>
+</body>
+</html>

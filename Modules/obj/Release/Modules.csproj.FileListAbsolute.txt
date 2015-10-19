@@ -1,0 +1,3 @@
+H:\OrderPrint\Modules\bin\Release\DCQWBOA.W8.Modules.dll
+H:\OrderPrint\Modules\obj\Release\Modules.csprojResolveAssemblyReference.cache
+H:\OrderPrint\Modules\obj\Release\DCQWBOA.W8.Modules.dll

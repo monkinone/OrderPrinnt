@@ -1,0 +1,764 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OrderPrintModelStoreContainer" CdmEntityContainer="OrderPrintEntities">
+    <EntitySetMapping Name="base_Material">
+      <EntityTypeMapping TypeName="OrderPrintModel.base_Material">
+        <MappingFragment StoreEntitySet="base_Material">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AttributeID" ColumnName="AttributeID" />
+          <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="UpperLimit" ColumnName="UpperLimit" />
+          <ScalarProperty Name="LowerLimit" ColumnName="LowerLimit" />
+          <ScalarProperty Name="TechnicalParameter" ColumnName="TechnicalParameter" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="WareHouseIDs" ColumnName="WareHouseIDs" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+          <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_MaterialAttribute">
+      <EntityTypeMapping TypeName="OrderPrintModel.base_MaterialAttribute">
+        <MappingFragment StoreEntitySet="base_MaterialAttribute">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+          <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_MaterialCategory">
+      <EntityTypeMapping TypeName="OrderPrintModel.base_MaterialCategory">
+        <MappingFragment StoreEntitySet="base_MaterialCategory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="ParentName" ColumnName="ParentName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+          <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_Suppliers">
+      <EntityTypeMapping TypeName="OrderPrintModel.base_Suppliers">
+        <MappingFragment StoreEntitySet="base_Suppliers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ContactMan" ColumnName="ContactMan" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="AssessmentLevel" ColumnName="AssessmentLevel" />
+          <ScalarProperty Name="InvoiceFa" ColumnName="InvoiceFa" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="IsContractModel" ColumnName="IsContractModel" />
+          <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="TaxpayerNumber" ColumnName="TaxpayerNumber" />
+          <ScalarProperty Name="CompanyAdress" ColumnName="CompanyAdress" />
+          <ScalarProperty Name="OtherContactMan" ColumnName="OtherContactMan" />
+          <ScalarProperty Name="ContactManDetailInfo" ColumnName="ContactManDetailInfo" />
+          <ScalarProperty Name="LoginUserID" ColumnName="LoginUserID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+          <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_Unit">
+      <EntityTypeMapping TypeName="OrderPrintModel.base_Unit">
+        <MappingFragment StoreEntitySet="base_Unit">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+          <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_WareHouse">
+      <EntityTypeMapping TypeName="OrderPrintModel.base_WareHouse">
+        <MappingFragment StoreEntitySet="base_WareHouse">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WareHouseName" ColumnName="WareHouseName" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="CategoryIDs" ColumnName="CategoryIDs" />
+          <ScalarProperty Name="CategoryNames" ColumnName="CategoryNames" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+          <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BiaoShiImg">
+      <EntityTypeMapping TypeName="OrderPrintModel.BiaoShiImg">
+        <MappingFragment StoreEntitySet="BiaoShiImg">
+          <ScalarProperty Name="imgId" ColumnName="imgId" />
+          <ScalarProperty Name="biaoShiNo" ColumnName="biaoShiNo" />
+          <ScalarProperty Name="biaoShiImg1" ColumnName="biaoShiImg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="OrderPrintModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="customerNo" ColumnName="customerNo" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="contacts" ColumnName="contacts" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="telPhone" ColumnName="telPhone" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="InvoiceMethod" ColumnName="InvoiceMethod" />
+          <ScalarProperty Name="backMethod" ColumnName="backMethod" />
+          <ScalarProperty Name="isFanben" ColumnName="isFanben" />
+          <ScalarProperty Name="companyAddress" ColumnName="companyAddress" />
+          <ScalarProperty Name="otherDangAn" ColumnName="otherDangAn" />
+          <ScalarProperty Name="modifyPriceRecord" ColumnName="modifyPriceRecord" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="isShowPrice" ColumnName="isShowPrice" />
+          <ScalarProperty Name="islock" ColumnName="islock" />
+          <ScalarProperty Name="zhangHao" ColumnName="zhangHao" />
+          <ScalarProperty Name="shuiHao" ColumnName="shuiHao" />
+          <ScalarProperty Name="isAddInfo" ColumnName="isAddInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_DeliverGoods">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_DeliverGoods">
+        <MappingFragment StoreEntitySet="domain_DeliverGoods">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="TheDeliveryAmout" ColumnName="TheDeliveryAmout" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="DeliveryNum" ColumnName="DeliveryNum" />
+          <ScalarProperty Name="LogisticsCompany" ColumnName="LogisticsCompany" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_EnterWareHouseLog">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_EnterWareHouseLog">
+        <MappingFragment StoreEntitySet="domain_EnterWareHouseLog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="Amout" ColumnName="Amout" />
+          <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+          <ScalarProperty Name="WareHouseName" ColumnName="WareHouseName" />
+          <ScalarProperty Name="Suppliers" ColumnName="Suppliers" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DealWithBy" ColumnName="DealWithBy" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="DoBy" ColumnName="DoBy" />
+          <ScalarProperty Name="DoTime" ColumnName="DoTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_EvaluationLevel">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_EvaluationLevel">
+        <MappingFragment StoreEntitySet="domain_EvaluationLevel">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_Log">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_Log">
+        <MappingFragment StoreEntitySet="domain_Log">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DoID" ColumnName="DoID" />
+          <ScalarProperty Name="DoType" ColumnName="DoType" />
+          <ScalarProperty Name="DoContent" ColumnName="DoContent" />
+          <ScalarProperty Name="DoBy" ColumnName="DoBy" />
+          <ScalarProperty Name="DoTime" ColumnName="DoTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_Material_WareHouse">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_Material_WareHouse">
+        <MappingFragment StoreEntitySet="domain_Material_WareHouse">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+          <ScalarProperty Name="WareHouseName" ColumnName="WareHouseName" />
+          <ScalarProperty Name="MaterialModelNumber" ColumnName="MaterialModelNumber" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="KuCun" ColumnName="KuCun" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_MaterialPrice">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_MaterialPrice">
+        <MappingFragment StoreEntitySet="domain_MaterialPrice">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_OutWareHouseLog">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_OutWareHouseLog">
+        <MappingFragment StoreEntitySet="domain_OutWareHouseLog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OutNo" ColumnName="OutNo" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="Amout" ColumnName="Amout" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DealWithBy" ColumnName="DealWithBy" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="DoBy" ColumnName="DoBy" />
+          <ScalarProperty Name="DoTime" ColumnName="DoTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_PurchaseContract">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_PurchaseContract">
+        <MappingFragment StoreEntitySet="domain_PurchaseContract">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="SuppliersID" ColumnName="SuppliersID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="GoodsMethods" ColumnName="GoodsMethods" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="DeleteBy" ColumnName="DeleteBy" />
+          <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_PurchaseContractItem">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_PurchaseContractItem">
+        <MappingFragment StoreEntitySet="domain_PurchaseContractItem">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="Amout" ColumnName="Amout" />
+          <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+          <ScalarProperty Name="Requirement" ColumnName="Requirement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_PurchaseOrders">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_PurchaseOrders">
+        <MappingFragment StoreEntitySet="domain_PurchaseOrders">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ItemCount" ColumnName="ItemCount" />
+          <ScalarProperty Name="AddBy" ColumnName="AddBy" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_PurchaseOrdersItem">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_PurchaseOrdersItem">
+        <MappingFragment StoreEntitySet="domain_PurchaseOrdersItem">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="Amout" ColumnName="Amout" />
+          <ScalarProperty Name="TechnicalParameters" ColumnName="TechnicalParameters" />
+          <ScalarProperty Name="Requirement" ColumnName="Requirement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domain_ReturnWareHouseLog">
+      <EntityTypeMapping TypeName="OrderPrintModel.domain_ReturnWareHouseLog">
+        <MappingFragment StoreEntitySet="domain_ReturnWareHouseLog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ReturnNo" ColumnName="ReturnNo" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="Amout" ColumnName="Amout" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DealWithBy" ColumnName="DealWithBy" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="DoBy" ColumnName="DoBy" />
+          <ScalarProperty Name="DoTime" ColumnName="DoTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuanJiaoZhenImg">
+      <EntityTypeMapping TypeName="OrderPrintModel.GuanJiaoZhenImg">
+        <MappingFragment StoreEntitySet="GuanJiaoZhenImg">
+          <ScalarProperty Name="imgId" ColumnName="imgId" />
+          <ScalarProperty Name="guanJiaoZhenNo" ColumnName="guanJiaoZhenNo" />
+          <ScalarProperty Name="guanJiaoZhenImg1" ColumnName="guanJiaoZhenImg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuiGeShu">
+      <EntityTypeMapping TypeName="OrderPrintModel.GuiGeShu">
+        <MappingFragment StoreEntitySet="GuiGeShu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fileUrl" ColumnName="fileUrl" />
+          <ScalarProperty Name="productNo" ColumnName="productNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MattersNeedingAttention">
+      <EntityTypeMapping TypeName="OrderPrintModel.MattersNeedingAttention">
+        <MappingFragment StoreEntitySet="MattersNeedingAttention">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customerNo" ColumnName="customerNo" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notice">
+      <EntityTypeMapping TypeName="OrderPrintModel.Notice">
+        <MappingFragment StoreEntitySet="Notice">
+          <ScalarProperty Name="noticeId" ColumnName="noticeId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priceManage">
+      <EntityTypeMapping TypeName="OrderPrintModel.priceManage">
+        <MappingFragment StoreEntitySet="priceManage">
+          <ScalarProperty Name="priceId" ColumnName="priceId" />
+          <ScalarProperty Name="customNo" ColumnName="customNo" />
+          <ScalarProperty Name="productNo" ColumnName="productNo" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrintSGDCount">
+      <EntityTypeMapping TypeName="OrderPrintModel.PrintSGDCount">
+        <MappingFragment StoreEntitySet="PrintSGDCount">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="printCount" ColumnName="printCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductParam">
+      <EntityTypeMapping TypeName="OrderPrintModel.ProductParam">
+        <MappingFragment StoreEntitySet="ProductParam">
+          <ScalarProperty Name="paramId" ColumnName="paramId" />
+          <ScalarProperty Name="customNo" ColumnName="customNo" />
+          <ScalarProperty Name="productNo" ColumnName="productNo" />
+          <ScalarProperty Name="paramContent" ColumnName="paramContent" />
+          <ScalarProperty Name="isWriteFahuoInfo" ColumnName="isWriteFahuoInfo" />
+          <ScalarProperty Name="isWriteXianChang" ColumnName="isWriteXianChang" />
+          <ScalarProperty Name="wuliaobian" ColumnName="wuliaobian" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="OrderPrintModel.products">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="productNum" ColumnName="productNum" />
+          <ScalarProperty Name="waiBZ" ColumnName="waiBZ" />
+          <ScalarProperty Name="NeiBZ" ColumnName="NeiBZ" />
+          <ScalarProperty Name="NeiBZDW" ColumnName="NeiBZDW" />
+          <ScalarProperty Name="bian" ColumnName="bian" />
+          <ScalarProperty Name="jingDu" ColumnName="jingDu" />
+          <ScalarProperty Name="xianXingdu" ColumnName="xianXingdu" />
+          <ScalarProperty Name="eDingJC" ColumnName="eDingJC" />
+          <ScalarProperty Name="tieXiCount" ColumnName="tieXiCount" />
+          <ScalarProperty Name="guiGe" ColumnName="guiGe" />
+          <ScalarProperty Name="caiLiao" ColumnName="caiLiao" />
+          <ScalarProperty Name="xingNeng" ColumnName="xingNeng" />
+          <ScalarProperty Name="chuLiMethod" ColumnName="chuLiMethod" />
+          <ScalarProperty Name="baoHeDian" ColumnName="baoHeDian" />
+          <ScalarProperty Name="xianQuanCount" ColumnName="xianQuanCount" />
+          <ScalarProperty Name="chujZaShu" ColumnName="chujZaShu" />
+          <ScalarProperty Name="chujXianJing" ColumnName="chujXianJing" />
+          <ScalarProperty Name="chujRaoXianZD" ColumnName="chujRaoXianZD" />
+          <ScalarProperty Name="chujXianTouCD" ColumnName="chujXianTouCD" />
+          <ScalarProperty Name="chujXiantouCL" ColumnName="chujXiantouCL" />
+          <ScalarProperty Name="chujTongMD" ColumnName="chujTongMD" />
+          <ScalarProperty Name="cijZaShu" ColumnName="cijZaShu" />
+          <ScalarProperty Name="cijXianJing" ColumnName="cijXianJing" />
+          <ScalarProperty Name="cijRaoXianZD" ColumnName="cijRaoXianZD" />
+          <ScalarProperty Name="cijXianTouCD" ColumnName="cijXianTouCD" />
+          <ScalarProperty Name="cijXianTouCL" ColumnName="cijXianTouCL" />
+          <ScalarProperty Name="cijTongMD" ColumnName="cijTongMD" />
+          <ScalarProperty Name="xqjcyqEquip" ColumnName="xqjcyqEquip" />
+          <ScalarProperty Name="xqjcyqShuRuState" ColumnName="xqjcyqShuRuState" />
+          <ScalarProperty Name="xqjcyqShuChuState" ColumnName="xqjcyqShuChuState" />
+          <ScalarProperty Name="xqjcyqJiaoCha" ColumnName="xqjcyqJiaoCha" />
+          <ScalarProperty Name="xqjcyqFuZai" ColumnName="xqjcyqFuZai" />
+          <ScalarProperty Name="biaoShiNo" ColumnName="biaoShiNo" />
+          <ScalarProperty Name="waiKeNo" ColumnName="waiKeNo" />
+          <ScalarProperty Name="waiKeCount" ColumnName="waiKeCount" />
+          <ScalarProperty Name="yongJiaoCS" ColumnName="yongJiaoCS" />
+          <ScalarProperty Name="shuRu" ColumnName="shuRu" />
+          <ScalarProperty Name="shuChu" ColumnName="shuChu" />
+          <ScalarProperty Name="biaoShiAddress" ColumnName="biaoShiAddress" />
+          <ScalarProperty Name="chajianNo" ColumnName="chajianNo" />
+          <ScalarProperty Name="chajianCount" ColumnName="chajianCount" />
+          <ScalarProperty Name="waiXingTZ" ColumnName="waiXingTZ" />
+          <ScalarProperty Name="cpjccsEquip" ColumnName="cpjccsEquip" />
+          <ScalarProperty Name="cpjccsShuRuState" ColumnName="cpjccsShuRuState" />
+          <ScalarProperty Name="cpjccsShuChuState" ColumnName="cpjccsShuChuState" />
+          <ScalarProperty Name="CpjccsJiaoChaBH" ColumnName="CpjccsJiaoChaBH" />
+          <ScalarProperty Name="cpjccsFuZai" ColumnName="cpjccsFuZai" />
+          <ScalarProperty Name="cpjccsNaiYa" ColumnName="cpjccsNaiYa" />
+          <ScalarProperty Name="cpjccsTongMD" ColumnName="cpjccsTongMD" />
+          <ScalarProperty Name="guanJiaoZhenLX" ColumnName="guanJiaoZhenLX" />
+          <ScalarProperty Name="guanJIaoZhenLXCount" ColumnName="guanJIaoZhenLXCount" />
+          <ScalarProperty Name="guanJiaoZhenLXTOW" ColumnName="guanJiaoZhenLXTOW" />
+          <ScalarProperty Name="guanJiaoZhenLXTOWCount" ColumnName="guanJiaoZhenLXTOWCount" />
+          <ScalarProperty Name="shuRuXC" ColumnName="shuRuXC" />
+          <ScalarProperty Name="shuChuXC" ColumnName="shuChuXC" />
+          <ScalarProperty Name="peiXianSR" ColumnName="peiXianSR" />
+          <ScalarProperty Name="peiXianSRCount" ColumnName="peiXianSRCount" />
+          <ScalarProperty Name="peiXianSC" ColumnName="peiXianSC" />
+          <ScalarProperty Name="peiXianSCCount" ColumnName="peiXianSCCount" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="isModifyTZ" ColumnName="isModifyTZ" />
+          <ScalarProperty Name="biaoShiPicture" ColumnName="biaoShiPicture" />
+          <ScalarProperty Name="isModifyWaikeNo" ColumnName="isModifyWaikeNo" />
+          <ScalarProperty Name="gongyiZYSX" ColumnName="gongyiZYSX" />
+          <ScalarProperty Name="baoZhuangHeGG" ColumnName="baoZhuangHeGG" />
+          <ScalarProperty Name="baoZhuangXiangGG" ColumnName="baoZhuangXiangGG" />
+          <ScalarProperty Name="baoHeDianTestTJ" ColumnName="baoHeDianTestTJ" />
+          <ScalarProperty Name="guJia" ColumnName="guJia" />
+          <ScalarProperty Name="tongPai" ColumnName="tongPai" />
+          <ScalarProperty Name="ciHuan" ColumnName="ciHuan" />
+          <ScalarProperty Name="duanZi" ColumnName="duanZi" />
+          <ScalarProperty Name="xianLuBan" ColumnName="xianLuBan" />
+          <ScalarProperty Name="jiaoPian" ColumnName="jiaoPian" />
+          <ScalarProperty Name="pingBi" ColumnName="pingBi" />
+          <ScalarProperty Name="wenYaGuan" ColumnName="wenYaGuan" />
+          <ScalarProperty Name="dianZu" ColumnName="dianZu" />
+          <ScalarProperty Name="luoSi" ColumnName="luoSi" />
+          <ScalarProperty Name="reSuoTaoGuan" ColumnName="reSuoTaoGuan" />
+          <ScalarProperty Name="anZhuangPJ" ColumnName="anZhuangPJ" />
+          <ScalarProperty Name="yuanQiJian1" ColumnName="yuanQiJian1" />
+          <ScalarProperty Name="yuanQiJian2" ColumnName="yuanQiJian2" />
+          <ScalarProperty Name="yuanQiJian3" ColumnName="yuanQiJian3" />
+          <ScalarProperty Name="yuanQiJian4" ColumnName="yuanQiJian4" />
+          <ScalarProperty Name="gujiaCanshu" ColumnName="gujiaCanshu" />
+          <ScalarProperty Name="gujiaCount" ColumnName="gujiaCount" />
+          <ScalarProperty Name="tongpaiCanshu" ColumnName="tongpaiCanshu" />
+          <ScalarProperty Name="tongpaoCount" ColumnName="tongpaoCount" />
+          <ScalarProperty Name="cihuanCanshu" ColumnName="cihuanCanshu" />
+          <ScalarProperty Name="cihuanCount" ColumnName="cihuanCount" />
+          <ScalarProperty Name="duanziCanshu" ColumnName="duanziCanshu" />
+          <ScalarProperty Name="duanziCount" ColumnName="duanziCount" />
+          <ScalarProperty Name="xianlubanCanshu" ColumnName="xianlubanCanshu" />
+          <ScalarProperty Name="xianlubanCount" ColumnName="xianlubanCount" />
+          <ScalarProperty Name="jiaopianCanshu" ColumnName="jiaopianCanshu" />
+          <ScalarProperty Name="jiaopianCount" ColumnName="jiaopianCount" />
+          <ScalarProperty Name="pingbiCanshu" ColumnName="pingbiCanshu" />
+          <ScalarProperty Name="pingbiCount" ColumnName="pingbiCount" />
+          <ScalarProperty Name="wenyaguanCanshu" ColumnName="wenyaguanCanshu" />
+          <ScalarProperty Name="wenyaguanCount" ColumnName="wenyaguanCount" />
+          <ScalarProperty Name="dianzuCanshu" ColumnName="dianzuCanshu" />
+          <ScalarProperty Name="dianzuCount" ColumnName="dianzuCount" />
+          <ScalarProperty Name="luosiCanshu" ColumnName="luosiCanshu" />
+          <ScalarProperty Name="luosiCount" ColumnName="luosiCount" />
+          <ScalarProperty Name="resuotaoguanCanshu" ColumnName="resuotaoguanCanshu" />
+          <ScalarProperty Name="resuotaoguanCount" ColumnName="resuotaoguanCount" />
+          <ScalarProperty Name="anzhuangPJCanshu" ColumnName="anzhuangPJCanshu" />
+          <ScalarProperty Name="anzhuangPJCount" ColumnName="anzhuangPJCount" />
+          <ScalarProperty Name="yuanqijian1Canshu" ColumnName="yuanqijian1Canshu" />
+          <ScalarProperty Name="Yuanqijian1Count" ColumnName="Yuanqijian1Count" />
+          <ScalarProperty Name="Yuanqijian2Canshu" ColumnName="Yuanqijian2Canshu" />
+          <ScalarProperty Name="Yuanqijian2Count" ColumnName="Yuanqijian2Count" />
+          <ScalarProperty Name="Yuanqijian3Canshu" ColumnName="Yuanqijian3Canshu" />
+          <ScalarProperty Name="Yuanqijian3Count" ColumnName="Yuanqijian3Count" />
+          <ScalarProperty Name="Yuanqijian4Canshu" ColumnName="Yuanqijian4Canshu" />
+          <ScalarProperty Name="Yuanqijian4Count" ColumnName="Yuanqijian4Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proOrders">
+      <EntityTypeMapping TypeName="OrderPrintModel.proOrders">
+        <MappingFragment StoreEntitySet="proOrders">
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="customNum" ColumnName="customNum" />
+          <ScalarProperty Name="heTongNum" ColumnName="heTongNum" />
+          <ScalarProperty Name="customOrderNum" ColumnName="customOrderNum" />
+          <ScalarProperty Name="customWLBH" ColumnName="customWLBH" />
+          <ScalarProperty Name="customManager" ColumnName="customManager" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="editTime" ColumnName="editTime" />
+          <ScalarProperty Name="updateTime" ColumnName="updateTime" />
+          <ScalarProperty Name="yikaipiaoMoney" ColumnName="yikaipiaoMoney" />
+          <ScalarProperty Name="yijiekuanMoney" ColumnName="yijiekuanMoney" />
+          <ScalarProperty Name="faPiaoDanhao" ColumnName="faPiaoDanhao" />
+          <ScalarProperty Name="chengShuiHao" ColumnName="chengShuiHao" />
+          <ScalarProperty Name="Remark1" ColumnName="Remark1" />
+          <ScalarProperty Name="editUser" ColumnName="editUser" />
+          <ScalarProperty Name="isTiXing" ColumnName="isTiXing" />
+          <ScalarProperty Name="shuRuXianchang" ColumnName="shuRuXianchang" />
+          <ScalarProperty Name="shuChuXianchang" ColumnName="shuChuXianchang" />
+          <ScalarProperty Name="发货状态" ColumnName="发货状态" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proOrdersDetail">
+      <EntityTypeMapping TypeName="OrderPrintModel.proOrdersDetail">
+        <MappingFragment StoreEntitySet="proOrdersDetail">
+          <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="proNum" ColumnName="proNum" />
+          <ScalarProperty Name="ProPrice" ColumnName="ProPrice" />
+          <ScalarProperty Name="withWorkNo" ColumnName="withWorkNo" />
+          <ScalarProperty Name="printTime" ColumnName="printTime" />
+          <ScalarProperty Name="printType" ColumnName="printType" />
+          <ScalarProperty Name="printCount" ColumnName="printCount" />
+          <ScalarProperty Name="piHao" ColumnName="piHao" />
+          <ScalarProperty Name="planSendTime" ColumnName="planSendTime" />
+          <ScalarProperty Name="productAddress" ColumnName="productAddress" />
+          <ScalarProperty Name="printSGDTime" ColumnName="printSGDTime" />
+          <ScalarProperty Name="printSGDCount" ColumnName="printSGDCount" />
+          <ScalarProperty Name="printSGDJLTime" ColumnName="printSGDJLTime" />
+          <ScalarProperty Name="printSGDJLCount" ColumnName="printSGDJLCount" />
+          <ScalarProperty Name="printQLDTime" ColumnName="printQLDTime" />
+          <ScalarProperty Name="printQLDCount" ColumnName="printQLDCount" />
+          <ScalarProperty Name="printCCJYBGTime" ColumnName="printCCJYBGTime" />
+          <ScalarProperty Name="printCCJYBGCount" ColumnName="printCCJYBGCount" />
+          <ScalarProperty Name="printSHDTime" ColumnName="printSHDTime" />
+          <ScalarProperty Name="printSHDCount" ColumnName="printSHDCount" />
+          <ScalarProperty Name="printBZBQTime" ColumnName="printBZBQTime" />
+          <ScalarProperty Name="printBZBQCount" ColumnName="printBZBQCount" />
+          <ScalarProperty Name="printZYSXTime" ColumnName="printZYSXTime" />
+          <ScalarProperty Name="printZYSXCount" ColumnName="printZYSXCount" />
+          <ScalarProperty Name="printYYQRDTime" ColumnName="printYYQRDTime" />
+          <ScalarProperty Name="printYYQRDCount" ColumnName="printYYQRDCount" />
+          <ScalarProperty Name="sGDCount" ColumnName="sGDCount" />
+          <ScalarProperty Name="发货状态" ColumnName="发货状态" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SendDetail">
+      <EntityTypeMapping TypeName="OrderPrintModel.SendDetail">
+        <MappingFragment StoreEntitySet="SendDetail">
+          <ScalarProperty Name="sendId" ColumnName="sendId" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="sendProNum" ColumnName="sendProNum" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="sendTime" ColumnName="sendTime" />
+          <ScalarProperty Name="packingDetail" ColumnName="packingDetail" />
+          <ScalarProperty Name="packingCount" ColumnName="packingCount" />
+          <ScalarProperty Name="packingCompanyName" ColumnName="packingCompanyName" />
+          <ScalarProperty Name="sendNum" ColumnName="sendNum" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="suiGongDanNum" ColumnName="suiGongDanNum" />
+          <ScalarProperty Name="PrintCompanyName" ColumnName="PrintCompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SGDRecord">
+      <EntityTypeMapping TypeName="OrderPrintModel.SGDRecord">
+        <MappingFragment StoreEntitySet="SGDRecord">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="customerNum" ColumnName="customerNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="suigongdan" ColumnName="suigongdan" />
+          <ScalarProperty Name="PrintCount" ColumnName="PrintCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userManage">
+      <EntityTypeMapping TypeName="OrderPrintModel.userManage">
+        <MappingFragment StoreEntitySet="userManage">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="trueName" ColumnName="trueName" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="userPass" ColumnName="userPass" />
+          <ScalarProperty Name="loginNum" ColumnName="loginNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WaiKeImg">
+      <EntityTypeMapping TypeName="OrderPrintModel.WaiKeImg">
+        <MappingFragment StoreEntitySet="WaiKeImg">
+          <ScalarProperty Name="imgId" ColumnName="imgId" />
+          <ScalarProperty Name="waiKeNo" ColumnName="waiKeNo" />
+          <ScalarProperty Name="waiKeImg1" ColumnName="waiKeImg" />
+          <ScalarProperty Name="isModify" ColumnName="isModify" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_NoWanChengOrder">
+      <EntityTypeMapping TypeName="OrderPrintModel.view_NoWanChengOrder">
+        <MappingFragment StoreEntitySet="view_NoWanChengOrder">
+          <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="proNum" ColumnName="proNum" />
+          <ScalarProperty Name="printSHDCount" ColumnName="printSHDCount" />
+          <ScalarProperty Name="planSendTime" ColumnName="planSendTime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="customerNo" ColumnName="customerNo" />
+          <ScalarProperty Name="SendCount" ColumnName="SendCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_OrderList">
+      <EntityTypeMapping TypeName="OrderPrintModel.view_OrderList">
+        <MappingFragment StoreEntitySet="view_OrderList">
+          <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="proNum" ColumnName="proNum" />
+          <ScalarProperty Name="ProPrice" ColumnName="ProPrice" />
+          <ScalarProperty Name="withWorkNo" ColumnName="withWorkNo" />
+          <ScalarProperty Name="printTime" ColumnName="printTime" />
+          <ScalarProperty Name="printType" ColumnName="printType" />
+          <ScalarProperty Name="printCount" ColumnName="printCount" />
+          <ScalarProperty Name="piHao" ColumnName="piHao" />
+          <ScalarProperty Name="planSendTime" ColumnName="planSendTime" />
+          <ScalarProperty Name="productAddress" ColumnName="productAddress" />
+          <ScalarProperty Name="printSGDTime" ColumnName="printSGDTime" />
+          <ScalarProperty Name="printSGDCount" ColumnName="printSGDCount" />
+          <ScalarProperty Name="printSGDJLTime" ColumnName="printSGDJLTime" />
+          <ScalarProperty Name="printSGDJLCount" ColumnName="printSGDJLCount" />
+          <ScalarProperty Name="printQLDTime" ColumnName="printQLDTime" />
+          <ScalarProperty Name="printQLDCount" ColumnName="printQLDCount" />
+          <ScalarProperty Name="printCCJYBGTime" ColumnName="printCCJYBGTime" />
+          <ScalarProperty Name="printCCJYBGCount" ColumnName="printCCJYBGCount" />
+          <ScalarProperty Name="printSHDTime" ColumnName="printSHDTime" />
+          <ScalarProperty Name="printSHDCount" ColumnName="printSHDCount" />
+          <ScalarProperty Name="printBZBQTime" ColumnName="printBZBQTime" />
+          <ScalarProperty Name="printBZBQCount" ColumnName="printBZBQCount" />
+          <ScalarProperty Name="printZYSXTime" ColumnName="printZYSXTime" />
+          <ScalarProperty Name="printZYSXCount" ColumnName="printZYSXCount" />
+          <ScalarProperty Name="printYYQRDTime" ColumnName="printYYQRDTime" />
+          <ScalarProperty Name="printYYQRDCount" ColumnName="printYYQRDCount" />
+          <ScalarProperty Name="sGDCount" ColumnName="sGDCount" />
+          <ScalarProperty Name="发货状态" ColumnName="发货状态" />
+          <ScalarProperty Name="customNum" ColumnName="customNum" />
+          <ScalarProperty Name="editTime" ColumnName="editTime" />
+          <ScalarProperty Name="sgdPrintCount" ColumnName="sgdPrintCount" />
+          <ScalarProperty Name="SendCount" ColumnName="SendCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_SendOrder">
+      <EntityTypeMapping TypeName="OrderPrintModel.view_SendOrder">
+        <MappingFragment StoreEntitySet="view_SendOrder">
+          <ScalarProperty Name="orderDetailId" ColumnName="orderDetailId" />
+          <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+          <ScalarProperty Name="proType" ColumnName="proType" />
+          <ScalarProperty Name="proNum" ColumnName="proNum" />
+          <ScalarProperty Name="ProPrice" ColumnName="ProPrice" />
+          <ScalarProperty Name="withWorkNo" ColumnName="withWorkNo" />
+          <ScalarProperty Name="printTime" ColumnName="printTime" />
+          <ScalarProperty Name="printType" ColumnName="printType" />
+          <ScalarProperty Name="printCount" ColumnName="printCount" />
+          <ScalarProperty Name="piHao" ColumnName="piHao" />
+          <ScalarProperty Name="planSendTime" ColumnName="planSendTime" />
+          <ScalarProperty Name="productAddress" ColumnName="productAddress" />
+          <ScalarProperty Name="printSGDTime" ColumnName="printSGDTime" />
+          <ScalarProperty Name="printSGDCount" ColumnName="printSGDCount" />
+          <ScalarProperty Name="printSGDJLTime" ColumnName="printSGDJLTime" />
+          <ScalarProperty Name="printSGDJLCount" ColumnName="printSGDJLCount" />
+          <ScalarProperty Name="printQLDTime" ColumnName="printQLDTime" />
+          <ScalarProperty Name="printQLDCount" ColumnName="printQLDCount" />
+          <ScalarProperty Name="printCCJYBGTime" ColumnName="printCCJYBGTime" />
+          <ScalarProperty Name="printCCJYBGCount" ColumnName="printCCJYBGCount" />
+          <ScalarProperty Name="printSHDTime" ColumnName="printSHDTime" />
+          <ScalarProperty Name="printSHDCount" ColumnName="printSHDCount" />
+          <ScalarProperty Name="printBZBQTime" ColumnName="printBZBQTime" />
+          <ScalarProperty Name="printBZBQCount" ColumnName="printBZBQCount" />
+          <ScalarProperty Name="printZYSXTime" ColumnName="printZYSXTime" />
+          <ScalarProperty Name="printZYSXCount" ColumnName="printZYSXCount" />
+          <ScalarProperty Name="printYYQRDTime" ColumnName="printYYQRDTime" />
+          <ScalarProperty Name="printYYQRDCount" ColumnName="printYYQRDCount" />
+          <ScalarProperty Name="sGDCount" ColumnName="sGDCount" />
+          <ScalarProperty Name="发货状态" ColumnName="发货状态" />
+          <ScalarProperty Name="customNum" ColumnName="customNum" />
+          <ScalarProperty Name="editTime" ColumnName="editTime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="customManager" ColumnName="customManager" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="paramContent" ColumnName="paramContent" />
+          <ScalarProperty Name="SendCount" ColumnName="SendCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

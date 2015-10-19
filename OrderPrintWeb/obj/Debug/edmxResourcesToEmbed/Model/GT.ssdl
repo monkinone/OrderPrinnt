@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GTModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="GTModelStoreContainer">
+    <EntitySet Name="BiaoShiImg" EntityType="GTModel.Store.BiaoShiImg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="customer" EntityType="GTModel.Store.customer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GuanJiaoZhenImg" EntityType="GTModel.Store.GuanJiaoZhenImg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GuiGeShu" EntityType="GTModel.Store.GuiGeShu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MattersNeedingAttention" EntityType="GTModel.Store.MattersNeedingAttention" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notice" EntityType="GTModel.Store.Notice" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="priceManage" EntityType="GTModel.Store.priceManage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PrintSGDCount" EntityType="GTModel.Store.PrintSGDCount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductParam" EntityType="GTModel.Store.ProductParam" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products" EntityType="GTModel.Store.products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="proOrders" EntityType="GTModel.Store.proOrders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="proOrdersDetail" EntityType="GTModel.Store.proOrdersDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SendDetail" EntityType="GTModel.Store.SendDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SGDRecord" EntityType="GTModel.Store.SGDRecord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="userManage" EntityType="GTModel.Store.userManage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WaiKeImg" EntityType="GTModel.Store.WaiKeImg" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="BiaoShiImg">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="biaoShiNo" Type="varchar" MaxLength="100" />
+    <Property Name="biaoShiImg" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="customerId" />
+    </Key>
+    <Property Name="customerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customerNo" Type="varchar" MaxLength="100" />
+    <Property Name="companyName" Type="varchar" MaxLength="100" />
+    <Property Name="contacts" Type="varchar" MaxLength="100" />
+    <Property Name="position" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="100" />
+    <Property Name="telPhone" Type="varchar" MaxLength="100" />
+    <Property Name="tax" Type="varchar" MaxLength="100" />
+    <Property Name="discount" Type="varchar" MaxLength="5000" />
+    <Property Name="InvoiceMethod" Type="varchar" MaxLength="100" />
+    <Property Name="backMethod" Type="varchar" MaxLength="100" />
+    <Property Name="isFanben" Type="int" />
+    <Property Name="companyAddress" Type="varchar" MaxLength="100" />
+    <Property Name="otherDangAn" Type="varchar" MaxLength="500" />
+    <Property Name="modifyPriceRecord" Type="varchar" MaxLength="500" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+    <Property Name="isShowPrice" Type="int" />
+    <Property Name="islock" Type="int" />
+    <Property Name="zhangHao" Type="varchar" MaxLength="100" />
+    <Property Name="shuiHao" Type="varchar" MaxLength="100" />
+    <Property Name="isAddInfo" Type="int" />
+  </EntityType>
+  <EntityType Name="GuanJiaoZhenImg">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="guanJiaoZhenNo" Type="varchar" MaxLength="100" />
+    <Property Name="guanJiaoZhenImg" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="GuiGeShu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fileUrl" Type="varchar" MaxLength="100" />
+    <Property Name="productNo" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MattersNeedingAttention">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customerNo" Type="varchar" MaxLength="50" />
+    <Property Name="contents" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="Notice">
+    <Key>
+      <PropertyRef Name="noticeId" />
+    </Key>
+    <Property Name="noticeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="varchar" MaxLength="50" />
+    <Property Name="contents" Type="text" />
+  </EntityType>
+  <EntityType Name="priceManage">
+    <Key>
+      <PropertyRef Name="priceId" />
+    </Key>
+    <Property Name="priceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customNo" Type="varchar" MaxLength="100" />
+    <Property Name="productNo" Type="varchar" MaxLength="100" />
+    <Property Name="price" Type="decimal" Scale="2" />
+  </EntityType>
+  <EntityType Name="PrintSGDCount">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="varchar" MaxLength="100" />
+    <Property Name="proType" Type="varchar" MaxLength="100" />
+    <Property Name="printCount" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductParam">
+    <Key>
+      <PropertyRef Name="paramId" />
+    </Key>
+    <Property Name="paramId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customNo" Type="varchar" MaxLength="100" />
+    <Property Name="productNo" Type="varchar" MaxLength="100" />
+    <Property Name="paramContent" Type="varchar" MaxLength="1000" />
+    <Property Name="isWriteFahuoInfo" Type="int" />
+    <Property Name="isWriteXianChang" Type="int" />
+    <Property Name="wuliaobian" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="productId" />
+    </Key>
+    <Property Name="productId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="productName" Type="varchar" MaxLength="5000" />
+    <Property Name="productNum" Type="varchar" MaxLength="5000" />
+    <Property Name="waiBZ" Type="int" />
+    <Property Name="NeiBZ" Type="varchar" MaxLength="5000" />
+    <Property Name="NeiBZDW" Type="varchar" MaxLength="5000" />
+    <Property Name="bian" Type="varchar" MaxLength="5000" />
+    <Property Name="jingDu" Type="varchar" MaxLength="5000" />
+    <Property Name="xianXingdu" Type="varchar" MaxLength="5000" />
+    <Property Name="eDingJC" Type="varchar" MaxLength="5000" />
+    <Property Name="tieXiCount" Type="int" />
+    <Property Name="guiGe" Type="varchar" MaxLength="5000" />
+    <Property Name="caiLiao" Type="varchar" MaxLength="5000" />
+    <Property Name="xingNeng" Type="varchar" MaxLength="5000" />
+    <Property Name="chuLiMethod" Type="varchar" MaxLength="5000" />
+    <Property Name="baoHeDian" Type="varchar" MaxLength="5000" />
+    <Property Name="xianQuanCount" Type="int" />
+    <Property Name="chujZaShu" Type="varchar" MaxLength="5000" />
+    <Property Name="chujXianJing" Type="varchar" MaxLength="5000" />
+    <Property Name="chujRaoXianZD" Type="varchar" MaxLength="5000" />
+    <Property Name="chujXianTouCD" Type="varchar" MaxLength="5000" />
+    <Property Name="chujXiantouCL" Type="varchar" MaxLength="5000" />
+    <Property Name="chujTongMD" Type="varchar" MaxLength="5000" />
+    <Property Name="cijZaShu" Type="varchar" MaxLength="5000" />
+    <Property Name="cijXianJing" Type="varchar" MaxLength="5000" />
+    <Property Name="cijRaoXianZD" Type="varchar" MaxLength="5000" />
+    <Property Name="cijXianTouCD" Type="varchar" MaxLength="5000" />
+    <Property Name="cijXianTouCL" Type="varchar" MaxLength="5000" />
+    <Property Name="cijTongMD" Type="varchar" MaxLength="5000" />
+    <Property Name="xqjcyqEquip" Type="varchar" MaxLength="5000" />
+    <Property Name="xqjcyqShuRuState" Type="varchar" MaxLength="5000" />
+    <Property Name="xqjcyqShuChuState" Type="varchar" MaxLength="5000" />
+    <Property Name="xqjcyqJiaoCha" Type="varchar" MaxLength="5000" />
+    <Property Name="xqjcyqFuZai" Type="varchar" MaxLength="5000" />
+    <Property Name="biaoShiNo" Type="varchar" MaxLength="5000" />
+    <Property Name="waiKeNo" Type="varchar" MaxLength="5000" />
+    <Property Name="waiKeCount" Type="int" />
+    <Property Name="yongJiaoCS" Type="varchar" MaxLength="5000" />
+    <Property Name="shuRu" Type="varchar" MaxLength="5000" />
+    <Property Name="shuChu" Type="varchar" MaxLength="5000" />
+    <Property Name="biaoShiAddress" Type="varchar" MaxLength="5000" />
+    <Property Name="chajianNo" Type="varchar" MaxLength="5000" />
+    <Property Name="chajianCount" Type="int" />
+    <Property Name="waiXingTZ" Type="varchar" MaxLength="5000" />
+    <Property Name="cpjccsEquip" Type="varchar" MaxLength="5000" />
+    <Property Name="cpjccsShuRuState" Type="varchar" MaxLength="5000" />
+    <Property Name="cpjccsShuChuState" Type="varchar" MaxLength="5000" />
+    <Property Name="CpjccsJiaoChaBH" Type="varchar" MaxLength="5000" />
+    <Property Name="cpjccsFuZai" Type="varchar" MaxLength="5000" />
+    <Property Name="cpjccsNaiYa" Type="varchar" MaxLength="5000" />
+    <Property Name="cpjccsTongMD" Type="varchar" MaxLength="5000" />
+    <Property Name="guanJiaoZhenLX" Type="varchar" MaxLength="5000" />
+    <Property Name="guanJIaoZhenLXCount" Type="int" />
+    <Property Name="guanJiaoZhenLXTOW" Type="varchar" MaxLength="5000" />
+    <Property Name="guanJiaoZhenLXTOWCount" Type="int" />
+    <Property Name="shuRuXC" Type="varchar" MaxLength="5000" />
+    <Property Name="shuChuXC" Type="varchar" MaxLength="5000" />
+    <Property Name="peiXianSR" Type="varchar" MaxLength="5000" />
+    <Property Name="peiXianSRCount" Type="decimal" Scale="2" />
+    <Property Name="peiXianSC" Type="varchar" MaxLength="5000" />
+    <Property Name="peiXianSCCount" Type="decimal" Scale="2" />
+    <Property Name="remark" Type="text" />
+    <Property Name="isModifyTZ" Type="int" />
+    <Property Name="biaoShiPicture" Type="varchar" MaxLength="500" />
+    <Property Name="isModifyWaikeNo" Type="int" />
+    <Property Name="gongyiZYSX" Type="varchar" MaxLength="5000" />
+    <Property Name="baoZhuangHeGG" Type="varchar" MaxLength="5000" />
+    <Property Name="baoZhuangXiangGG" Type="varchar" MaxLength="5000" />
+    <Property Name="baoHeDianTestTJ" Type="varchar" MaxLength="5000" />
+    <Property Name="guJia" Type="varchar" MaxLength="5000" />
+    <Property Name="tongPai" Type="varchar" MaxLength="5000" />
+    <Property Name="ciHuan" Type="varchar" MaxLength="5000" />
+    <Property Name="duanZi" Type="varchar" MaxLength="5000" />
+    <Property Name="xianLuBan" Type="varchar" MaxLength="5000" />
+    <Property Name="jiaoPian" Type="varchar" MaxLength="5000" />
+    <Property Name="pingBi" Type="varchar" MaxLength="5000" />
+    <Property Name="wenYaGuan" Type="varchar" MaxLength="5000" />
+    <Property Name="dianZu" Type="varchar" MaxLength="5000" />
+    <Property Name="luoSi" Type="varchar" MaxLength="5000" />
+    <Property Name="reSuoTaoGuan" Type="varchar" MaxLength="5000" />
+    <Property Name="anZhuangPJ" Type="varchar" MaxLength="5000" />
+    <Property Name="yuanQiJian1" Type="varchar" MaxLength="5000" />
+    <Property Name="yuanQiJian2" Type="varchar" MaxLength="5000" />
+    <Property Name="yuanQiJian3" Type="varchar" MaxLength="5000" />
+    <Property Name="yuanQiJian4" Type="varchar" MaxLength="5000" />
+    <Property Name="gujiaCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="gujiaCount" Type="int" />
+    <Property Name="tongpaiCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="tongpaoCount" Type="int" />
+    <Property Name="cihuanCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="cihuanCount" Type="int" />
+    <Property Name="duanziCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="duanziCount" Type="int" />
+    <Property Name="xianlubanCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="xianlubanCount" Type="int" />
+    <Property Name="jiaopianCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="jiaopianCount" Type="int" />
+    <Property Name="pingbiCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="pingbiCount" Type="int" />
+    <Property Name="wenyaguanCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="wenyaguanCount" Type="int" />
+    <Property Name="dianzuCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="dianzuCount" Type="int" />
+    <Property Name="luosiCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="luosiCount" Type="int" />
+    <Property Name="resuotaoguanCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="resuotaoguanCount" Type="int" />
+    <Property Name="anzhuangPJCanshu" Type="varchar" MaxLength="5000" />
+    <Property Name="anzhuangPJCount" Type="int" />
+    <Property Name="yuanqijian1Canshu" Type="varchar" MaxLength="5000" />
+    <Property Name="Yuanqijian1Count" Type="int" />
+    <Property Name="Yuanqijian2Canshu" Type="varchar" MaxLength="5000" />
+    <Property Name="Yuanqijian2Count" Type="int" />
+    <Property Name="Yuanqijian3Canshu" Type="varchar" MaxLength="5000" />
+    <Property Name="Yuanqijian3Count" Type="int" />
+    <Property Name="Yuanqijian4Canshu" Type="varchar" MaxLength="5000" />
+    <Property Name="Yuanqijian4Count" Type="int" />
+  </EntityType>
+  <EntityType Name="proOrders">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="varchar" MaxLength="100" />
+    <Property Name="customNum" Type="varchar" MaxLength="100" />
+    <Property Name="heTongNum" Type="varchar" MaxLength="100" />
+    <Property Name="customOrderNum" Type="varchar" MaxLength="100" />
+    <Property Name="customWLBH" Type="varchar" MaxLength="100" />
+    <Property Name="customManager" Type="varchar" MaxLength="100" />
+    <Property Name="remark" Type="text" />
+    <Property Name="editTime" Type="datetime" />
+    <Property Name="updateTime" Type="datetime" />
+    <Property Name="yikaipiaoMoney" Type="decimal" Scale="2" />
+    <Property Name="yijiekuanMoney" Type="decimal" Scale="2" />
+    <Property Name="faPiaoDanhao" Type="varchar" MaxLength="100" />
+    <Property Name="chengShuiHao" Type="varchar" MaxLength="100" />
+    <Property Name="Remark1" Type="text" />
+    <Property Name="editUser" Type="int" />
+    <Property Name="isTiXing" Type="int" />
+    <Property Name="shuRuXianchang" Type="varchar" MaxLength="100" />
+    <Property Name="shuChuXianchang" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="proOrdersDetail">
+    <Key>
+      <PropertyRef Name="orderDetailId" />
+    </Key>
+    <Property Name="orderDetailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="varchar" MaxLength="100" />
+    <Property Name="proType" Type="varchar" MaxLength="100" />
+    <Property Name="proNum" Type="int" />
+    <Property Name="ProPrice" Type="decimal" Scale="2" />
+    <Property Name="withWorkNo" Type="varchar" MaxLength="50" />
+    <Property Name="printTime" Type="datetime" />
+    <Property Name="printType" Type="varchar" MaxLength="50" />
+    <Property Name="printCount" Type="int" />
+    <Property Name="piHao" Type="varchar" MaxLength="50" />
+    <Property Name="planSendTime" Type="datetime" />
+    <Property Name="productAddress" Type="varchar" MaxLength="100" />
+    <Property Name="printSGDTime" Type="datetime" />
+    <Property Name="printSGDCount" Type="int" />
+    <Property Name="printSGDJLTime" Type="datetime" />
+    <Property Name="printSGDJLCount" Type="int" />
+    <Property Name="printQLDTime" Type="datetime" />
+    <Property Name="printQLDCount" Type="int" />
+    <Property Name="printCCJYBGTime" Type="datetime" />
+    <Property Name="printCCJYBGCount" Type="int" />
+    <Property Name="printSHDTime" Type="datetime" />
+    <Property Name="printSHDCount" Type="int" />
+    <Property Name="printBZBQTime" Type="datetime" />
+    <Property Name="printBZBQCount" Type="int" />
+    <Property Name="printZYSXTime" Type="datetime" />
+    <Property Name="printZYSXCount" Type="int" />
+    <Property Name="printYYQRDTime" Type="datetime" />
+    <Property Name="printYYQRDCount" Type="int" />
+    <Property Name="sGDCount" Type="int" />
+  </EntityType>
+  <EntityType Name="SendDetail">
+    <Key>
+      <PropertyRef Name="sendId" />
+    </Key>
+    <Property Name="sendId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="varchar" MaxLength="100" />
+    <Property Name="proType" Type="varchar" MaxLength="100" />
+    <Property Name="sendProNum" Type="int" />
+    <Property Name="UnitPrice" Type="decimal" Scale="2" />
+    <Property Name="sendTime" Type="datetime" />
+    <Property Name="packingDetail" Type="varchar" MaxLength="200" />
+    <Property Name="packingCount" Type="int" />
+    <Property Name="packingCompanyName" Type="varchar" MaxLength="5000" />
+    <Property Name="sendNum" Type="varchar" MaxLength="5000" />
+    <Property Name="remark" Type="text" />
+    <Property Name="suiGongDanNum" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SGDRecord">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="varchar" MaxLength="500" />
+    <Property Name="customerNum" Type="varchar" MaxLength="500" />
+    <Property Name="proType" Type="varchar" MaxLength="500" />
+    <Property Name="suigongdan" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="userManage">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="trueName" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="userType" Type="int" />
+    <Property Name="userPass" Type="varchar" MaxLength="100" />
+    <Property Name="loginNum" Type="int" />
+  </EntityType>
+  <EntityType Name="WaiKeImg">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="waiKeNo" Type="varchar" MaxLength="100" />
+    <Property Name="waiKeImg" Type="varchar" MaxLength="100" />
+    <Property Name="isModify" Type="int" />
+  </EntityType>
+</Schema>

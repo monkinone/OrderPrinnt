@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OrderPrintModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="BiaoShiImg">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="biaoShiNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="biaoShiImg1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="customerId" />
+    </Key>
+    <Property Name="customerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customerNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="companyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contacts" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tax" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="discount" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceMethod" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="backMethod" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isFanben" Type="Int32" />
+    <Property Name="companyAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="otherDangAn" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="modifyPriceRecord" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="isShowPrice" Type="Int32" />
+    <Property Name="islock" Type="Int32" />
+    <Property Name="zhangHao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="shuiHao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isAddInfo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GuanJiaoZhenImg">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="guanJiaoZhenNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="guanJiaoZhenImg1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GuiGeShu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fileUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="productNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MattersNeedingAttention">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contents" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Notice">
+    <Key>
+      <PropertyRef Name="noticeId" />
+    </Key>
+    <Property Name="noticeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="priceManage">
+    <Key>
+      <PropertyRef Name="priceId" />
+    </Key>
+    <Property Name="priceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="productNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="5" />
+  </EntityType>
+  <EntityType Name="PrintSGDCount">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="proType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="printCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProductParam">
+    <Key>
+      <PropertyRef Name="paramId" />
+    </Key>
+    <Property Name="paramId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="productNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="paramContent" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="isWriteFahuoInfo" Type="Int32" />
+    <Property Name="isWriteXianChang" Type="Int32" />
+    <Property Name="wuliaobian" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="productId" />
+    </Key>
+    <Property Name="productId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productName" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="productNum" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="waiBZ" Type="Int32" />
+    <Property Name="NeiBZ" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="NeiBZDW" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="bian" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="jingDu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xianXingdu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="eDingJC" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="tieXiCount" Type="Int32" />
+    <Property Name="guiGe" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="caiLiao" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xingNeng" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="chuLiMethod" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="baoHeDian" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xianQuanCount" Type="Int32" />
+    <Property Name="chujZaShu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="chujXianJing" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="chujRaoXianZD" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="chujXianTouCD" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="chujXiantouCL" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="chujTongMD" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cijZaShu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cijXianJing" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cijRaoXianZD" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cijXianTouCD" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cijXianTouCL" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cijTongMD" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xqjcyqEquip" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xqjcyqShuRuState" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xqjcyqShuChuState" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xqjcyqJiaoCha" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xqjcyqFuZai" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="biaoShiNo" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="waiKeNo" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="waiKeCount" Type="Int32" />
+    <Property Name="yongJiaoCS" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="shuRu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="shuChu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="biaoShiAddress" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="chajianNo" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="chajianCount" Type="Int32" />
+    <Property Name="waiXingTZ" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cpjccsEquip" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cpjccsShuRuState" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cpjccsShuChuState" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="CpjccsJiaoChaBH" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cpjccsFuZai" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cpjccsNaiYa" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cpjccsTongMD" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="guanJiaoZhenLX" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="guanJIaoZhenLXCount" Type="Int32" />
+    <Property Name="guanJiaoZhenLXTOW" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="guanJiaoZhenLXTOWCount" Type="Int32" />
+    <Property Name="shuRuXC" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="shuChuXC" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="peiXianSR" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="peiXianSRCount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="peiXianSC" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="peiXianSCCount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isModifyTZ" Type="Int32" />
+    <Property Name="biaoShiPicture" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="isModifyWaikeNo" Type="Int32" />
+    <Property Name="gongyiZYSX" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="baoZhuangHeGG" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="baoZhuangXiangGG" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="baoHeDianTestTJ" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="guJia" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="tongPai" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="ciHuan" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="duanZi" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xianLuBan" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="jiaoPian" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="pingBi" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="wenYaGuan" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="dianZu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="luoSi" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="reSuoTaoGuan" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="anZhuangPJ" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="yuanQiJian1" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="yuanQiJian2" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="yuanQiJian3" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="yuanQiJian4" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="gujiaCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="gujiaCount" Type="Double" />
+    <Property Name="tongpaiCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="tongpaoCount" Type="Double" />
+    <Property Name="cihuanCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="cihuanCount" Type="Double" />
+    <Property Name="duanziCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="duanziCount" Type="Double" />
+    <Property Name="xianlubanCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="xianlubanCount" Type="Double" />
+    <Property Name="jiaopianCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="jiaopianCount" Type="Double" />
+    <Property Name="pingbiCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="pingbiCount" Type="Double" />
+    <Property Name="wenyaguanCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="wenyaguanCount" Type="Double" />
+    <Property Name="dianzuCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="dianzuCount" Type="Double" />
+    <Property Name="luosiCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="luosiCount" Type="Double" />
+    <Property Name="resuotaoguanCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="resuotaoguanCount" Type="Double" />
+    <Property Name="anzhuangPJCanshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="anzhuangPJCount" Type="Double" />
+    <Property Name="yuanqijian1Canshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Yuanqijian1Count" Type="Double" />
+    <Property Name="Yuanqijian2Canshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Yuanqijian2Count" Type="Double" />
+    <Property Name="Yuanqijian3Canshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Yuanqijian3Count" Type="Double" />
+    <Property Name="Yuanqijian4Canshu" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Yuanqijian4Count" Type="Double" />
+  </EntityType>
+  <EntityType Name="proOrders">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="customNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="heTongNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="customOrderNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="customWLBH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="customManager" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="editTime" Type="DateTime" Precision="3" />
+    <Property Name="updateTime" Type="DateTime" Precision="3" />
+    <Property Name="yikaipiaoMoney" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="yijiekuanMoney" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="faPiaoDanhao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="chengShuiHao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Remark1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="editUser" Type="Int32" />
+    <Property Name="isTiXing" Type="Int32" />
+    <Property Name="shuRuXianchang" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="shuChuXianchang" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="发货状态" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="proOrdersDetail">
+    <Key>
+      <PropertyRef Name="orderDetailId" />
+    </Key>
+    <Property Name="orderDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="proType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="proNum" Type="Int32" />
+    <Property Name="ProPrice" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="withWorkNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="printTime" Type="DateTime" Precision="3" />
+    <Property Name="printType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="printCount" Type="Int32" />
+    <Property Name="piHao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="planSendTime" Type="DateTime" Precision="3" />
+    <Property Name="productAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="printSGDTime" Type="DateTime" Precision="3" />
+    <Property Name="printSGDCount" Type="Int32" />
+    <Property Name="printSGDJLTime" Type="DateTime" Precision="3" />
+    <Property Name="printSGDJLCount" Type="Int32" />
+    <Property Name="printQLDTime" Type="DateTime" Precision="3" />
+    <Property Name="printQLDCount" Type="Int32" />
+    <Property Name="printCCJYBGTime" Type="DateTime" Precision="3" />
+    <Property Name="printCCJYBGCount" Type="Int32" />
+    <Property Name="printSHDTime" Type="DateTime" Precision="3" />
+    <Property Name="printSHDCount" Type="Int32" />
+    <Property Name="printBZBQTime" Type="DateTime" Precision="3" />
+    <Property Name="printBZBQCount" Type="Int32" />
+    <Property Name="printZYSXTime" Type="DateTime" Precision="3" />
+    <Property Name="printZYSXCount" Type="Int32" />
+    <Property Name="printYYQRDTime" Type="DateTime" Precision="3" />
+    <Property Name="printYYQRDCount" Type="Int32" />
+    <Property Name="sGDCount" Type="Int32" />
+    <Property Name="发货状态" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SendDetail">
+    <Key>
+      <PropertyRef Name="sendId" />
+    </Key>
+    <Property Name="sendId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="proType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sendProNum" Type="Int32" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="sendTime" Type="DateTime" Precision="3" />
+    <Property Name="packingDetail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="packingCount" Type="Int32" />
+    <Property Name="packingCompanyName" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="sendNum" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="suiGongDanNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PrintCompanyName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SGDRecord">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderNum" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="customerNum" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="proType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="suigongdan" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PrintCount" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="userManage">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trueName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userType" Type="Int32" />
+    <Property Name="userPass" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="loginNum" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WaiKeImg">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="waiKeNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="waiKeImg1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isModify" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="OrderPrintEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BiaoShiImg" EntityType="Self.BiaoShiImg" />
+    <EntitySet Name="customer" EntityType="Self.customer" />
+    <EntitySet Name="GuanJiaoZhenImg" EntityType="Self.GuanJiaoZhenImg" />
+    <EntitySet Name="GuiGeShu" EntityType="Self.GuiGeShu" />
+    <EntitySet Name="MattersNeedingAttention" EntityType="Self.MattersNeedingAttention" />
+    <EntitySet Name="Notice" EntityType="Self.Notice" />
+    <EntitySet Name="priceManage" EntityType="Self.priceManage" />
+    <EntitySet Name="PrintSGDCount" EntityType="Self.PrintSGDCount" />
+    <EntitySet Name="ProductParam" EntityType="Self.ProductParam" />
+    <EntitySet Name="products" EntityType="Self.products" />
+    <EntitySet Name="proOrders" EntityType="Self.proOrders" />
+    <EntitySet Name="proOrdersDetail" EntityType="Self.proOrdersDetail" />
+    <EntitySet Name="SendDetail" EntityType="Self.SendDetail" />
+    <EntitySet Name="SGDRecord" EntityType="Self.SGDRecord" />
+    <EntitySet Name="userManage" EntityType="Self.userManage" />
+    <EntitySet Name="WaiKeImg" EntityType="Self.WaiKeImg" />
+  </EntityContainer>
+</Schema>

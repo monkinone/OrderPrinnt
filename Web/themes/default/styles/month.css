@@ -1,0 +1,103 @@
+﻿*{margin:0; padding:0;}
+.btn
+{
+    cursor: pointer;
+}
+
+.month_content
+{
+    width:97%;
+    margin:8px auto;
+}
+.month_title
+{
+    float:left;
+    width:99%;
+}
+.month_title p
+{
+    font:36px "微软雅黑" , "黑体" , "宋体";
+    color:#004DA1;
+    float:left; 
+}
+.month_p
+{
+    font:24px "微软雅黑" , "黑体" , "宋体";
+    color:#004DA1;
+   float:left; 
+}
+.month_btn
+{
+    float:right;
+}
+.month_btn img
+{
+    padding:0 10px;
+}
+.month
+{
+    float:left;
+    width:100%;
+    margin:1px 0;
+}
+.Mon_word , .Tue_word , .Wed_word , .Thur_word , .Fri_word , .Sat_word , .Sun_word
+{
+    float:left;
+    width:13.9%;
+    margin-right:2px;
+    color:#222222;
+    font:14px "微软雅黑" , "黑体" , "宋体";
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.Mon_word p , .Tue_word p , .Wed_word p , .Thur_word p , .Fri_word p , .Sat_word p , .Sun_word p
+{
+    margin-left:10px;
+}
+.Mon , .Tue , .Wed , .Thur , .Fri , .Sat , .Sun
+{
+    float:left;
+    width:13.9%;
+    height:92px;
+    margin-right:2px;
+    color:#004DA1;
+    font:14px "微软雅黑" , "黑体" , "宋体";
+    padding-top:10px;
+    padding-bottom:10px;
+    background:#EFEFEF;
+    cursor:pointer;
+}
+.Mon p , .Tue p , .Wed p , .Thur p , .Fri p , .Sat p , .Sun p
+{
+    float:left;
+    font-size:18px;
+    margin-left:10px;
+}
+.Mon span , .Tue span , .Wed span , .Thur span , .Fri span , .Sat span , .Sun span
+{
+    font-size:12px;
+    float:right;
+    margin-right:10px;
+    margin-top:3px;
+}
+.tips
+{
+    float:left;
+    width:100%;
+    height:42px;
+    background:#007ED6;
+    margin-top:20px;
+    color:#fff;
+    text-align:center;
+    line-height:42px;
+    font-size:12px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.tips strong
+{
+    font:18px "微软雅黑";
+    font-weight:normal;
+    margin-left:10px;     
+}

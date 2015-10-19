@@ -1,0 +1,3 @@
+H:\OrderPrint\Common\bin\DCQWBOA.W8.Common.dll
+H:\OrderPrint\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
+H:\OrderPrint\Common\obj\Release\DCQWBOA.W8.Common.dll

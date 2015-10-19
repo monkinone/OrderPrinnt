@@ -1,0 +1,355 @@
+﻿body
+{
+    margin: 0 auto;
+    padding: 0 auto;
+    overflow: hidden;
+}
+/*WindowControl区域*/
+.wincontrol
+{
+    width: 300px;
+    float: right;
+    text-align: right;
+    background: #007ed6;
+    color: White;
+}
+.wincontrol .item
+{
+    float: left;
+}
+.wincontrol .btn
+{
+    margin: 6px 16px 0 0;
+    cursor: pointer;
+}
+
+
+
+/*TabBar区域*/
+.tab
+{
+    width: 100%;
+    height: 52px;
+    background: #007ed6;
+}
+.tab ul
+{
+    padding: 0;
+    margin: 0;
+}
+.tab ul li.item
+{
+    cursor: pointer;
+    float: left;
+    display: block;
+    padding: 0 20px 0 20px;
+    font: normal 30px/52px "微软雅黑" , "黑体" , "宋体";
+    color: White;
+    height: 52px;
+    text-decoration: none;
+    background: #007ed6;
+    width: auto;
+}
+.tab ul li.item:hover
+{
+    background: #1eb9ee;
+}
+.tab ul li.item .close
+{
+    float: left;
+    margin-left: 10px;
+}
+
+.tab ul li.current
+{
+    float: left;
+    display: block;
+    padding: 0 20px 0 20px;
+    font: normal 30px/52px "微软雅黑" , "黑体" , "宋体";
+    color: White;
+    height: 52px;
+    background: #1eb9ee;
+}
+.tab ul li.current:hover
+{
+    background: #1eb9ee;
+}
+
+/*MainArea区域*/
+.m
+{
+    width: 100%;
+    background: white url(../images/main_ass_bg.png) no-repeat bottom left;
+    overflow: hidden;
+}
+.m iframe
+{
+    border: 0;
+    display: none;
+}
+.m iframe.current
+{
+    display: block;
+}
+
+.data-template
+{
+    display: none;
+}
+
+.selectarea
+{
+    width: 320px;
+    background: #eee;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.settingarea
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.selectarea .title, .settingarea .title
+{
+    width: 100%;
+    text-indent: 20px;
+    font: normal 24px/32px "微软雅黑" , "黑体" , "宋体";
+}
+.name
+{  font: normal 24px/32px "微软雅黑" , "黑体" , "宋体";}
+.selectarea .btn
+{
+    cursor: pointer;
+    font-family: "微软雅黑" , "黑体" , "宋体";
+    margin: 18px 0 0 18px;
+    float: left;
+    overflow: hidden;
+}
+.darkblue
+{
+    background: #004ea2;
+    color: White;
+}
+.darkblue:hover
+{
+    background: #146cca;
+    color: White;
+}
+.lightblue
+{
+    background: #1eb9ee;
+    color: White;
+}
+.lightblue:hover
+{
+    background: #00beff;
+    color: White;
+}
+.skyblue
+{
+    background: #007ed6;
+    color: White;
+}
+.darkgreen
+{
+    background: #009944;
+    color: White;
+}
+.darkgreen:hover
+{
+    background: #0dbc5b;
+    color: White;
+}
+.darkred
+{
+    background: #b71a35;
+    color: White;
+}
+.lightgreen
+{
+    background: #6eb92b;
+    color: White;
+}
+.lightgreen:hover
+{
+    background: #71cf1c;
+    color: White;
+}
+.orange
+{
+    background: #f39800;
+    color: White;
+}
+.orange:hover
+{
+    background: #faaa25;
+    color: White;
+}
+.lightred
+{
+    background: #eb6100;
+    color: White;
+}
+.lightred:hover
+{
+    background: #ff7f25;
+    color: White;
+}
+
+.grayblue
+{
+    background: #e6f3fd;
+    color: White;
+}
+
+.selectarea .s
+{
+    width: 126px;
+    height: 125px;
+}
+.selectarea .s .icon
+{
+    margin: 10px 0 2px 0;
+    text-align: center;
+}
+.selectarea .s .date .date
+{
+    font-size: 72px;
+    line-height: 62px;
+    text-align: center;
+}
+.selectarea .s .date .week
+{
+    font-size: 24px;
+    text-align: center;
+}
+
+.selectarea .s .funcname
+{
+    font-size: 20px;
+    text-align: center;
+}
+.selectarea a.link
+{
+    font: normal 18px/46px "微软雅黑" , "黑体" , "宋体";
+    display: block;
+    text-decoration: none;
+    color: #004ea2;
+    height: 46px;
+    margin-top: 1px;
+    padding-left: 40px;
+}
+.selectarea a.link:hover
+{
+    background: #007ed6;
+    color: White;
+}
+.selectarea a.current
+{
+    background: #004ea2;
+    color: White;
+}
+.selectarea a.current:hover
+{
+    background: #004ea2;
+    color: White;
+}
+
+.selectarea a.link:hover
+{
+    background: #007ed6;
+    color: White;
+}
+
+.settingarea .optarea
+{
+    float: right;
+    padding: 6px 18px;
+}
+
+.settingarea .optarea .btn
+{
+    cursor: pointer;
+}
+.settingarea .byorg, .settingarea .bydate
+{
+    width: 100%;
+}
+.settingarea .byorg .title, .settingarea .bydate .title
+{
+    width: 100%;
+    font: normal 18px/32px "微软雅黑" , "黑体" , "宋体";
+}
+.settingarea .byorg .list, .settingarea .bydate .list
+{
+    padding: 0 20px;
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+.settingarea .byorg .list .item, .settingarea .bydate .list .item
+{
+    float: left;
+    height: 32px;
+    font: normal 18px/32px "微软雅黑" , "黑体" , "宋体";
+    padding: 0 10px;
+    background: #eee;
+    margin: 6px 6px 0 0;
+    width: 146px;
+    cursor: pointer;
+    color: #004ea2;
+}
+.settingarea .bydate .list .item
+{
+    color: #009944;
+}
+.settingarea .byorg .list .current
+{
+    background: #004ea2;
+    color: White;
+}
+.settingarea .bydate .list .current
+{
+    background: #009944;
+    color: White;
+}
+.settingarea .splitor
+{
+    height: 10px;
+    margin: 0 10px;
+    border-bottom: 1px dashed #004ea2;
+}
+.settingarea .forminfo td
+{
+    padding: 2px;
+}
+.settingarea .forminfo .title
+{
+    font: normal 16px/32px "微软雅黑" , "黑体" , "宋体";
+    text-align: right;
+    vertical-align: top;
+    width: 30%;
+}
+.settingarea .forminfo .info
+{
+    font: normal 16px/32px "微软雅黑" , "黑体" , "宋体";
+    text-align: left;
+    vertical-align: top;
+}
+
+.settingarea .forminfo .info .tbox
+{
+    border: #004ea2 1px solid;
+    height: 30px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    color: #454545;
+}

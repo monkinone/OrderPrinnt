@@ -1,0 +1,99 @@
+﻿html
+{
+    overflow: hidden;
+}
+body
+{
+    background: #004ea2;
+}
+.loginarea
+{
+    position: absolute;
+    top: 23%;
+    width: 100%;
+    text-align: center;
+    background: white;
+}
+/*TopArea区域*/
+.t
+{
+    background: none;
+    margin: 20px auto 0;
+    text-align: center;
+}
+.t .appname
+{
+    width: auto;
+    background: none;
+    padding-top: 6px;
+}
+
+.t .logo
+{
+    margin: 10px 0 0 120px;
+}
+
+.login
+{
+    margin-top: 20px;
+    width: 100%;
+    background: #1eb9ee;
+}
+.login .title1
+{
+    width: 30%;
+    text-align: right;
+    font: bold 34px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: top;
+    color: #fff;
+    padding: 20px 20px;
+    background: #009944;
+}
+.login .title2
+{
+    font: bold 14px "微软雅黑" , "黑体" , "宋体";
+    vertical-align: top;
+    color: #004ea2;
+    padding: 0 10px;
+}
+.login .username
+{
+    text-align: left;
+    padding-top: 20px;
+}
+.login .password
+{
+    padding-top: 20px;
+    text-align: right;
+}
+.login .tbox
+{
+    padding: 4px;
+}
+.login .tbox input
+{
+    width: 100%;
+    border: #004ea2 1px solid;
+    height: 30px;
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    color: #454545;
+}
+.login .btn
+{
+    width: 30%;
+    text-align: left;
+    padding: 0 20px;
+}
+.login .msg
+{
+    font: normal 18px/28px "微软雅黑" , "黑体" , "宋体";
+    color: #b71a35;
+}
+.login .copy
+{
+    text-align: center;
+    padding: 2px 20px;
+    background: #004ea2;
+    color: White;
+    font: normal 12px/28px "微软雅黑" , "黑体" , "宋体";
+}

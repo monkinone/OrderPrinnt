@@ -429,7 +429,7 @@
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="OrderID" Type="varchar" MaxLength="50" />
-          <Property Name="ItemCount" Type="int" />
+          <Property Name="isFinished" Type="int" />
           <Property Name="AddBy" Type="varchar" MaxLength="50" />
           <Property Name="AddTime" Type="datetime" />
           <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
@@ -1204,7 +1204,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OrderID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="ItemCount" Type="Int32" />
+          <Property Name="isFinished" Type="Int32" />
           <Property Name="AddBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="AddTime" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -1948,7 +1948,7 @@
               <MappingFragment StoreEntitySet="domain_PurchaseOrders">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="ItemCount" ColumnName="ItemCount" />
+                <ScalarProperty Name="isFinished" ColumnName="isFinished" />
                 <ScalarProperty Name="AddBy" ColumnName="AddBy" />
                 <ScalarProperty Name="AddTime" ColumnName="AddTime" />
                 <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />

@@ -3,15 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Web.Service;
+using Web.Model;
 
 namespace Web.Service.BaseDataService_2
 {
     /// <summary>
-    /// PurchaseOrdersManager 的摘要说明
+    /// Handler1 的摘要说明
     /// </summary>
-    public class PurchaseOrdersManager : BaseService
+    public class Handler1 : BaseService
     {
-
         public override void ProcessRequest(HttpContext context)
         {
             base.ProcessRequest(context);
@@ -66,7 +67,8 @@ namespace Web.Service.BaseDataService_2
             {
                 OrderID = OrderID,
                 AddBy = UserInfo.UserName,
-                AddTime = DateTime.Now
+                AddTime = DateTime.Now,
+                isFinished = 0//未生成合同
             };
             db.domain_PurchaseOrders.Add(porder);
             string Items = context.Request["Items"] + "";
@@ -110,16 +112,38 @@ where Status=0  ";
         {
             int pageSize = NCore.DataConvert.ToInt(context.Request["rows"] + "", 10);
             int pageIndex = NCore.DataConvert.ToInt(context.Request["page"] + "", 1);
+            string OrderID = context.Request["OrderID"] + "";
+            string isFinished = context.Request["isFinished"];
+            string startTime = context.Request["startTime"] + "";
+            string endTime = context.Request["endTime"] + "";
             int total;////总条数
 
             //var list = db.domain_PurchaseOrders.Where(w => w.isFinished == 0);
             var list = db.domain_PurchaseOrders.OrderByDescending(o => o.ID).ToList().Select(s => new
             {
                 s.OrderID,
-                //s.isFinished,
+                s.isFinished,
                 s.AddBy,
-                AddTime =s.AddTime==null?"": DateTime.Parse(s.AddTime.ToString()).ToString("yyyy-mm-dd hh:mm:ss")              
+                AddTime = s.AddTime == null ? "" : DateTime.Parse(s.AddTime.ToString()).ToString("yyyy-mm-dd hh:mm:ss")
             });
+
+            if (!string.IsNullOrEmpty(OrderID))
+            {
+                list = list.Where(w => w.OrderID.Contains(OrderID));
+            }
+
+            if (!string.IsNullOrEmpty(isFinished))
+            {
+                list = list.Where(w => w.isFinished == Convert.ToInt32(isFinished));
+            }
+            if (!string.IsNullOrEmpty(startTime))
+            {
+                list = list.Where(w => Convert.ToDateTime(w.AddTime) >= Convert.ToDateTime(startTime));
+            }
+            if (!string.IsNullOrEmpty(endTime))
+            {
+                list = list.Where(w => Convert.ToDateTime(w.AddTime) <= Convert.ToDateTime(endTime));
+            }
             total = list.Count();
             list = list.Skip((pageIndex - 1) * pageSize).Take(pageSize);
             var obk = new { total = total, rows = list };
@@ -135,7 +159,6 @@ where Status=0  ";
                 return false;
             }
         }
-
 
         //物料信息类
         public class base_Material_View

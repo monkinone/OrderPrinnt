@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="PurchaseOrdersManager.ashx.cs" Class="Web.Service.BaseDataService_2.PurchaseOrdersManager" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="PurchaseOrdersManager.ashx.cs" Class="Web.Service.BaseDataService_2.Handler1" %>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Web.Service;
+using Web.Model;
 
 namespace Web.BaseDataUI_2
 {
@@ -68,8 +69,9 @@ namespace Web.BaseDataUI_2
         private void getOrderList(HttpContext context)
         {
             string orderid = context.Request["orderid"];//采购订单编号
-            string sql = @"select * from domain_PurchaseOrdersItem where ModelNumber+CategoryName not in (
-                            select ModelNumber+CategoryName from domain_PurchaseContractItem where OrderID='" + orderid + "')";
+            string sql = @"select * from domain_PurchaseOrdersItem where OrderID='" + orderid +
+           @"' and ModelNumber+CategoryName not in (select ModelNumber+CategoryName 
+    from domain_PurchaseContractItem where OrderID='" + orderid + "')";
             var list = db.Database.SqlQuery<Model.domain_PurchaseOrdersItem>(sql);
             int total = list.Count();
             var obk = new { total = total, rows = list };
@@ -115,12 +117,17 @@ namespace Web.BaseDataUI_2
                     };
                     //采购订单详情数量
                     int cgitem = db.domain_PurchaseOrdersItem.Where(w => w.OrderID == OrderID).Count();
-                    //int htfinish = db.domain_PurchaseContractItem.Where(w => w.OrderID == OrderID).Count();
-                    //if (htfinish + ItemCount >= cgitem)
-                    //{
-                    //    Model.domain_PurchaseOrders order = db.domain_PurchaseOrders.Where(w => w.OrderID == OrderID).FirstOrDefault();
-                    //    order.isFinished = 0;
-                    //}
+                    int htfinish = db.domain_PurchaseContractItem.Where(w => w.OrderID == OrderID).Count();
+                    Model.domain_PurchaseOrders order = db.domain_PurchaseOrders.
+                        Where(w => w.OrderID == OrderID).FirstOrDefault();
+                    if (htfinish + ItemCount >= cgitem)
+                    {
+                        order.isFinished = 2;//全部生成合同
+                    }
+                    else
+                    {
+                        order.isFinished = 1;//部分生成合同
+                    }
                     db.domain_PurchaseContract.Add(pc);
                 }
 
@@ -152,10 +159,25 @@ namespace Web.BaseDataUI_2
             Model.domain_PurchaseContract pc = db.domain_PurchaseContract.Where(w => w.ID == ID).First();
             pc.Status = 1;//删除
             string ContractID = pc.ContractID;
+            string OrderID = pc.OrderID;
             List<Model.domain_PurchaseContractItem> list = db.domain_PurchaseContractItem.Where(w => w.ContractID == ContractID).ToList();
             for (int i = 0; i < list.Count(); i++)
             {
                 db.domain_PurchaseContractItem.Remove(list[i]);
+            }
+            //采购订单详情数量
+            int cgitem = db.domain_PurchaseOrdersItem.Where(w => w.OrderID == OrderID).Count();
+         
+            //订单实体
+            Model.domain_PurchaseOrders order = db.domain_PurchaseOrders.
+                            Where(w => w.OrderID == OrderID).FirstOrDefault();
+            if (cgitem == list.Count)
+            {
+                order.isFinished = 0;//未生成合同
+            }
+            else if (cgitem - list.Count > 0)
+            {
+                order.isFinished = 1;//部分生成合同
             }
             int num = db.SaveChanges();
             context.Response.Write("{\"d\":" + num + "}");
@@ -166,11 +188,40 @@ namespace Web.BaseDataUI_2
         {
             int pageSize = NCore.DataConvert.ToInt(context.Request["rows"] + "", 20);
             int pageIndex = NCore.DataConvert.ToInt(context.Request["page"] + "", 1);
-            //string SuppliersName = context.Request["SuppliersName"] + "";//供应商名称
+            string ContractID = context.Request["ContractID"] + "";
+            string OrderID = context.Request["OrderID"] + "";
+            string CompanyName = context.Request["CompanyName"] + "";//供应商名称
+            string SupplierId = context.Request["SupplierId"] + "";
             int total;////总条数
 
-            var list = db.domain_PurchaseContract.OrderByDescending(O=>O.ID).Where(w => w.Status == 0);
-            total = list.Count();         
+            var list = db.domain_PurchaseContract.Where(w => w.Status == 0).OrderByDescending(O => O.ID).ToList()
+                .Select(s => new
+                {
+                    s.ID,
+                    s.OrderID,
+                    s.SuppliersID,
+                    s.ContractID,
+                    s.CompanyName,
+                    AddTime = s.AddTime == null ? "" : DateTime.Parse(s.AddTime.ToString()).ToString("yyyy-mm-dd hh:mm:ss")
+                });
+            if (!string.IsNullOrEmpty(ContractID))
+            {
+                list = list.Where(w => w.ContractID.Contains(ContractID));
+            }
+            if (!string.IsNullOrEmpty(OrderID))
+            {
+                list = list.Where(w => w.OrderID.Contains(OrderID));
+            }
+            if (!string.IsNullOrEmpty(SupplierId))
+            {
+                list = list.Where(w => w.SuppliersID == Convert.ToInt32(SupplierId));
+            }
+            //if (!string.IsNullOrEmpty(CompanyName))
+            //{
+            //    list = list.Where(w => w.CompanyName.Contains(CompanyName));
+            //}
+
+            total = list.Count();
             list = list.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
             var obk = new { total = total, rows = list.ToList() };

@@ -39,11 +39,43 @@
         function formatop(val, row, index) {
             return '<a class="red" href="javascript:toCreate()">生成合同</a> ';
         }
+        //查找按钮
+        function searchData() {
+            var tbx_search_OrderID = $("#tbx_search_OrderID").val();
+            var sel_search_status = $("#sel_search_status").combobox("getValue");
+            var stime = $("#tbx_search_addTime_begin").datebox("getValue");
+            var endtime = $("#tbx_search_addTime_end").datebox("getValue");
+            $('#dgorderinfo').datagrid('load', {
+                OrderID: tbx_search_OrderID,
+                isFinished: sel_search_status,
+                startTime: stime,
+                endTime: endtime,
+            });
+        }
+
     </script>
     <title>采购订单列表</title>
 </head>
 <body>
+
     <div style="font-size: 20px; margin: 10px; font-family: 'Microsoft YaHei';">采购订单列表</div>
+    <div style="margin: 10px;">
+        <span>采购订单编号：</span>
+        <input type="text" class="inpu_bg" id="tbx_search_OrderID" />
+        <span>状态：</span>
+        <select id="sel_search_status" class="easyui-combobox" style="width: 120px;">
+            <option value="">==选择状态==</option>
+            <option value="0">未生存合同</option>
+            <option value="1">部分生产合同</option>
+            <option value="2">全部生产合同</option>
+        </select>
+        <span>时间：</span>
+        <input class="easyui-datebox" id="tbx_search_addTime_begin" />
+        <label>-</label>
+        <input class="easyui-datebox" id="tbx_search_addTime_end" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="searchData()" data-options="iconCls:'icon-search',plain:true">查询</a>
+        <a href="PurchaseOrder_Add.aspx" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">添加</a>
+    </div>
 
     <table id="dgorderinfo" title="订单列表" style="width: 1000px; height: auto">
         <thead>
@@ -51,7 +83,6 @@
                 <th data-options="field:'OrderID',width:200">采购订单编号</th>
                 <th data-options="field:'AddBy',width:200">创建人</th>
                 <th data-options="field:'AddTime',width:200">创建时间</th>
-
                 <th data-options="field:'op',width:200,formatter:formatop">操作</th>
             </tr>
         </thead>

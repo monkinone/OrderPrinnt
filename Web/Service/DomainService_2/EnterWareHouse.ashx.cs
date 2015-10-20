@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using Web.Model;
@@ -66,8 +67,11 @@ namespace Web.Service.DomainService_2
         private void AddEnterWareHouse(HttpContext context)
         {
             int  WareHouseID = NCore.DataConvert.ToInt(context.Request["WareHouseID"],0);
+            string WareHouseName = context.Request["WareHouseName"] ?? "";
             string MaterialName = context.Request["MaterialName"]??"";
             string ModelNumber = context.Request["ModelNumber"] ?? "";
+            decimal Amout = decimal.Parse(context.Request["Amout"] ?? "");
+
             Model.domain_EnterWareHouseLog log = new Model.domain_EnterWareHouseLog()
             {
                 OrderID = context.Request["OrderID"]??"",
@@ -75,9 +79,9 @@ namespace Web.Service.DomainService_2
                 ModelNumber = ModelNumber,
                 CategoryName = context.Request["CategoryName"] ?? "",
                 UnitName = context.Request["UnitName"]??"",
-                Amout = decimal.Parse(context.Request["Amout"]??""),
+                Amout = Amout,
                 WareHouseID = WareHouseID,
-                WareHouseName = context.Request["WareHouseName"]??"",
+                WareHouseName = WareHouseName,
                 Suppliers = context.Request["Suppliers"]??"",
                 Remark = context.Request["Remark"]??"",
                 DealWithBy = context.Request["DealWithBy"] ?? "",
@@ -95,12 +99,27 @@ namespace Web.Service.DomainService_2
                                                                                                   &&w.MaterialModelNumber==ModelNumber)
                                                                                      .ToList();
                 if (list.Count > 0)
-                {
-
+                {  //物料库存表中存在
+                    domain_Material_WareHouse mw = list[0];
+                    //增加库存量
+                    mw.KuCun += Amout;
+                    //先将实体附加到实体上下文中
+                    db.domain_Material_WareHouse.Attach(mw);
+                    //手动修改实体的状态
+                    db.Entry(mw).State = EntityState.Modified;
+                    db.SaveChanges();
                 }
                 else
-                { 
-                
+                { //物料库存表中不存在
+                    domain_Material_WareHouse mw = new domain_Material_WareHouse() {
+                         KuCun=Amout,
+                         MaterialModelNumber=ModelNumber,
+                         MaterialName=MaterialName,
+                         WareHouseID=WareHouseID,
+                         WareHouseName=WareHouseName
+                    };
+                    db.domain_Material_WareHouse.Add(mw);
+                    db.SaveChanges();
                 }
 
             }

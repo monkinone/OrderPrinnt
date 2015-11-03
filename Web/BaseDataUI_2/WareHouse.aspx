@@ -32,7 +32,7 @@
                 <tr>  
                     <th data-options="field:'WareHouseName',align:'center',width:200">仓库名称</th>  
                     <th data-options="field:'Position',align:'center',width:200">位置</th>  
-                    <th data-options="field:'Position',align:'center',width:400">可存放的物料类别</th>  
+                    <th data-options="field:'CategoryNames',align:'center',width:400">可存放的物料类别</th>  
                     <th data-options="field:'Remark',align:'center',width:400">备注</th>
                     <th data-options="field:'opr',align:'center',width:100,formatter:formatOperWareHouse">操作</th>
                 </tr>  

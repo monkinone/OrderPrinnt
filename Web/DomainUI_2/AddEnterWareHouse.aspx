@@ -11,6 +11,8 @@
     <script src="../themes/jquery-easyui-1.4.1/jquery.min.js"></script>
     <script src="../themes/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
     <script src="../themes/jquery-easyui-1.4.1/easyui-lang-zh_CN.js"></script>
+    <!--功能JS-->
+    <script src="../JS_2/DoMain/EnterWareHouse.js"></script>
     <title>物料进仓</title>
 </head>
 <body>
@@ -19,7 +21,7 @@
         <a href="" class="easyui-linkbutton">添加</a>   
         <a href="" class="easyui-linkbutton">删除</a>
     </div>
-     <table id="dg_enterWareHouse">
+     <table id="dg_enterWareHouseLog">
         <thead>  
             <tr>
                 <th data-options="field:'OrderID',align:'center',width:200">采购订单编号</th>

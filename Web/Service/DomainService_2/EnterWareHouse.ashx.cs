@@ -13,9 +13,10 @@ namespace Web.Service.DomainService_2
     /// </summary>
     public class EnterWareHouse : BaseService
     {
-        public void ProcessRequest(HttpContext context)
+        public override void ProcessRequest(HttpContext context)
         {
             base.ProcessRequest(context);
+
             context.Response.ContentType = "application/json";
             //opr请求执行的程序名称
             string opr = context.Request["opr"] + "";
@@ -95,8 +96,8 @@ namespace Web.Service.DomainService_2
             {
                 List<domain_Material_WareHouse> list = db.domain_Material_WareHouse
                                                                                      .Where(w => w.WareHouseID == WareHouseID
-                                                                                                  &&w.MaterialName==MaterialName
-                                                                                                  &&w.MaterialModelNumber==ModelNumber)
+                                                                                                  && w.MaterialName == MaterialName
+                                                                                                  && w.MaterialModelNumber == ModelNumber)
                                                                                      .ToList();
                 if (list.Count > 0)
                 {  //物料库存表中存在
@@ -107,21 +108,41 @@ namespace Web.Service.DomainService_2
                     db.domain_Material_WareHouse.Attach(mw);
                     //手动修改实体的状态
                     db.Entry(mw).State = EntityState.Modified;
-                    db.SaveChanges();
+                    int r1= db.SaveChanges();
+                    if(r1>0)
+                    {
+                        context.Response.Write("{\"d\":1}");
+                    }
+                    else
+                    {
+                        context.Response.Write("{\"d\":0,\"msg\":\"保存失败！\"}");
+                    }
                 }
                 else
                 { //物料库存表中不存在
-                    domain_Material_WareHouse mw = new domain_Material_WareHouse() {
-                         KuCun=Amout,
-                         MaterialModelNumber=ModelNumber,
-                         MaterialName=MaterialName,
-                         WareHouseID=WareHouseID,
-                         WareHouseName=WareHouseName
+                    domain_Material_WareHouse mw = new domain_Material_WareHouse()
+                    {
+                        KuCun = Amout,
+                        MaterialModelNumber = ModelNumber,
+                        MaterialName = MaterialName,
+                        WareHouseID = WareHouseID,
+                        WareHouseName = WareHouseName
                     };
                     db.domain_Material_WareHouse.Add(mw);
-                    db.SaveChanges();
+                    int r1 = db.SaveChanges();
+                    if (r1 > 0)
+                    {
+                        context.Response.Write("{\"d\":1}");
+                    }
+                    else
+                    {
+                        context.Response.Write("{\"d\":0,\"msg\":\"保存失败！\"}");
+                    }
                 }
-
+            }
+            else 
+            {
+                context.Response.Write("{\"d\":0,\"msg\":\"保存失败！\"}");
             }
         }
         

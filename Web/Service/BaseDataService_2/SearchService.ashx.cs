@@ -64,11 +64,16 @@ namespace Web.Service.BaseDataService_2
             int pageSize = NCore.DataConvert.ToInt(context.Request["rows"] + "", 20);
             int pageIndex = NCore.DataConvert.ToInt(context.Request["page"] + "", 1);
             string wareHouseName = context.Request["WareHouseName"]+"";
+            string categoryID = context.Request["CategoryID"]+"";
             int total = db.base_WareHouse.Count();
             IQueryable<base_WareHouse> list = db.base_WareHouse.OrderByDescending(o => o.ID);
             if (!string.IsNullOrEmpty(wareHouseName))
             {
                 list = list.Where(w => w.WareHouseName.Contains(wareHouseName)==true);
+            }
+            if (!string.IsNullOrEmpty(categoryID))
+            {
+                list = list.Where(w => w.CategoryIDs.Contains(categoryID)==true);
             }
 
             list = list.Skip((pageIndex - 1) * pageSize).Take(pageSize);

@@ -3,7 +3,7 @@
 $(function () {
     //*****入仓日志表******
     $("#dg_enterWareHouseLog").datagrid({
-        url: '/Service/DomainService_2/EnterWareHouse.ashx?opr=warehouse',
+        url: '/Service/DomainService_2/EnterWareHouse.ashx?opr=searchenterwarehouselog',
         loadMsg: "正在加载，请稍等...",
         pageSize: 20,
         rownumbers: true,//行号    
@@ -50,6 +50,64 @@ function showAddDialog() {
     tbx_dealWithBy.val("");
     tbx_department.val("");
 }
+//添加
+function addEnterWareHouse() {
+    var OrderID = $("#txt_orderID").val();
+    var ModelNumber = $("#txt_modelNumber").val();
+    if (ModelNumber.trim()=="") {
+        alert("请选择物料型号");
+        return;
+    }
+    var MaterialName = $("#txt_materialName").val();
+    if (MaterialName.trim()=="") {
+        alert("请填写物料名称");
+        return;
+    }
+    var Unit = $("#txt_unit").val();
+    var CategoryName = $("#txt_categoryName").val();
+    var CategoryID = $("#hid_categoryID").val();
+    var SuppliersName = $("#txt_suppliersName").val();
+    var WareHouseName = $("#txt_wareHouseName").val();
+    if (WareHouseName.trim()=="") {
+        alert("请选择仓库");
+        return;
+    }
+    var WareHouseID = $("#hid_wareHouseID").val();
+    var Amout = $("#txt_amout").val();
+    var Remark = $("#txt_remark").val();
+    var Department = $("#tbx_department").val();
+    var Doby = $("#tbx_doby").val();
+    var DealWithBy = $("#tbx_dealWithBy").val();
+
+    $.post(
+     "/Service/DomainService_2/EnterWareHouse.ashx",
+     {
+         opr: "addenterwarehouse",
+         WareHouseID:WareHouseID,
+         WareHouseName:WareHouseName,
+         MaterialName:MaterialName,
+         ModelNumber:ModelNumber,
+         Amout:Amout,
+         OrderID:OrderID,
+         CategoryName:CategoryName,
+         UnitName:Unit,
+         Suppliers:SuppliersName,
+         Remark:Remark,
+         DealWithBy:DealWithBy,
+         Department:Department,
+         DoBy:Doby
+     },
+     function (data) {
+         if (data.d == 1) {
+             $('#dg_enterWareHouseLog').datagrid('reload');
+             $('#dlg_rucang_add').dialog('close');
+             alert("保存成功!");
+         } else {
+             alert(data.msg);
+         }
+     }
+    );
+}
 //显示选择物料弹窗
 function showSelectMaterial() {
     $("#dlg_material").dialog("open");
@@ -66,6 +124,7 @@ function showSelectMaterial() {
             $("#txt_materialName").val(rowData.MaterialName);
             $("#txt_unit").val(rowData.UnitName);
             $("#txt_categoryName").val(rowData.CategoryName);
+            $("#hid_categoryID").val(rowData.CategoryID);
             //关闭物料选择窗
             $("#dlg_material").dialog("close");
         }
@@ -82,15 +141,26 @@ function showSelectMaterial() {
 }
 //显示选择仓库弹窗
 function showSelectWareHouse() {
+    var CategoryID = $("#hid_categoryID").val();
+    if (CategoryID == "") {
+        alert("请先选择物料！");
+        return;
+    }
     $("#dlg_wareHouse").dialog("open");
     //*****仓库名称表******
     $("#dg_warehouse").datagrid({
-        url: '/Service/BaseDataService_2/SearchService.ashx?opr=warehouse',
+        url: '/Service/BaseDataService_2/SearchService.ashx?opr=warehouse&CategoryID=' + CategoryID,
         loadMsg: "正在加载，请稍等...",
         pageSize: 20,
         rownumbers: true,//行号
         singleSelect: true,//是否单选
-        pagination: true//分页控件 
+        pagination: true,//分页控件 
+        onClickRow: function (rowIndex, rowData) {
+            $("#txt_wareHouseName").val(rowData.WareHouseName);
+            $("#hid_wareHouseID").val(rowData.ID);
+            //关闭选择仓库的弹窗
+            $("#dlg_wareHouse").dialog("close");
+        }
     });
     //设置分页控件       
     var p = $('#dg_warehouse').datagrid('getPager');

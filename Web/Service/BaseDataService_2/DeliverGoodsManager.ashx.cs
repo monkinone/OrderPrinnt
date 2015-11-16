@@ -52,7 +52,7 @@ namespace Web.Service.BaseDataService_2
                     string OrderID = context.Request["OrderID"] + "";//采购订单id
                     string ModelNumber = context.Request["ModelNumber"] + "";//产品型号
                     string isDelivered = context.Request["isDelivered"] + "";//是否发货 0 未发货 1 已发货
-
+                    string MaterialName = context.Request["MaterialName"] + "";//物料名称
                     string sql = @" select  domain_DeliverGoods.ID, domain_PurchaseContractItem.OrderID,
 domain_PurchaseContract.CompanyName,
 domain_PurchaseContract.SuppliersID,
@@ -89,6 +89,10 @@ where domain_PurchaseContract.SuppliersID='" + SuppliersID + "'";
                     {
                         list = list.Where(w => w.AllDeliverCount > 0);
                     }
+                    if (!string.IsNullOrEmpty(MaterialName))
+                    {
+                        list = list.Where(w => w.MaterialName.Contains(MaterialName));
+                    }
                     total = list.Count();
                     list = list.Skip((pageIndex - 1) * pageSize).Take(pageSize);
                     var obk = new { total = total, rows = list.ToList() };
@@ -120,6 +124,7 @@ where domain_PurchaseContract.SuppliersID='" + SuppliersID + "'";
             string OrderID = context.Request["OrderID"] + "";//采购订单id
             string ModelNumber = context.Request["ModelNumber"] + "";//产品型号
             string CompanyName = context.Request["CompanyName"] + "";//供应商名称
+            string MaterialName = context.Request["MaterialName"] + "";//物料名称
 
             string sql = @" select  domain_DeliverGoods.ID, domain_PurchaseContractItem.OrderID,
 domain_PurchaseContract.CompanyName,
@@ -152,6 +157,10 @@ and domain_PurchaseContractItem.MaterialName = domain_DeliverGoods.MaterialName"
             {
                 list = list.Where(w => w.CompanyName.Contains(CompanyName));
             }
+            if (!string.IsNullOrEmpty(MaterialName))
+            {
+                list = list.Where(w => w.MaterialName.Contains(MaterialName));
+            }
             total = list.Count();
             list = list.Skip((pageIndex - 1) * pageSize).Take(pageSize);
             var obk = new { total = total, rows = list.ToList() };
@@ -165,22 +174,31 @@ and domain_PurchaseContractItem.MaterialName = domain_DeliverGoods.MaterialName"
         //获取此供应商的订单列表
         private void getOrderlist(HttpContext context)
         {
+            List<Model.base_Suppliers> SuppliersList = db.base_Suppliers.Where(w => w.LoginUserID == UserInfo.UserId).ToList();
 
-            //获取登录的供应商id
-            Model.base_Suppliers Suppliers = db.base_Suppliers.Where(w => w.LoginUserID == UserInfo.UserId).First();
-            if (!string.IsNullOrEmpty(Suppliers.ID + ""))
+            if (SuppliersList.Count >= 0)
             {
-                string sql = @"select domain_PurchaseContractItem.OrderID,MaterialName,ModelNumber from domain_PurchaseContract inner join domain_PurchaseContractItem
+                //获取登录的供应商id
+                Model.base_Suppliers Suppliers = SuppliersList.First();
+                if (!string.IsNullOrEmpty(Suppliers.ID + ""))
+                {
+                    string sql = @"select domain_PurchaseContractItem.OrderID,MaterialName,ModelNumber from domain_PurchaseContract inner join domain_PurchaseContractItem
 on domain_PurchaseContract.ContractID=domain_PurchaseContractItem.ContractID where domain_PurchaseContract.SuppliersID=" + Suppliers.ID;
-                var list = db.Database.SqlQuery<orderinfo>(sql); ;
-                //序列化json字符串
-                string result = JsonConvert.SerializeObject(list);
-                context.Response.Write(result);
+                    var list = db.Database.SqlQuery<orderinfo>(sql); ;
+                    //序列化json字符串
+                    string result = JsonConvert.SerializeObject(list);
+                    context.Response.Write(result);
+                }
+                else
+                {
+                    context.Response.Write("");
+                }
             }
             else
             {
                 context.Response.Write("");
             }
+
         }
 
 

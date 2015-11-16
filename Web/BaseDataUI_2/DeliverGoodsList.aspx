@@ -32,11 +32,11 @@
         //查找按钮
         function searchData() {
             var tbx_search_OrderID = $("#tbx_search_OrderID").val();
-            var tbx_search_ModelNumber = $("#tbx_search_ModelNumber").val();
+            var tbx_search_MaterialName = $("#tbx_search_MaterialName").val();
             var tbx_search_CompanyName = $("#tbx_search_CompanyName").val();
             $('#dgorderinfo').datagrid('load', {
                 OrderID: tbx_search_OrderID,
-                ModelNumber: tbx_search_ModelNumber,
+                MaterialName: tbx_search_MaterialName,
                 CompanyName: tbx_search_CompanyName
             });
         }
@@ -53,8 +53,8 @@
         <input type="text" class="inpu_bg" id="tbx_search_CompanyName" />
         <span>采购订单编号：</span>
         <input type="text" class="inpu_bg" id="tbx_search_OrderID" />
-        <span>物料型号：</span>
-        <input type="text" class="inpu_bg" id="tbx_search_ModelNumber" />
+        <span>物料名称：</span>
+        <input type="text" class="inpu_bg" id="tbx_search_MaterialName" />
 
         <a href="javascript:void(0)" class="easyui-linkbutton" onclick="searchData()" data-options="iconCls:'icon-search',plain:true">查询</a>
     </div>

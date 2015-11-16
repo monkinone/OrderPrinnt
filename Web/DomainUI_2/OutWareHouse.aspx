@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnterWareHouse.aspx.cs" Inherits="Web.DomainUI_2.EnterWareHouse" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OutWareHouse.aspx.cs" Inherits="Web.DomainUI_2.domain_OutWareHouse" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="../themes/jquery-easyui-1.4.1/easyui.css" rel="stylesheet" />
     <link href="../themes/jquery-easyui-1.4.1/icon.css" rel="stylesheet" />
@@ -12,50 +12,42 @@
     <script src="../themes/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
     <script src="../themes/jquery-easyui-1.4.1/easyui-lang-zh_CN.js"></script>
     <!--功能JS-->
-    <script src="../JS_2/DoMain/EnterWareHouse.js"></script>
-    <title>物料入仓</title>
+    <script src="../JS_2/DoMain/OutWareHouse.js"></script>
+    <title>物料出仓</title>
 </head>
 <body>
-      <div style="font-size:20px; margin:10px;font-family:'Microsoft YaHei';">物料入仓日志</div>
+      <div style="font-size:20px; margin:10px;font-family:'Microsoft YaHei';">物料出仓日志</div>
        <div style="margin:10px;">
-            <span>采购订单号：</span>
-            <input type="text" class="inpu_bg" id="tbx_search_orderID" />
             <span>物料名称：</span>
             <input type="text" class="inpu_bg" id="tbx_search_materialName" />
             <span>物料型号：</span>
             <input type="text" class="inpu_bg" id="tbx_search_modelNumber" />
             <span>仓库名称：</span>
             <input type="text" class="inpu_bg" id="tbx_search_wareHouse" />
-            <a href="javascript:searchEnterWareHouseLog()" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">查询</a>          
-            <a href="javascript:showAddDialog()" style="right:10px;" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">物料入仓</a>
+            <a href="javascript:searchOutWareHouseLog()" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">查询</a>          
+            <a href="javascript:showAddDialog()" style="right:10px;" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">物料出仓</a>
        </div>
-    <table id="dg_enterWareHouseLog">
+    <table id="dg_outWareHouseLog">
         <thead>  
             <tr>
-                <th data-options="field:'OrderID',align:'center',width:200">采购订单编号</th>  
                 <th data-options="field:'MaterialName',align:'center',width:200">物料名称</th>  
                 <th data-options="field:'ModelNumber',align:'center',width:200">物料型号</th>  
                 <th data-options="field:'CategoryName',align:'center',width:200">物料类别</th>
                 <th data-options="field:'UnitName',align:'center',width:200">单位名称</th> 
-                <th data-options="field:'WareHouseName',align:'center',width:200">入仓名称</th>
-                <th data-options="field:'Amout',align:'center',width:200">入库数量</th> 
-                <th data-options="field:'Suppliers',align:'center',width:200">供应商名称</th> 
+                <th data-options="field:'WareHouseName',align:'center',width:200">仓库名称</th>
+                <th data-options="field:'Amout',align:'center',width:200">出库数量</th> 
                 <th data-options="field:'Remark',align:'center',width:200">特殊说明</th> 
             </tr>  
         </thead>
     </table>
 
     <!------------弹窗--------------->
-    <!----添加物料入仓s--->
-    <div id="dlg_rucang_add" class="easyui-dialog" title="物料入仓" style="width:800px;height:400px;padding:10px"
+    <!----添加物料出仓s--->
+    <div id="dlg_outWareHouse_add" class="easyui-dialog" title="物料出仓" style="width:800px;height:400px;padding:10px"
 			data-options="modal:true,closed:true,iconCls: 'icon-edit',buttons: '#dlg-buttons_add1'">
          <div class="sear_list">
                <ul>
                 <li class="b3">&nbsp;</li>
-                <li class="b10_right">采购订单号：</li>
-                <li class="b35_left">
-                    <input type="text" class="inpu_bg" id="txt_orderID" maxlength="50" />
-                </li>
                 <li class="b10_right">物料型号：</li>
                 <li class="b35_left">
                     <input type="text" class="inpu_bg" id="txt_modelNumber" disabled="disabled" />
@@ -82,10 +74,6 @@
                     <input type="text" class="inpu_bg" id="txt_categoryName"/>
                     <input type="hidden" id="hid_categoryID" />
                 </li>
-                <li class="b10_right">供应商名称：</li>
-                <li class="b35_left">
-                    <input type="text" class="inpu_bg" id="txt_suppliersName"/>      
-                </li>
               </ul>
               <ul>
                 <li class="b3">&nbsp;</li>
@@ -96,10 +84,10 @@
                     <font style="color:red">*</font>     
                     <a href="javascript:showSelectWareHouse()" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">选择仓库</a>  
                 </li>
-                <li class="b10_right">入仓数量：</li>
+                <li class="b10_right">出仓数量：</li>
                 <li class="b35_left">
-                    <input type="text" class="inpu_bg" id="txt_amout" />
-                    <font style="color:red">*</font> 
+                    <input type="text" class="inpu_bg" id="txt_amout" />      
+                    <font style="color:red">*</font>     
                 </li>
               </ul>
               <ul>
@@ -131,7 +119,7 @@
 	</div>
     <div id="dlg-buttons_add1">
 		<a href="javascript:addEnterWareHouse()" class="easyui-linkbutton">保存</a>
-		<a href="javascript:$('#dlg_rucang_add').dialog('close');" class="easyui-linkbutton">取消</a>
+		<a href="javascript:$('#dlg_outWareHouse_add').dialog('close');" class="easyui-linkbutton">取消</a>
 	</div>
    <!----仓库名称e--->
    <!--物料选择窗体s-->
@@ -174,3 +162,4 @@
    <!--仓库选择窗体e-->
 </body>
 </html>
+

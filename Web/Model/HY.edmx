@@ -384,6 +384,8 @@
           <Property Name="CategoryName" Type="varchar" MaxLength="50" />
           <Property Name="UnitName" Type="varchar" MaxLength="10" />
           <Property Name="Amout" Type="decimal" />
+          <Property Name="WareHouseID" Type="int" />
+          <Property Name="WareHouseName" Type="varchar" MaxLength="50" />
           <Property Name="Remark" Type="varchar" MaxLength="500" />
           <Property Name="DealWithBy" Type="varchar" MaxLength="50" />
           <Property Name="Department" Type="varchar" MaxLength="50" />
@@ -1159,6 +1161,8 @@
           <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="UnitName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="Amout" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WareHouseID" Type="Int32" />
+          <Property Name="WareHouseName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Remark" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="DealWithBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Department" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -1900,6 +1904,8 @@
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
                 <ScalarProperty Name="UnitName" ColumnName="UnitName" />
                 <ScalarProperty Name="Amout" ColumnName="Amout" />
+                <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+                <ScalarProperty Name="WareHouseName" ColumnName="WareHouseName" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="DealWithBy" ColumnName="DealWithBy" />
                 <ScalarProperty Name="Department" ColumnName="Department" />

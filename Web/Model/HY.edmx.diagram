@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3fa19b446dd2476f8716e47fd18a5e25" Name="关系图1" ZoomLevel="88">
+      <Diagram DiagramId="dd32c4da754447639c8eea9ba64763e4" Name="关系图1" ZoomLevel="88">
         <EntityTypeShape EntityType="OrderPrintModel.base_Material" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="OrderPrintModel.base_MaterialAttribute" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="OrderPrintModel.base_MaterialCategory" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />

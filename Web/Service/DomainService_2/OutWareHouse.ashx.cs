@@ -9,9 +9,9 @@ using Web.Model;
 namespace Web.Service.DomainService_2
 {
     /// <summary>
-    /// EnterWareHouse 的摘要说明
+    /// OutWareHouse 的摘要说明
     /// </summary>
-    public class EnterWareHouse : BaseService
+    public class OutWareHouse : BaseService
     {
         public override void ProcessRequest(HttpContext context)
         {
@@ -22,31 +22,27 @@ namespace Web.Service.DomainService_2
             string opr = context.Request["opr"] + "";
             switch (opr.ToLower())
             {
-                case "searchenterwarehouselog":
-                    SearchEnterWareHouseLog(context);
+                case "searchoutwarehouselog":
+                    SearchOutWareHouseLog(context);
                     break;
-                case "addenterwarehouse":
-                    AddEnterWareHouse(context);
+                case "addoutwarehouse":
+                    AddOutWareHouse(context);
                     break;
             }
         }
         /// <summary>
-        ///  查询入仓日志
+        /// 查询物料出仓日志
         /// </summary>
-        private void SearchEnterWareHouseLog(HttpContext context)
+        /// <param name="context"></param>
+        private void SearchOutWareHouseLog(HttpContext context)
         {
             int pageSize = NCore.DataConvert.ToInt(context.Request["rows"] + "", 20);
             int pageIndex = NCore.DataConvert.ToInt(context.Request["page"] + "", 1);
-            string OrderID = context.Request["OrderID"] ?? ""; //采购订单编号
             string MaterialName = context.Request["MaterialName"] ?? "";//物料名称
             string ModelNumber = context.Request["ModelNumber"] ?? "";//物料编号
             string WareHouseName = context.Request["WareHouseName"] ?? "";//仓库名称
-            int total = db.domain_EnterWareHouseLog.Count();
-            IQueryable<domain_EnterWareHouseLog> list = db.domain_EnterWareHouseLog.OrderByDescending(o => o.ID);
-            if (!string.IsNullOrEmpty(OrderID))
-            {
-                list = list.Where(w => w.OrderID.Contains(OrderID)==true);
-            }
+            int total = db.domain_OutWareHouseLog.Count();
+            IQueryable<domain_OutWareHouseLog> list = db.domain_OutWareHouseLog.OrderByDescending(o => o.ID);
             if (!string.IsNullOrEmpty(MaterialName))
             {
                 list = list.Where(w => w.MaterialName.Contains(MaterialName) == true);
@@ -68,34 +64,33 @@ namespace Web.Service.DomainService_2
             context.Response.Write(result);
         }
         /// <summary>
-        /// 添加物料入仓
+        /// 添加物料出仓
         /// </summary>
-        private void AddEnterWareHouse(HttpContext context)
+        /// <param name="context"></param>
+        private void  AddOutWareHouse(HttpContext context)
         {
-            int  WareHouseID = NCore.DataConvert.ToInt(context.Request["WareHouseID"],0);
+            int WareHouseID = NCore.DataConvert.ToInt(context.Request["WareHouseID"], 0);
             string WareHouseName = context.Request["WareHouseName"] ?? "";
-            string MaterialName = context.Request["MaterialName"]??"";
+            string MaterialName = context.Request["MaterialName"] ?? "";
             string ModelNumber = context.Request["ModelNumber"] ?? "";
             decimal Amout = decimal.Parse(context.Request["Amout"] ?? "");
 
-            Model.domain_EnterWareHouseLog log = new Model.domain_EnterWareHouseLog()
+            Model.domain_OutWareHouseLog log = new Model.domain_OutWareHouseLog()
             {
-                OrderID = context.Request["OrderID"]??"",
                 MaterialName = MaterialName,
                 ModelNumber = ModelNumber,
                 CategoryName = context.Request["CategoryName"] ?? "",
-                UnitName = context.Request["UnitName"]??"",
+                UnitName = context.Request["UnitName"] ?? "",
                 Amout = Amout,
                 WareHouseID = WareHouseID,
                 WareHouseName = WareHouseName,
-                Suppliers = context.Request["Suppliers"]??"",
-                Remark = context.Request["Remark"]??"",
+                Remark = context.Request["Remark"] ?? "",
                 DealWithBy = context.Request["DealWithBy"] ?? "",
                 Department = context.Request["Department"] ?? "",
                 DoBy = context.Request["DoBy"] ?? "",
                 DoTime = DateTime.Now
             };
-            db.domain_EnterWareHouseLog.Add(log);
+            db.domain_OutWareHouseLog.Add(log);
             int num = db.SaveChanges();
             if (num > 0) //日志录入成功
             {
@@ -108,13 +103,13 @@ namespace Web.Service.DomainService_2
                 {  //物料库存表中存在
                     domain_Material_WareHouse mw = list[0];
                     //增加库存量
-                    mw.KuCun += Amout;
+                    mw.KuCun -= Amout;
                     //先将实体附加到实体上下文中
                     db.domain_Material_WareHouse.Attach(mw);
                     //手动修改实体的状态
                     db.Entry(mw).State = EntityState.Modified;
-                    int r1= db.SaveChanges();
-                    if(r1>0)
+                    int r1 = db.SaveChanges();
+                    if (r1 > 0)
                     {
                         context.Response.Write("{\"d\":1}");
                     }
@@ -127,7 +122,7 @@ namespace Web.Service.DomainService_2
                 { //物料库存表中不存在
                     domain_Material_WareHouse mw = new domain_Material_WareHouse()
                     {
-                        KuCun = Amout,
+                        KuCun = 0,
                         MaterialModelNumber = ModelNumber,
                         MaterialName = MaterialName,
                         WareHouseID = WareHouseID,
@@ -145,11 +140,11 @@ namespace Web.Service.DomainService_2
                     }
                 }
             }
-            else 
+            else
             {
                 context.Response.Write("{\"d\":0,\"msg\":\"保存失败！\"}");
             }
         }
-        
+
     }
 }

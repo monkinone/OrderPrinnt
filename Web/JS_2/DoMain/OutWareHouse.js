@@ -1,9 +1,9 @@
 ﻿///<reference path="/themes/jquery-easyui-1.4.1/jquery.min.js"/>
 
 $(function () {
-    //*****入仓日志表******
-    $("#dg_enterWareHouseLog").datagrid({
-        url: '/Service/DomainService_2/EnterWareHouse.ashx?opr=searchenterwarehouselog',
+    //*****出仓日志表******
+    $("#dg_outWareHouseLog").datagrid({
+        url: '/Service/DomainService_2/OutWareHouse.ashx?opr=searchoutwarehouselog',
         loadMsg: "正在加载，请稍等...",
         pageSize: 20,
         rownumbers: true,//行号    
@@ -11,7 +11,7 @@ $(function () {
         pagination: true//分页控件 
     });
     //设置分页控件       
-    var p = $('#dg_enterWareHouseLog').datagrid('getPager');
+    var p = $('#dg_outWareHouseLog').datagrid('getPager');
     $(p).pagination({
         pageSize: 20,//每页显示的记录条数，默认为10           
         pageList: [20, 30, 50],//可以设置每页记录条数的列表           
@@ -20,29 +20,25 @@ $(function () {
         displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录'
     });
 });
-//查询入仓日志
-function searchEnterWareHouseLog() {
-    var tbx_search_orderID = $("#tbx_search_orderID").val();
+//查询出仓日志
+function searchOutWareHouseLog() {
     var tbx_search_materialName = $("#tbx_search_materialName").val();
     var tbx_search_modelNumber = $("#tbx_search_modelNumber").val();
     var tbx_search_wareHouse = $("#tbx_search_wareHouse").val();
-    $('#dg_enterWareHouseLog').datagrid('load', {
-        OrderID: tbx_search_orderID,
+    $('#dg_outWareHouseLog').datagrid('load', {
         MaterialName: tbx_search_materialName,
         ModelNumber: tbx_search_modelNumber,
         WareHouseName: tbx_search_wareHouse
     });
 }
-//显示增加物料入仓的窗体
+//显示增加物料出仓的窗体
 function showAddDialog() {
-    $("#dlg_rucang_add").dialog("open");
-    
-    var txt_orderID = $("#txt_orderID");
+    $("#dlg_outWareHouse_add").dialog("open");
+
     var txt_modelNumber = $("#txt_modelNumber");
     var txt_materialName = $("#txt_materialName");
     var txt_unit = $("#txt_unit");
     var txt_categoryName = $("#txt_categoryName");
-    var txt_suppliersName = $("#txt_suppliersName");
     var txt_wareHouseName = $("#txt_wareHouseName");
     var txt_amout = $("#txt_amout");
     var txt_remark = $("#txt_remark");
@@ -50,12 +46,10 @@ function showAddDialog() {
     var tbx_doby = $("#tbx_doby");
     var tbx_dealWithBy = $("#tbx_dealWithBy");
     //清理数据
-    txt_orderID.val("");
     txt_modelNumber.val("");
     txt_materialName.val("");
     txt_unit.val("");
     txt_categoryName.val("");
-    txt_suppliersName.val("");
     txt_wareHouseName.val("");
     txt_amout.val("");
     txt_remark.val("");
@@ -65,31 +59,28 @@ function showAddDialog() {
 }
 //添加
 function addEnterWareHouse() {
-    var OrderID = $("#txt_orderID").val();
     var ModelNumber = $("#txt_modelNumber").val();
-    if (ModelNumber.trim()=="") {
+    if (ModelNumber.trim() == "") {
         alert("请选择物料型号");
         return;
     }
     var MaterialName = $("#txt_materialName").val();
-    if (MaterialName.trim()=="") {
+    if (MaterialName.trim() == "") {
         alert("请填写物料名称");
         return;
     }
     var Unit = $("#txt_unit").val();
     var CategoryName = $("#txt_categoryName").val();
     var CategoryID = $("#hid_categoryID").val();
-    var SuppliersName = $("#txt_suppliersName").val();
     var WareHouseName = $("#txt_wareHouseName").val();
-    if (WareHouseName.trim()=="") {
+    if (WareHouseName.trim() == "") {
         alert("请选择仓库");
         return;
     }
     var WareHouseID = $("#hid_wareHouseID").val();
     var Amout = $("#txt_amout").val();
-    var Amout = $("#txt_amout").val();
     if (Amout.trim() == "") {
-        alert("请输入入仓数量");
+        alert("请输入出仓数量");
         return;
     }
     var Remark = $("#txt_remark").val();
@@ -98,27 +89,25 @@ function addEnterWareHouse() {
     var DealWithBy = $("#tbx_dealWithBy").val();
 
     $.post(
-     "/Service/DomainService_2/EnterWareHouse.ashx",
+     "/Service/DomainService_2/OutWareHouse.ashx",
      {
-         opr: "addenterwarehouse",
-         WareHouseID:WareHouseID,
-         WareHouseName:WareHouseName,
-         MaterialName:MaterialName,
-         ModelNumber:ModelNumber,
-         Amout:Amout,
-         OrderID:OrderID,
-         CategoryName:CategoryName,
-         UnitName:Unit,
-         Suppliers:SuppliersName,
-         Remark:Remark,
-         DealWithBy:DealWithBy,
-         Department:Department,
-         DoBy:Doby
+         opr: "addoutwarehouse",
+         WareHouseID: WareHouseID,
+         WareHouseName: WareHouseName,
+         MaterialName: MaterialName,
+         ModelNumber: ModelNumber,
+         Amout: Amout,
+         CategoryName: CategoryName,
+         UnitName: Unit,
+         Remark: Remark,
+         DealWithBy: DealWithBy,
+         Department: Department,
+         DoBy: Doby
      },
      function (data) {
          if (data.d == 1) {
-             $('#dg_enterWareHouseLog').datagrid('reload');
-             $('#dlg_rucang_add').dialog('close');
+             $('#dg_outWareHouseLog').datagrid('reload');
+             $('#dlg_outWareHouse_add').dialog('close');
              alert("保存成功!");
          } else {
              alert(data.msg);

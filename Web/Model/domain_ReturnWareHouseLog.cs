@@ -20,6 +20,8 @@ namespace Web.Model
         public string ModelNumber { get; set; }
         public string CategoryName { get; set; }
         public string UnitName { get; set; }
+        public Nullable<int> WareHouseID { get; set; }
+        public string WareHouseName { get; set; }
         public Nullable<decimal> Amout { get; set; }
         public string Remark { get; set; }
         public string DealWithBy { get; set; }

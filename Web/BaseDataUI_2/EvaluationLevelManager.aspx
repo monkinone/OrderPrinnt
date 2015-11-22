@@ -69,13 +69,7 @@
                     <label class="red">*</label>
                 </li>
             </ul>
-            <%--     <ul>
-                <li class="b3">&nbsp;</li>
-                <li class="b10_right">评审记录：</li>
-                <li class="b20_left">
-                    <textarea style="width: 200px; height: 80px" id="tbx_Remark"></textarea>
-                </li>
-            </ul>--%>
+          
         </div>
     </div>
     <div id="dlg-buttons_add1">

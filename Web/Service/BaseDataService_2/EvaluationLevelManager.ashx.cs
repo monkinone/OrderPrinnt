@@ -23,17 +23,20 @@ namespace Web.Service.BaseDataService_2
                 case "Levellist"://列表
                     getLevelList(context);
                     break;
-                case "addLevel":
+                case "addLevel"://添加等级
                     addLevel(context);
                     break;
-                case "editLevel":
+                case "editLevel"://编辑等级
                     editLevel(context);
                     break;
-                case "delLevel":
+                case "delLevel"://删除等级
                     delLevel(context);
                     break;
                 case "getLevelRecord"://获取调价记录
                     getLevelRecord(context);
+                    break;
+                case "getSelfLevle"://获取供应商自己的等级
+                    getSelfLevle(context);
                     break;
 
             }
@@ -60,6 +63,73 @@ namespace Web.Service.BaseDataService_2
             string result = JsonConvert.SerializeObject(data);
             context.Response.Write(result);
         }
+        //获取供应商自己的等级
+        private void getSelfLevle(HttpContext context)
+        {
+            //判断登录用户是否为供应商
+            if (UserInfo.UserType == 9)
+            {
+                //获取登录用户的供应商列表
+                List<Model.base_Suppliers> SuppliersList = db.base_Suppliers.Where(w =>
+                    w.LoginUserID == UserInfo.UserId).ToList();
+                if (SuppliersList.Count >= 0)
+                {
+                    //获取登录的供应商id
+                    Model.base_Suppliers Suppliers = SuppliersList.First();
+                    int SuppliersID = Suppliers.ID;
+                    //获取供应商等级信息
+                    Model.domain_EvaluationLevel el = db.domain_EvaluationLevel.Where(w =>
+                        w.SuppliersID == SuppliersID).FirstOrDefault();
+
+                    string logstr = "\"\"";
+
+                    if (el != null)
+                    {
+                        //获取供应商评审记录
+                        var domain_LogList = db.domain_Log.Where(w => w.DoID == SuppliersID).
+                            OrderByDescending(o => o.DoTime).ToList().Select(s => new
+                            {
+                                DoTime = s.DoTime == null ? "" : DateTime.Parse(s.DoTime.ToString()).ToString("yyyy-mm-dd hh:mm:ss"),
+                                s.DoContent
+                            });
+                        int count = domain_LogList.Count();
+                        if (count > 0)
+                        {
+                            logstr = JsonConvert.SerializeObject(domain_LogList);//日志详情列表
+                        }                     
+
+                    }
+                    else
+                    {
+                        el = new Model.domain_EvaluationLevel
+                        {
+                            AddBy = "",
+                            CompanyName = "",
+                            AddTime = DateTime.Now,
+                            LastUpdateBy = "",
+                            LastUpdateTime = DateTime.Now,
+                            Level = "",
+                            SuppliersID = SuppliersID
+                        };
+                    }
+
+                    //序列化json字符串
+                    string elstr = JsonConvert.SerializeObject(el);//详情
+                    string result = "{\"LevelData\":" + elstr + ",\"logData\":" + logstr + "}";
+                    context.Response.Write(result);
+                }
+                else
+                {
+                    context.Response.Write("");
+                }
+            }
+            else
+            {
+                context.Response.Write("");
+            }
+
+        }
+
         /// <summary>
         /// 添加评级信息
         /// </summary>
@@ -116,7 +186,7 @@ namespace Web.Service.BaseDataService_2
             Model.domain_EvaluationLevel el = db.domain_EvaluationLevel.Where(w => w.ID == ID).First();
             if (SuppliersID == el.SuppliersID && Level == el.Level)//信息未更改
             {
-                num = 1;    
+                num = 1;
             }
             else
             {

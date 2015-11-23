@@ -134,6 +134,9 @@
                                 <asp:ListItem Value="3" Text="技术管理"></asp:ListItem>
                                 <asp:ListItem Value="4" Text="业务管理"></asp:ListItem>
                                 <asp:ListItem Value="5" Text="用户管理"></asp:ListItem>
+                                <asp:ListItem Value="7" Text="库房管理"></asp:ListItem>
+                                <asp:ListItem Value="8" Text="采购管理"></asp:ListItem>
+                                <asp:ListItem Value="9" Text="供应商用户"></asp:ListItem>
                             </asp:DropDownList>
                         </td>
                     </tr>

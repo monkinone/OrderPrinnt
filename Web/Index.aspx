@@ -155,12 +155,12 @@
                 </li>
                 <!--库房-->
                <li name="tab_00" class="item " id="kufang" runat="server" visible="false">
-                    <a href="" target="iframe_tab_00">原料进仓</a>
-                    <a href="" target="iframe_tab_00">原料出仓</a>
-                    <a href="" target="iframe_tab_00">退料</a>
-                    <a href="" target="iframe_tab_00">查看供应商发货明细</a>
-                    <a href="" target="iframe_tab_00">导出库存清单</a>
-                    <a href="" target="iframe_tab_00">采购订单管理</a>
+                    <a href="DomainUI_2/EnterWareHouse.aspx" target="iframe_tab_00">原料进仓</a>
+                    <a href="DomainUI_2/OutWareHouse.aspx" target="iframe_tab_00">原料出仓</a>
+                    <a href="DomainUI_2/ReturnWareHouse.aspx" target="iframe_tab_00">退料</a>
+                    <a href="BaseDataUI_2/DeliverGoodsList.aspx" target="iframe_tab_00">查看供应商发货明细</a>
+                    <a href="DomainUI_2/ExporKuCun.aspx" target="iframe_tab_00">导出库存清单</a>
+                    <a href="BaseDataUI_2/PurchaseOrder_List.aspx" target="iframe_tab_00">采购订单管理</a>
                     <a href="BaseDataUI_2/WareHouse.aspx" target="iframe_tab_00">仓库管理</a>
                     <a href="BaseDataUI_2/MaterialManager.aspx" target="iframe_tab_00">物料信息</a>
                     <a href="NoticeManage/Notice.aspx" target="iframe_tab_00">通知公告</a>
@@ -171,17 +171,17 @@
                     <a href="BaseDataUI_2/SuppliersUser.aspx" target="iframe_tab_00">供应商帐号管理</a>
                     <a href="BaseDataUI_2/SuppliersUnitPrice.aspx" target="iframe_tab_00">单价管理</a>
                     <a href="BaseDataUI_2/SuppliersLevel.aspx" target="iframe_tab_00">供应商评定</a>
-                    <a href="" target="iframe_tab_00">供应商发货明细</a>
-                    <a href="" target="iframe_tab_00">导出库存清单</a>
-                    <a href="" target="iframe_tab_00">采购订单查看</a>
-                    <a href="" target="iframe_tab_00">合同管理</a>
+                    <a href="BaseDataUI_2/DeliverGoodsList.aspx" target="iframe_tab_00">供应商发货明细</a>
+                    <a href="DomainUI_2/ExporKuCun.aspx" target="iframe_tab_00">导出库存清单</a>
+                    <a href="BaseDataUI_2/PurchaseOrder_List.aspx" target="iframe_tab_00">采购订单查看</a>
+                    <a href="BaseDataUI_2/PurchaseContractManage_List.aspx" target="iframe_tab_00">合同管理</a>
                    <a href="BaseDataUI_2/WareHouse.aspx" target="iframe_tab_00">仓库管理</a>
                    <a href="BaseDataUI_2/MaterialManager.aspx" target="iframe_tab_00">物料信息</a>
                    <a href="NoticeManage/Notice.aspx" target="iframe_tab_00">通知公告</a>
                 </li>
                 <!--供应商-->
                <li name="tab_00" class="item " id="gongyingshang" runat="server" visible="false">
-                    <a href="" target="iframe_tab_00">发货</a>
+                    <a href="BaseDataUI_2/DeliverGoods.aspx" target="iframe_tab_00">发货</a>
                     <a href="" target="iframe_tab_00">等级查看</a>
                     <a href="" target="iframe_tab_00">订单合同</a>
                     <a href="NoticeManage/Notice.aspx" target="iframe_tab_00">通知公告</a>

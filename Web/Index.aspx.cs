@@ -79,6 +79,18 @@ public partial class Index : PageBase
                     {
                         fzsc.Visible = true;
                     }
+                    else if(UserInfo.UserType==7)
+                    {
+                        kufang.Visible = true;
+                    }
+                    else if (UserInfo.UserType == 8)
+                    {
+                        caigou.Visible = true;
+                    }
+                    else if (UserInfo.UserType == 9)
+                    {
+                        gongyingshang.Visible = true;
+                    }
                     //跳转页面
                     tiaozhuan();
                 }
@@ -113,6 +125,15 @@ public partial class Index : PageBase
                 break;
             case 6:
                 desk.Attributes.Add("src", "orderManage/OrderProManage.aspx?UserType=6");
+                break;
+            case 7:
+                desk.Attributes.Add("src", "DomainUI_2/EnterWareHouse.aspx");
+                break;
+            case 8:
+                desk.Attributes.Add("src", "BaseDataUI_2/Suppliers.aspx");
+                break;
+            case 9:
+                desk.Attributes.Add("src", "BaseDataUI_2/DeliverGoods.aspx");
                 break;
             default:
                 desk.Attributes.Add("src", "UserManage/UserManage.aspx");

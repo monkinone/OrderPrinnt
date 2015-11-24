@@ -16,101 +16,7 @@
     <script src="../themes/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
     <script src="../themes/jquery-easyui-1.4.1/easyui-lang-zh_CN.js">       
     </script>
-    <script type="text/javascript">
-
-        $(function () {
-            $("#OrderID").combobox({
-                url: '/Service/BaseDataService_2/DeliverGoodsManager.ashx?opr=getOrderlist',
-                method: 'post',
-                valueField: 'OrderID',
-                textField: 'OrderID',
-                onSelect: function (record) {
-                    if (!$("#deID").val()) {
-                        $("#ModelNumber").val(record.ModelNumber);
-                        $("#MaterialName").val(record.MaterialName);
-                    }
-                }
-            });
-
-            $("#dgorderinfo").datagrid({
-                url: '/Service/BaseDataService_2/DeliverGoodsManager.ashx?opr=getDeliverGoodsList',
-                loadMsg: "正在加载，请稍等...",
-                pageSize: 20,
-                rownumbers: true,//行号    
-                singleSelect: true,//是否单选
-                pagination: true//分页控件 
-            })
-        })
-        //弹出添加明细窗口
-        function toCreate() {
-            var row = $('#dgorderinfo').datagrid('getSelected');
-            $("#deID").val(row.ID);
-            $("#OrderID").combobox("select", row.OrderID);
-            $("#ModelNumber").val(row.ModelNumber);
-            $("#MaterialName").val(row.MaterialName);
-            $("#TheDeliveryAmout").val(row.TheDeliveryAmout),
-            $("#Number").val(row.Number),
-            $("#DeliveryNum").val(row.DeliveryNum),
-            $("#LogisticsCompany").val(row.LogisticsCompany);
-            $("#dlg_add").dialog("open");
-        }
-
-        function formatop(val, row, index) {
-            return '<a class="red" href="javascript:toCreate()">录入发货明细</a> ';
-        }
-        //查找按钮
-        function searchData() {
-            var tbx_search_OrderID = $("#tbx_search_OrderID").val();
-            var tbx_search_ModelNumber = $("#tbx_search_ModelNumber").val();
-            var sel_search_isDelivered = $("#sel_search_isDelivered").combobox("getValue");
-            $('#dgorderinfo').datagrid('load', {
-                OrderID: tbx_search_OrderID,
-                ModelNumber: tbx_search_ModelNumber,
-                isDelivered: sel_search_isDelivered
-            });
-        }
-
-        //弹出添加明细框
-        function addinfo() {
-            $("#dlg_add input").val("");
-            $("#dlg_add").dialog("open");
-        }
-
-        //明细
-        function edit() {
-            var OrderID = $("#OrderID").combobox("getText"),
-              ModelNumber = $("#ModelNumber").val(),
-              MaterialName = $("#MaterialName").val(),
-              TheDeliveryAmout = $("#TheDeliveryAmout").val(),
-              Number = $("#Number").val(),
-              DeliveryNum = $("#DeliveryNum").val(),
-              LogisticsCompany = $("#LogisticsCompany").val();
-            $.post("/Service/BaseDataService_2/DeliverGoodsManager.ashx?opr=addDeliverGoods", {
-                ID: $("#deID").val(),
-                OrderID: OrderID,
-                ModelNumber: ModelNumber,
-                MaterialName: MaterialName,
-                TheDeliveryAmout: TheDeliveryAmout,
-                Number: Number,
-                DeliveryNum: DeliveryNum,
-                LogisticsCompany: LogisticsCompany
-            }, function (data) {
-                if (data.d > 0) {
-                    alert("明细添加成功！");
-                    $('#dgorderinfo').datagrid('reload');
-                } else {
-                    alert("明细添加失败！");
-                }
-                adddialoginit();
-            })
-        }
-        //对话框取消按钮
-        function adddialoginit() {
-            $("#dlg_add input").val("");
-            $("#dlg_add").dialog("close");
-        }
-
-    </script>
+    <script src="../JS_2/BaseData/DeliverGoods.js"></script>
 
     <title>供应商发货明细录入</title>
 </head>
@@ -214,5 +120,38 @@
         <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:adddialoginit()">取消</a>
     </div>
 
+
+    <div id="dlg_htinfo" class="easyui-dialog" title="有订单合同" style="width: 700px; height: 300px;"
+        data-options="modal:true,closed:true,iconCls: 'icon-ok'">
+        <table id="htinfo" title="合同信息" style="width: 680px; height: auto">
+            <thead>
+                <tr>
+                    <th data-options="field:'OrderID',width:150">采购订单编号</th>
+                    <th data-options="field:'ContractID',width:150">合同编号</th>
+                    <th data-options="field:'AddTime',width:150">订单时间</th>
+                    <th data-options="field:'op',width:100,formatter:formatophtinfo">操作</th>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+
+    <div id="dlg_htdetailinfo" class="easyui-dialog" title="合同详情" style="width: 800px; height: 400px;"
+        data-options="modal:true,closed:true,iconCls: 'icon-ok'">
+        <table id="htdetailinfo" title="合同信息" style="width: 780px; height: auto">
+            <thead>
+                <tr>
+                    <th data-options="field:'OrderID',width:120">采购订单编号</th>
+                    <th data-options="field:'ContractID',width:120">合同编号</th>
+                    <th data-options="field:'ModelNumber',width:50">物料型号</th>
+                    <th data-options="field:'CategoryName',width:50">物料类别</th>
+                    <th data-options="field:'Amout',width:50">数量</th>
+                    <th data-options="field:'TechnicalParameters',width:100">技术参数</th>
+                    <th data-options="field:'Requirement',width:100">特殊要求</th>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
 </body>
 </html>

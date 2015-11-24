@@ -42,7 +42,16 @@ namespace Web.BaseDataUI_2
                     delPurchaseContract(context);
                     break;
                 case "getPurchaseContractList"://获取合同列表
-                    getPurchaseContractList(context);
+                    getPurchaseContractList(context, "");
+                    break;
+                case "LoginUserPurchaseContractList"://获取登录供应商的合同列表
+                    LoginUserPurchaseContractList(context);
+                    break;
+                case "updatePurchaseContraceStatus":
+                    updatePurchaseContraceStatus(context);//修改合同状态为接受 2或拒绝 1
+                    break;
+                case "getHtDetail"://获取供应商合同详情
+                    getHtDetail(context);
                     break;
 
             }
@@ -157,17 +166,19 @@ namespace Web.BaseDataUI_2
         {
             int ID = Convert.ToInt32(context.Request["ID"]);
             Model.domain_PurchaseContract pc = db.domain_PurchaseContract.Where(w => w.ID == ID).First();
-            pc.Status = 1;//删除
+            //pc.Status = 1;//删除
+            db.domain_PurchaseContract.Remove(pc);//删除合同
             string ContractID = pc.ContractID;
             string OrderID = pc.OrderID;
             List<Model.domain_PurchaseContractItem> list = db.domain_PurchaseContractItem.Where(w => w.ContractID == ContractID).ToList();
             for (int i = 0; i < list.Count(); i++)
             {
+                //删除合同详情
                 db.domain_PurchaseContractItem.Remove(list[i]);
             }
             //采购订单详情数量
             int cgitem = db.domain_PurchaseOrdersItem.Where(w => w.OrderID == OrderID).Count();
-         
+
             //订单实体
             Model.domain_PurchaseOrders order = db.domain_PurchaseOrders.
                             Where(w => w.OrderID == OrderID).FirstOrDefault();
@@ -183,18 +194,65 @@ namespace Web.BaseDataUI_2
             context.Response.Write("{\"d\":" + num + "}");
         }
 
+        //修改合同状态为接受 2或拒绝 1
+        private void updatePurchaseContraceStatus(HttpContext context)
+        {
+            int ID = Convert.ToInt32(context.Request["ID"]);
+            int Status = Convert.ToInt32(context.Request["Status"]);
+            Model.domain_PurchaseContract pc = db.domain_PurchaseContract.Where(w => w.ID == ID).First();
+            pc.Status = Status;//1拒绝 2接受
+            int num = db.SaveChanges();
+            context.Response.Write("{\"d\":" + num + "}");
+        }
+        //获取登录供应商的无状态的合同列表
+        private void LoginUserPurchaseContractList(HttpContext context)
+        {
+            string result = "{\"total\":0}";
+            if (UserInfo.UserType == 9)
+            {
+                //获取登录的供应商id
+                Model.base_Suppliers Suppliers = db.base_Suppliers.Where(w => w.LoginUserID == UserInfo.UserId).FirstOrDefault();
+                if (Suppliers != null)
+                {
+                    getPurchaseContractList(context, Suppliers.ID + "");
+                }
+                else
+                {
+                    context.Response.Write(result);
+                }
+
+            }
+            else
+            {
+                context.Response.Write(result);
+            }
+
+
+        }
+
+
         //获取合同列表
-        private void getPurchaseContractList(HttpContext context)
+        private void getPurchaseContractList(HttpContext context, string SupplierId)
         {
             int pageSize = NCore.DataConvert.ToInt(context.Request["rows"] + "", 20);
             int pageIndex = NCore.DataConvert.ToInt(context.Request["page"] + "", 1);
             string ContractID = context.Request["ContractID"] + "";
             string OrderID = context.Request["OrderID"] + "";
             string CompanyName = context.Request["CompanyName"] + "";//供应商名称
-            string SupplierId = context.Request["SupplierId"] + "";
+            if (string.IsNullOrEmpty(SupplierId))
+            {
+                SupplierId = context.Request["SupplierId"] + "";
+            }
+
+            int Status = 0;////合同状态 0 无状态 1拒绝 2接受
+            if (!string.IsNullOrEmpty(context.Request["Status"]))
+            {
+                Status = Convert.ToInt32(context.Request["Status"]);
+            }
+
             int total;////总条数
 
-            var list = db.domain_PurchaseContract.Where(w => w.Status == 0).OrderByDescending(O => O.ID).ToList()
+            var list = db.domain_PurchaseContract.Where(w => w.Status == Status).OrderByDescending(O => O.ID).ToList()
                 .Select(s => new
                 {
                     s.ID,
@@ -229,6 +287,32 @@ namespace Web.BaseDataUI_2
             string result = JsonConvert.SerializeObject(obk);
             context.Response.Write(result);
         }
+
+        //获取合同详情
+        private void getHtDetail(HttpContext context)
+        {
+            string ContractID = context.Request["ContractID"] + "";
+            string result = "{\"total\":0}";
+            if (UserInfo.UserType == 9 && !string.IsNullOrEmpty(ContractID))
+            {
+                //获取登录的供应商id
+                Model.base_Suppliers Suppliers = db.base_Suppliers.Where(w =>
+                    w.LoginUserID == UserInfo.UserId).FirstOrDefault();
+                if (Suppliers != null)
+                {
+                    var list = db.domain_PurchaseContractItem.Where(w => w.ContractID == ContractID).ToList();
+                    int total = list.Count();
+                    var obk = new { total = total, rows = list };
+                    //序列化json字符串
+                    result = JsonConvert.SerializeObject(obk);
+
+                }
+
+            }
+            context.Response.Write(result);
+        }
+
+
 
 
         public bool IsReusable

@@ -23,13 +23,16 @@ namespace Web.Service.BaseDataService_2
                     getDeliverGoodsList(context);
                     break;
                 case "getAllDeliverGoodsList":  //获取所有供应商发货明细
-                    getAllDeliverGoodsList(context);
+                    getAllDeliverGoodsList(context, "");
                     break;
                 case "getOrderlist":   //获取此供应商的订单列表
                     getOrderlist(context);
                     break;
                 case "addDeliverGoods":   //添加发货明细
                     addDeliverGoods(context);
+                    break;
+                case "PurchaseContractExport"://导出活动数据
+                    PurchaseContractExport(context);
                     break;
             }
         }
@@ -55,7 +58,9 @@ namespace Web.Service.BaseDataService_2
                     string MaterialName = context.Request["MaterialName"] + "";//物料名称
                     string sql = @" select  domain_DeliverGoods.ID, domain_PurchaseContractItem.OrderID,
 domain_PurchaseContract.CompanyName,
+domain_PurchaseContract.ContractID,
 domain_PurchaseContract.SuppliersID,
+domain_PurchaseContract.AddTime,
 domain_PurchaseContractItem.MaterialName,
 domain_PurchaseContractItem.ModelNumber,
 Amout,TechnicalParameters,TheDeliveryAmout,Number,
@@ -111,9 +116,15 @@ where domain_PurchaseContract.SuppliersID='" + SuppliersID + "'";
             }
 
         }
+        //获取活动导出数据
+        private void PurchaseContractExport(HttpContext context)
+        {
+            getDeliverGoodsList(context);
+        }
+
 
         //获取所有供应商发货明细
-        private void getAllDeliverGoodsList(HttpContext context)
+        private void getAllDeliverGoodsList(HttpContext context, string SuppliersID)
         {
 
             int pageSize = NCore.DataConvert.ToInt(context.Request["rows"] + "", 10);
@@ -125,10 +136,14 @@ where domain_PurchaseContract.SuppliersID='" + SuppliersID + "'";
             string ModelNumber = context.Request["ModelNumber"] + "";//产品型号
             string CompanyName = context.Request["CompanyName"] + "";//供应商名称
             string MaterialName = context.Request["MaterialName"] + "";//物料名称
+            //string SuppliersID = context.Request["SuppliersID"] + "";//供应商id
 
-            string sql = @" select  domain_DeliverGoods.ID, domain_PurchaseContractItem.OrderID,
+            string sql = @" select  domain_DeliverGoods.ID, 
+domain_PurchaseContractItem.OrderID,
 domain_PurchaseContract.CompanyName,
+domain_PurchaseContract.ContractID,
 domain_PurchaseContract.SuppliersID,
+domain_PurchaseContract.AddTime,
 domain_PurchaseContractItem.MaterialName,
 domain_PurchaseContractItem.ModelNumber,
 Amout,TechnicalParameters,TheDeliveryAmout,Number,
@@ -161,6 +176,10 @@ and domain_PurchaseContractItem.MaterialName = domain_DeliverGoods.MaterialName"
             {
                 list = list.Where(w => w.MaterialName.Contains(MaterialName));
             }
+            if (!string.IsNullOrEmpty(SuppliersID))
+            {
+                list = list.Where(w => w.SuppliersID == Convert.ToInt32(SuppliersID));
+            }
             total = list.Count();
             list = list.Skip((pageIndex - 1) * pageSize).Take(pageSize);
             var obk = new { total = total, rows = list.ToList() };
@@ -179,11 +198,11 @@ and domain_PurchaseContractItem.MaterialName = domain_DeliverGoods.MaterialName"
             if (SuppliersList.Count >= 0)
             {
                 //获取登录的供应商id
-                Model.base_Suppliers Suppliers = SuppliersList.First();
-                if (!string.IsNullOrEmpty(Suppliers.ID + ""))
+                Model.base_Suppliers Suppliers = SuppliersList.FirstOrDefault();
+                if (Suppliers != null && !string.IsNullOrEmpty(Suppliers.ID + ""))
                 {
                     string sql = @"select domain_PurchaseContractItem.OrderID,MaterialName,ModelNumber from domain_PurchaseContract inner join domain_PurchaseContractItem
-on domain_PurchaseContract.ContractID=domain_PurchaseContractItem.ContractID where domain_PurchaseContract.SuppliersID=" + Suppliers.ID;
+on domain_PurchaseContract.ContractID=domain_PurchaseContractItem.ContractID where Status=2 and domain_PurchaseContract.SuppliersID=" + Suppliers.ID;
                     var list = db.Database.SqlQuery<orderinfo>(sql); ;
                     //序列化json字符串
                     string result = JsonConvert.SerializeObject(list);
@@ -268,6 +287,7 @@ on domain_PurchaseContract.ContractID=domain_PurchaseContractItem.ContractID whe
         {
             public int? ID { get; set; }//明细编号
             public string OrderID { get; set; }// 采购订单编号
+            public string ContractID { get; set; }// 合同编号
             public string MaterialName { get; set; }// 物料名称
             public string ModelNumber { get; set; }//物料型号
             public string CompanyName { get; set; }//供应商名称
@@ -281,7 +301,7 @@ on domain_PurchaseContract.ContractID=domain_PurchaseContractItem.ContractID whe
             public decimal? AllDeliverCount { get; set; }//已发货数量    
             public decimal? TheDeliveryAmout { get; set; }//本次发货数量   
             public DateTime? DeliverGoodsTime { get; set; }//发货时间   
-
+            public DateTime? AddTime { get; set; }//合同生成时间   
         }
         public class orderinfo
         {
